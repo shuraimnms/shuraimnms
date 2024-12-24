@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+    max-width: 1200px; /* Optional, limit the width */
+    margin: 0 auto; /* Center the content */
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 120px; /* Make text smaller for mobile devices */
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    /* Adjust button styles for better touch interaction */
+    .btn {
+        padding: 12px;
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even smaller screens */
+    h1, h2 {
+        font-size: 126px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1 1 30%; /* Each item will take 30% of the container width */
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 1 45%; /* On smaller screens, items will take up 45% width */
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 1 1 100%; /* On very small screens, each item will take full width */
+    }
+}
+img {
+    max-width: 100%;  /* Ensures images never exceed the container's width */
+    height: auto;     /* Maintains aspect ratio */
+}

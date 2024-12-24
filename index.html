@@ -1,0 +1,416 @@
+<html>
+ <head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+   ZikrMate Home Page       
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Amiri', serif;
+        }
+  </style>
+  <script>
+   let pageStack = [];
+
+        function navigateTo(pageId) {
+            const currentPage = document.querySelector('.page:not(.hidden)');
+            if (currentPage) {
+                pageStack.push(currentPage.id);
+                currentPage.classList.add('hidden');
+            }
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+
+        function goBack() {
+            if (pageStack.length > 0) {
+                const previousPageId = pageStack.pop();
+                document.querySelector('.page:not(.hidden)').classList.add('hidden');
+                document.getElementById(previousPageId).classList.remove('hidden');
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Backspace' || event.key === 'Escape') {
+                goBack();
+            }
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        function handleGesture() {
+            if (touchEndX < touchStartX) {
+                // Swipe left
+            }
+            if (touchEndX > touchStartX) {
+                goBack(); // Swipe right
+            }
+        }
+
+        document.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleGesture();
+        });
+
+        function playAudio(audioId) {
+            const audioElement = document.getElementById(audioId);
+            if (audioElement) {
+                audioElement.play();
+            }
+        }
+  </script>
+ </head>
+ <div class="flex flex-wrap justify-between">
+    <div class="w-full sm:w-1/2 md:w-1/3 p-2">
+        <!-- Content here -->
+    </div>
+</div>
+
+ <body class="bg-gray-100 text-gray-900">
+  <!-- Home Page -->
+  <div class="page" id="homePage">
+   <!-- Header Section -->
+   <header class="flex justify-between items-center p-4 bg-white shadow-md">
+    <div class="flex items-center">
+     <img alt="ZikarMate logo in a sleek, Islamic font" class="h-10 w-10" height="50" src="https://storage.googleapis.com/a1aa/image/1yQm3wKeUEXAeEyYDO6aLfpLbIhOgSglAPdejHPMlTff3rk7E.jpg" width="50"/>
+     <span class="ml-2 text-xl font-bold">
+      ZikrMate
+     </span>
+    <<div>
+        <div class="flex items-center space-x-4">
+            <div class="text-right">
+                <div class="text-sm font-bold" id="islamic-date">
+                    <!-- Islamic Date will update here -->
+                </div>
+                <div class="text-xs text-gray-500 font-bold" id="gregorian-date">
+                    <!-- Gregorian Date will update here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     </div>
+     <i class="fas fa-cog text-xl cursor-pointer" onclick="navigateTo('settingsPage')">
+     </i>
+    </div>
+        <!-- Developed by Shuraim -->
+        <div class="text-xs text-gray-400">
+            Developed by Shuraim
+        </div>
+    </div>
+   </header>
+   <!-- Greeting Message -->
+   <section class="p-4 text-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
+    <h1 class="text-2xl font-semibold font-bold">
+     Assalamu Alaikum/ السلام علیکم! Start your day with Bismillah
+    </h1>
+    <img alt="Subtle graphic of a sunrise" class="mx-auto mt-2" height="100" src="https://storage.googleapis.com/a1aa/image/uo4tseKonn28ai5yOEr4JzwxgV9TlfzL6y0VZvqcsighvSuTA.jpg" width="100"/>
+   </section>
+   <!-- Main Features (Interactive Cards) -->
+   <main class="p-4 space-y-4">
+    <!-- Daily Dua Card -->
+    <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+     <h2 class="text-xl font-semibold font-bold">
+      Daily Dua
+     </h2>
+     <p class="mt-2 text-gray-700 font-bold">
+      اللّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلاَّ أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ
+     </p>
+     <p class="mt-1 text-gray-500 font-bold">
+      O Allah, You are my Lord, there is no deity but You. You created me and I am Your servant.
+     </p>
+     <div class="mt-4 flex space-x-2">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold" onclick="playAudio('audioDailyDua')">
+       
+      </button>
+      <button class="bg-green-500 text-white px-4 py-2 rounded font-bold">
+       
+     </div>
+    </div>
+    <!-- Morning Azkar/صبح کا اذکار Card -->
+    <div class="bg-yellow-100 p-4 rounded-lg shadow-md" onclick="navigateTo('morningAzkarPage')">
+     <div class="flex items-center">
+      <i class="fas fa-sun text-yellow-500 text-2xl">
+     </i>
+<h2 class="ml-2 text-xl font-semibold font-bold">
+  Morning Azkar/صبح کا اذکار
+</h2>
+</div>
+<div class="mt-4 flex space-x-2">
+  <a href="morning_azkar/morning_azkar.html">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+      Read Azkar
+    </button>
+  </a>
+
+     </div>
+    </div>
+    <!-- Evening Azkar/شام کا اذکار Card -->
+    <div class="bg-purple-100 p-4 rounded-lg shadow-md">
+     <div class="flex items-center">
+      <i class="fas fa-moon text-blue-500 text-2xl">
+      </i>
+      <h2 class="ml-2 text-xl font-semibold font-bold">
+       Evening Azkar/شام کا اذکار 
+      </h2>
+     </div>
+     <div class="mt-4 flex space-x-2">
+        <a href="evening_azkar/evening_azkar.html">
+      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+       Read Azkar
+      </button>
+    </div>
+</div>
+<!-- Dua and Dhikr/دعا اور ذکر Card -->
+<div class="bg-yellow-100 p-4 rounded-lg shadow-md" onclick="navigateTo('morningAzkarPage')">
+ <div class="flex items-center">
+  <i class="fas fa-sun text-yellow-500 text-2xl">
+ </i>
+<h2 class="ml-2 text-xl font-semibold font-bold">
+Dua and Dhikr/دعا اور ذکر
+</h2>
+</div>
+<div class="mt-4 flex space-x-2">
+<a href="duadhikr.html">
+<button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+  Open Dhikr
+</button>
+</a>
+
+ </div>
+     </div>
+    </div>
+    <!-- Favorites Card -->
+    <div class="bg-pink-100 p-4 rounded-lg shadow-md">
+     <div class="flex items-center">
+      <i class="fas fa-heart text-red-500 text-2xl">
+      </i>
+      <h2 class="ml-2 text-xl font-semibold font-bold">
+       Favorites
+      </h2>
+     </div>
+     <p class="mt-2 text-gray-700 font-bold">
+      Quick access to your saved duas and azkar.
+     </p>
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeling Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function redirectToFeelingPage() {
+      window.location.href = 'iamfeeling.html'; // Redirect to the new page
+    }
+  </script>
+</head>
+<body class="bg-blue-100">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Feeling Card with onClick -->
+    <div class="bg-green-100 p-4 rounded-lg shadow-md cursor-pointer" onclick="redirectToFeelingPage()">
+      <div class="flex items-center">
+        <i class="fas fa-clock text-blue-500 text-2xl"></i>
+        <h2 class="ml-2 text-xl font-semibold font-bold">
+          I am feeling/میں محسوس کر رہا ہوں
+        </h2>
+      </div>
+      <p class="mt-2 text-gray-700 font-bold">
+        Check out the duas for what you feel
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded font-bold">
+        View All
+      </button>
+    </div>
+  
+
+   <!-- Quick Access Row (Horizontal Scroll) -->
+   <section class="p-4 bg-white shadow-md">
+    <div class="flex space-x-4 overflow-x-auto">
+     <div class="flex flex-col items-center">
+      <div class="bg-blue-500 text-white p-4 rounded-full">
+       <i class="fas fa-book-open">
+       </i>
+      </div>
+      <span class="mt-2 text-sm font-bold">
+       Quran
+      </span>
+     </div>
+     <div class="flex flex-col items-center">
+      <div class="bg-green-500 text-white p-4 rounded-full">
+       <i class="fas fa-praying-hands">
+       </i>
+      </div>
+      <span class="mt-2 text-sm font-bold">
+       Tasbeeh
+      </span>
+     </div>
+     <div class="flex flex-col items-center">
+      <div class="bg-yellow-500 text-white p-4 rounded-full">
+       <i class="fas fa-calendar-alt">
+       </i>
+      </div>
+      <span class="mt-2 text-sm font-bold">
+       Calendar
+      </span>
+     </div>
+     <div class="flex flex-col items-center">
+      <div class="bg-red-500 text-white p-4 rounded-full">
+       <i class="fas fa-shield-alt">
+       </i>
+      </div>
+      <span class="mt-2 text-sm font-bold">
+       Ruqyah
+      </span>
+     </div>
+     <div class="flex flex-col items-center">
+      <div class="bg-purple-500 text-white p-4 rounded-full">
+       <i class="fas fa-bell">
+       </i>
+      </div>
+      <span class="mt-2 text-sm font-bold">
+       Reminders
+      </span>
+     </div>
+    </div>
+   </section>
+   <!-- Theme Preview -->
+   <section class="p-4 bg-gray-200 text-center">
+    <div class="flex justify-center items-center space-x-2">
+     <span class="text-sm font-bold">
+      Active Theme:
+     </span>
+     <div class="w-6 h-6 bg-blue-500 rounded-full">
+     </div>
+     <div class="w-6 h-6 bg-green-500 rounded-full">
+     </div>
+     <div class="w-6 h-6 bg-yellow-500 rounded-full">
+     </div>
+    </div>
+   </section>
+   <!-- Footer Section -->
+   <footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
+    <div class="flex justify-around p-2">
+     <div class="text-center">
+      <i class="fas fa-home text-blue-500 text-2xl">
+      </i>
+      <span class="block text-xs font-bold">
+       Home
+      </span>
+     </div>
+     <div class="text-center">
+      <i class="fas fa-praying-hands text-gray-500 text-2xl">
+      </i>
+      <span class="block text-xs font-bold">
+       Duas
+      </span>
+     </div>
+     <div class="text-center">
+      <i class="fas fa-beads text-gray-500 text-2xl">
+      </i>
+      <span class="block text-xs font-bold">
+       Azkar
+      </span>
+     </div>
+     <div class="text-center">
+      <i class="fas fa-book text-gray-500 text-2xl">
+      </i>
+      </span>
+     </div>
+     <div class="text-center">
+      <i class="fas fa-ellipsis-h text-gray-500 text-2xl">
+      </i>
+      <span class="block text-xs font-bold">
+       More
+      </span>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <!-- Morning Azkar Page -->
+  <div class="page hidden" id="morningAzkarPage">
+   <!-- Header Section -->
+   <header class="flex justify-between items-center p-4 bg-white shadow-md">
+    <div class="flex items-center">
+     <i class="fas fa-arrow-left text-xl cursor-pointer" onclick="goBack()">
+     </i>
+     <h2 class="ml-2 text-xl font-semibold font-bold">
+      Morning Azkar
+     </h2>
+    </div>
+    <i class="fas fa-cog text-xl">
+    </i>
+   </header>
+   <!-- Introduction Card -->
+   <section class="p-4 bg-white shadow-md">
+    <h3 class="text-lg font-semibold font-bold">
+     Start your day with the blessings of remembrance
+    </h3>
+    <p class="mt-2 text-gray-700 font-bold">
+     The morning azkar are a collection of supplications and remembrances that help you start your day with the blessings and protection of Allah.
+    </p>
+    <a class="text-blue-500 mt-2 inline-block font-bold" href="#">
+     Read More
+    </a>
+   </section>
+   </main>
+  </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Date Update</title>
+    <style>
+        /* Styling for the date */
+        #date {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Function to update the Gregorian date
+        function updateGregorianDate() {
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = today.toLocaleDateString('en-US', options);
+            document.getElementById("gregorian-date").textContent = formattedDate;
+        }
+    
+        // Function to calculate the Islamic date (Hijri)
+        function updateIslamicDate() {
+            const today = new Date();
+            const hijriDateOptions = { calendar: "islamic", day: "numeric", month: "long", year: "numeric" };
+            const hijriDate = today.toLocaleDateString('en-SA', hijriDateOptions);
+            document.getElementById("islamic-date").textContent = hijriDate;
+        }
+    
+        // Call both functions on page load
+        updateGregorianDate();
+        updateIslamicDate();
+    </script>
+    
+
+        // Call the function to update the date
+        updateDate();
+    </script>
+</body>
+</html>
+
+</body>
+</html>
