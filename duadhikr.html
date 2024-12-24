@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhikr Categories</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // JavaScript function to handle card clicks
+    function onCardClick(dhikrName) {
+      alert("You clicked on " + dhikrName); // Replace this with your desired action
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Dhikr Categories</h1>
+
+    <!-- Grid for Dhikr Categories -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Morning Dhikr -->
+      <a href="morning_azkar/morning_azkar.html" class="block">
+      <div class="text-center bg-white shadow-md rounded-lg p-3" onclick="onCardClick('Morning Dhikr')">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.hkslncv3kwaxVx6iyfupwwHaEo&pid=Api&P=0&h=180" />
+        <p class="mt-2 text-sm font-semibold">Morning Dhikr</p>
+      </div>
+
+      <!-- Evening Dhikr with navigation -->
+      <a href="evening_azkar/evening_azkar.html" class="block">
+        <div class="text-center bg-white shadow-md rounded-lg p-3">" 
+          <img src="https://www.islamestic.com/wp-content/uploads/2023/03/morning1-870x570.jpg" />
+          <p class="mt-2 text-sm font-semibold">Evening Dhikr</p>
+        </div>
+      </a>
+      
+      
+
+      <!-- Before Sleep Dhikr -->
+      <div class="text-center bg-white shadow-md rounded-lg p-3" onclick="onCardClick('Before Sleep Dhikr')">
+        <img src="https://www.islamestic.com/wp-content/uploads/2023/03/before_sleep1-1-870x570.jpg" class="rounded-md w-full h-28 object-cover" />
+        <p class="mt-2 text-sm font-semibold">Before Sleep Dhikr</p>
+      </div>
+
+      <!-- Salah Dhikr -->
+      <div class="text-center bg-white shadow-md rounded-lg p-3" onclick="onCardClick('Salah Dhikr')">
+        <img src="https://www.islamestic.com/wp-content/uploads/2023/03/salah1-870x570.jpg" alt="Salah Dhikr" class="rounded-md w-full h-28 object-cover" />
+        <p class="mt-2 text-sm font-semibold">Salah Dhikr</p>
+      </div>
+
+      <!-- After Salah Dhikr -->
+      <div class="text-center bg-white shadow-md rounded-lg p-3" onclick="onCardClick('After Salah Dhikr')">
+        <img src="https://www.islamestic.com/wp-content/uploads/2023/03/after_salah_dhikr1-870x570.jpg" alt="After Salah Dhikr" class="rounded-md w-full h-28 object-cover" />
+        <p class="mt-2 text-sm font-semibold">After Salah Dhikr</p>
+      </div>
+
+      <!-- Ruqyah & Illness -->
+      <div class="text-center bg-white shadow-md rounded-lg p-3" onclick="onCardClick('Ruqyah & Illness')">
+        <img src="https://www.islamestic.com/wp-content/uploads/2023/03/illness1-870x570.jpg" alt="Ruqyah &amp; Illness" class="rounded-md w-full h-28 object-cover" />
+        <p class="mt-2 text-sm font-semibold">Ruqyah &amp; Illness</p>
+      </div>
+    </div>
+
+    <!-- Some Important Dhikr Section -->
+    <h2 class="text-xl font-bold text-gray-800 mt-10 mb-4">Some Important Dhikr</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="bg-indigo-50 shadow-lg rounded-lg p-3 text-center" onclick="onCardClick('Subhanallah wa Bihamdihi')">
+        <img src="https://via.placeholder.com/150?text=Subhanallah" alt="Subhanallah wa Bihamdihi" class="rounded-md w-full h-20 object-cover" />
+        <h3 class="text-sm font-semibold text-indigo-700 mt-2">Subhanallah wa Bihamdihi</h3>
+        <p class="text-gray-600 text-xs mt-1">“Glory be to Allah and all praise is due to Him.”</p>
+      </div>
+      <div class="bg-indigo-50 shadow-lg rounded-lg p-3 text-center" onclick="onCardClick('Astaghfirullah')">
+        <img src="https://via.placeholder.com/150?text=Astaghfirullah" alt="Astaghfirullah" class="rounded-md w-full h-20 object-cover" />
+        <h3 class="text-sm font-semibold text-indigo-700 mt-2">Astaghfirullah</h3>
+        <p class="text-gray-600 text-xs mt-1">“I seek forgiveness from Allah.”</p>
+      </div>
+      <div class="bg-indigo-50 shadow-lg rounded-lg p-3 text-center" onclick="onCardClick('La ilaha illallah')">
+        <img src="https://via.placeholder.com/150?text=La+ilaha+illallah" alt="La ilaha illallah" class="rounded-md w-full h-20 object-cover" />
+        <h3 class="text-sm font-semibold text-indigo-700 mt-2">La ilaha illallah</h3>
+        <p class="text-gray-600 text-xs mt-1">“There is no deity but Allah.”</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

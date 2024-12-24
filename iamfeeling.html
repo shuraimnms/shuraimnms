@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feelings Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function showDeveloperInfo() {
+      // Show the text at the top
+      document.getElementById('developer-info').style.display = 'block';
+    }
+  </script>
+</head>
+<body class="bg-blue-100" onclick="showDeveloperInfo()">
+  <!-- Developer Info Header -->
+  <div id="developer-info" class="fixed top-0 left-0 w-full bg-gray-800 text-white text-xs text-center py-1 hidden">
+    Developed by Shuraim
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">How Are You Feeling Today?</h1>
+
+    <!-- Grid for Feeling Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Happy Card -->
+      <a href="iamfeeling/happy.html" class="block">
+        <div class="bg-yellow-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-yellow-800">Happy</h3>
+            <p class="text-sm font-bold text-yellow-700 mt-2">Feeling joy and contentment. Life is good!</p>
+            <p class="text-sm font-bold text-yellow-700 mt-2">خوشی - خوشی اور اطمینان کا احساس۔ زندگی اچھی ہے!</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Angry Card -->
+      <a href="iamfeeling/angry.html" class="block">
+        <div class="bg-red-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-red-800">Angry</h3>
+            <p class="text-sm font-bold text-red-700 mt-2">Frustration or annoyance. Need to let off some steam!</p>
+            <p class="text-sm font-bold text-red-700 mt-2">غصہ - مایوسی یا ناراضگی۔ غصہ کم کرنے کی ضرورت ہے!</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Sad Card -->
+      <a href="iamfeeling/sad.html" class="block">
+        <div class="bg-blue-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-blue-800">Sad</h3>
+            <p class="text-sm font-bold text-blue-700 mt-2">Feeling down or sorrowful. Need some comfort.</p>
+            <p class="text-sm font-bold text-blue-700 mt-2">اداس - نیچے یا غمگین محسوس کرنا۔ کچھ تسلی کی ضرورت ہے۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Excited Card -->
+      <a href="iamfeeling/excited.html" class="block">
+        <div class="bg-pink-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-pink-800">Excited</h3>
+            <p class="text-sm font-bold text-pink-700 mt-2">Feeling enthusiastic and full of energy. Let’s go!</p>
+            <p class="text-sm font-bold text-pink-700 mt-2">پر جوش - جوش و جذبہ اور توانائی سے بھرپور محسوس کرنا۔ چلیں!</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Calm Card -->
+      <a href="iamfeeling/calm.html" class="block">
+        <div class="bg-green-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-green-800">Calm</h3>
+            <p class="text-sm font-bold text-green-700 mt-2">At peace and collected. The mind is at ease.</p>
+            <p class="text-sm font-bold text-green-700 mt-2">پرامن - سکون اور اطمینان محسوس کرنا۔ دماغ پرسکون ہے۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Confused Card -->
+      <a href="iamfeeling/confused.html" class="block">
+        <div class="bg-purple-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-purple-800">Confused</h3>
+            <p class="text-sm font-bold text-purple-700 mt-2">Uncertain and unclear. Need some clarity.</p>
+            <p class="text-sm font-bold text-purple-700 mt-2">مبہم - غیر یقینی اور غیر واضح محسوس کرنا۔ کچھ وضاحت کی ضرورت ہے۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Surprised Card -->
+      <a href="iamfeeling/surprised.html" class="block">
+        <div class="bg-teal-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-teal-800">Surprised</h3>
+            <p class="text-sm font-bold text-teal-700 mt-2">Caught off guard! Something unexpected happened.</p>
+            <p class="text-sm font-bold text-teal-700 mt-2">حیران - غافل ہو جانا! کچھ غیر متوقع ہوا۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Grateful Card -->
+      <a href="iamfeeling/grateful.html" class="block">
+        <div class="bg-orange-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-orange-800">Grateful</h3>
+            <p class="text-sm font-bold text-orange-700 mt-2">Feeling thankful for the blessings in life.</p>
+            <p class="text-sm font-bold text-orange-700 mt-2">شکر گزار - زندگی کی نعمتوں کے لئے شکر گزار محسوس کرنا۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Lonely Card -->
+      <a href="iamfeeling/lonely.html" class="block">
+        <div class="bg-indigo-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-indigo-800">Lonely</h3>
+            <p class="text-sm font-bold text-indigo-700 mt-2">Feeling isolated and disconnected. Seeking company.</p>
+            <p class="text-sm font-bold text-indigo-700 mt-2">تنہا - الگ تھلگ اور بے جوڑ محسوس کرنا۔ ساتھی کی تلاش میں۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Hopeful Card -->
+      <a href="iamfeeling/hopeful.html" class="block">
+        <div class="bg-lime-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-lime-800">Hopeful</h3>
+            <p class="text-sm font-bold text-lime-700 mt-2">Looking forward to something better, full of hope.</p>
+            <p class="text-sm font-bold text-lime-700 mt-2">مستقبل کے لئے امید بھرا دیکھنا، بہت سی امیدوں سے بھرا۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tired Card -->
+      <a href="iamfeeling/tired.html" class="block">
+        <div class="bg-gray-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-gray-800">Tired</h3>
+            <p class="text-sm font-bold text-gray-700 mt-2">Feeling drained and low on energy. Need some rest.</p>
+            <p class="text-sm font-bold text-gray-700 mt-2">تھکاوٹ - توانائی ختم ہونا اور آرام کی ضرورت ہونا۔</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Proud Card -->
+      <a href="iamfeeling/proud.html" class="block">
+        <div class="bg-yellow-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-yellow-800">Proud</h3>
+            <p class="text-sm font-bold text-yellow-700 mt-2">Feeling accomplished and proud of achievements.</p>
+            <p class="text-sm font-bold text-yellow-700 mt-2">فخر - کامیابیوں پر فخر محسوس کرنا۔</p>
+          </div>
+        </div>
+      </a>
+    
+
+      <!-- Anxious Card -->
+      <a href="iamfeeling/anxious.html" class="block">
+        <div class="bg-red-300 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+          <div>
+            <h3 class="text-lg font-bold text-red-800">Anxious</h3>
+            <p class="text-sm font-bold text-red-700 mt-2">Feeling uneasy or worried. Need to calm down.</p>
+            <p class="text-sm font-bold text-red-700 mt-2">تشویش - بے چینی یا فکر کرنا۔ سکون کی ضرورت ہے۔</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
