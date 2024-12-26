@@ -85,7 +85,8 @@
      <span class="ml-2 text-xl font-bold">
       ZikrMate
      </span>
-    <<div>
+    <div>
+
         <div class="flex items-center space-x-4">
             <div class="text-right">
                 <div class="text-sm font-bold" id="islamic-date">
@@ -95,12 +96,15 @@
                     <!-- Gregorian Date will update here -->
                 </div>
             </div>
+            <button id="theme-toggle" class="p-2 bg-gray-200 rounded-full">
+                <i id="theme-icon" class="fas fa-sun text-yellow-500"></i>
+              </button>
+              
         </div>
     </div>
     
      </div>
-     <i class="fas fa-cog text-xl cursor-pointer" onclick="navigateTo('settingsPage')">
-     </i>
+     
     </div>
         <!-- Developed by Shuraim -->
         <div class="text-xs text-gray-400">
@@ -122,19 +126,35 @@
      <h2 class="text-xl font-semibold font-bold">
       Daily Dua
      </h2>
-     <p class="mt-2 text-gray-700 font-bold">
-      اللّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلاَّ أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ
-     </p>
-     <p class="mt-1 text-gray-500 font-bold">
-      O Allah, You are my Lord, there is no deity but You. You created me and I am Your servant.
-     </p>
-     <div class="mt-4 flex space-x-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold" onclick="playAudio('audioDailyDua')">
-       
-      </button>
-      <button class="bg-green-500 text-white px-4 py-2 rounded font-bold">
-       
-     </div>
+
+  <!-- Box where Dua is displayed (with a different background color) -->
+  <div class="bg-green-100 p-4 rounded-lg mt-4">
+    <p class="text-md font-semibold">
+      <!-- Your Dua content here -->
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Dua</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Daily Dua Section -->
+    <div class="dua-section">
+      <h2 class="title mb-2 text-center text-2xl font-bold text-gray-800">Daily Dua</h2>
+      <div id="daily-dua" class="text-center bg-white shadow-md rounded-lg p-6">
+        <!-- Dua will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to app.js -->
+  <script src="app.js"></script>
+</body>
+</html>
+
     </div>
     <!-- Morning Azkar/صبح کا اذکار Card -->
     <div class="bg-yellow-100 p-4 rounded-lg shadow-md" onclick="navigateTo('morningAzkarPage')">
@@ -153,190 +173,169 @@
   </a>
 
      </div>
-    </div>
-    <!-- Evening Azkar/شام کا اذکار Card -->
-    <div class="bg-purple-100 p-4 rounded-lg shadow-md">
-     <div class="flex items-center">
-      <i class="fas fa-moon text-blue-500 text-2xl">
-      </i>
-      <h2 class="ml-2 text-xl font-semibold font-bold">
-       Evening Azkar/شام کا اذکار 
-      </h2>
-     </div>
-     <div class="mt-4 flex space-x-2">
-        <a href="evening_azkar/evening_azkar.html">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-       Read Azkar
-      </button>
-    </div>
-</div>
-<!-- Dua and Dhikr/دعا اور ذکر Card -->
-<div class="bg-yellow-100 p-4 rounded-lg shadow-md" onclick="navigateTo('morningAzkarPage')">
- <div class="flex items-center">
-  <i class="fas fa-sun text-yellow-500 text-2xl">
- </i>
-<h2 class="ml-2 text-xl font-semibold font-bold">
-Dua and Dhikr/دعا اور ذکر
-</h2>
-</div>
-<div class="mt-4 flex space-x-2">
-<a href="duadhikr.html">
-<button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-  Open Dhikr
-</button>
-</a>
-
- </div>
-     </div>
-    </div>
-    <!-- Favorites Card -->
-    <div class="bg-pink-100 p-4 rounded-lg shadow-md">
-     <div class="flex items-center">
-      <i class="fas fa-heart text-red-500 text-2xl">
-      </i>
-      <h2 class="ml-2 text-xl font-semibold font-bold">
-       Favorites
-      </h2>
-     </div>
-     <p class="mt-2 text-gray-700 font-bold">
-      Quick access to your saved duas and azkar.
-     </p>
-    </div>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feeling Cards</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function redirectToFeelingPage() {
-      window.location.href = 'iamfeeling.html'; // Redirect to the new page
-    }
-  </script>
-</head>
-<body class="bg-blue-100">
-  <div class="container mx-auto px-4 py-8">
-    <!-- Feeling Card with onClick -->
-    <div class="bg-green-100 p-4 rounded-lg shadow-md cursor-pointer" onclick="redirectToFeelingPage()">
+    </div><!-- Evening Azkar/شام کا اذکار Card -->
+    <div class="bg-purple-100 p-4 rounded-lg shadow-md mb-4">
       <div class="flex items-center">
-        <i class="fas fa-clock text-blue-500 text-2xl"></i>
+        <i class="fas fa-moon text-blue-500 text-2xl"></i>
         <h2 class="ml-2 text-xl font-semibold font-bold">
-          I am feeling/میں محسوس کر رہا ہوں
+          Evening Azkar/شام کا اذکار
         </h2>
       </div>
-      <p class="mt-2 text-gray-700 font-bold">
-        Check out the duas for what you feel
-      </p>
+      <div class="mt-4 flex space-x-2">
+        <a href="evening_azkar/evening_azkar.html">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+            Read Azkar
+          </button>
+        </a>
+      </div>
+    </div>
+    
+  <!-- Dua and Dhikr Folder -->
+<div class="bg-yellow-100 p-4 rounded-lg shadow-md mb-4">
+    <div class="flex items-center">
+      <i class="fas fa-sun text-yellow-500 text-2xl"></i>
+      <h2 class="ml-2 text-xl font-semibold font-bold">
+        Dua and Dhikr/دعا اور ذکر
+      </h2>
+    </div>
+    <div class="mt-4 flex space-x-2">
+      <a href="duadhikr.html">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+          Open Dhikr
+        </button>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Feeling Folder -->
+<div class="bg-green-100 p-4 rounded-lg shadow-md cursor-pointer mb-4">
+    <div class="flex items-center">
+      <i class="fas fa-clock text-blue-500 text-2xl"></i>
+      <h2 class="ml-2 text-xl font-semibold font-bold">
+        I am feeling/میں محسوس کر رہا ہوں
+      </h2>
+    </div>
+    <p class="mt-2 text-gray-700 font-bold">
+      Check out the duas for what you feel
+    </p>
+    <!-- Link to iamfeeling.html -->
+    <a href="iamfeeling.html">
       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded font-bold">
         View All
       </button>
-    </div>
+    </a>
+  </div>
+  
   
 
-   <!-- Quick Access Row (Horizontal Scroll) -->
-   <section class="p-4 bg-white shadow-md">
+ <!-- Quick Access Row (Horizontal Scroll) -->
+<section class="p-4 bg-white shadow-md">
     <div class="flex space-x-4 overflow-x-auto">
-     <div class="flex flex-col items-center">
-      <div class="bg-blue-500 text-white p-4 rounded-full">
-       <i class="fas fa-book-open">
-       </i>
+      
+      <!-- Quran -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='quran.html'">
+        <div class="bg-blue-500 text-white p-4 rounded-full">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Quran
+        </span>
       </div>
-      <span class="mt-2 text-sm font-bold">
-       Quran
-      </span>
-     </div>
-     <div class="flex flex-col items-center">
-      <div class="bg-green-500 text-white p-4 rounded-full">
-       <i class="fas fa-praying-hands">
-       </i>
+  
+      <!-- Tasbeeh -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
+        <div class="bg-green-500 text-white p-4 rounded-full">
+          <i class="fas fa-praying-hands"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Tasbeeh
+        </span>
       </div>
-      <span class="mt-2 text-sm font-bold">
-       Tasbeeh
-      </span>
-     </div>
-     <div class="flex flex-col items-center">
-      <div class="bg-yellow-500 text-white p-4 rounded-full">
-       <i class="fas fa-calendar-alt">
-       </i>
+      <!-- Tasbeeh -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
+        <div class="bg-green-500 text-white p-4 rounded-full">
+          <i class="fas fa-praying-hands"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Tasbeeh
+        </span>
       </div>
-      <span class="mt-2 text-sm font-bold">
-       Calendar
-      </span>
-     </div>
-     <div class="flex flex-col items-center">
-      <div class="bg-red-500 text-white p-4 rounded-full">
-       <i class="fas fa-shield-alt">
-       </i>
+  <!-- dua azkar -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='duadhikr.html_dhikr/tasbeeh.html'">
+        <div class="bg-green-500 text-white p-4 rounded-full">
+          <i class="fas fa-praying-hands"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          dua azkar
+        </span>
       </div>
-      <span class="mt-2 text-sm font-bold">
-       Ruqyah
-      </span>
-     </div>
-     <div class="flex flex-col items-center">
-      <div class="bg-purple-500 text-white p-4 rounded-full">
-       <i class="fas fa-bell">
-       </i>
+  
+  
+      <!-- Calendar -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='calendar.html'">
+        <div class="bg-yellow-500 text-white p-4 rounded-full">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Calendar
+        </span>
       </div>
-      <span class="mt-2 text-sm font-bold">
-       Reminders
-      </span>
-     </div>
+  
+      <!-- Ruqyah -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='ruqyah_illness/ruqyah.html'">
+        <div class="bg-red-500 text-white p-4 rounded-full">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Ruqyah
+        </span>
+      </div>
+  
+      <!-- Reminders -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='reminders.html'">
+        <div class="bg-purple-500 text-white p-4 rounded-full">
+          <i class="fas fa-bell"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Reminders
+        </span>
+      </div>
     </div>
-   </section>
-   <!-- Theme Preview -->
-   <section class="p-4 bg-gray-200 text-center">
-    <div class="flex justify-center items-center space-x-2">
-     <span class="text-sm font-bold">
-      Active Theme:
-     </span>
-     <div class="w-6 h-6 bg-blue-500 rounded-full">
-     </div>
-     <div class="w-6 h-6 bg-green-500 rounded-full">
-     </div>
-     <div class="w-6 h-6 bg-yellow-500 rounded-full">
-     </div>
-    </div>
-   </section>
-   <!-- Footer Section -->
-   <footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
+  </section>
+  
+
+  
+  <!-- Footer Section -->
+  <footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
     <div class="flex justify-around p-2">
-     <div class="text-center">
-      <i class="fas fa-home text-blue-500 text-2xl">
-      </i>
-      <span class="block text-xs font-bold">
-       Home
-      </span>
-     </div>
-     <div class="text-center">
-      <i class="fas fa-praying-hands text-gray-500 text-2xl">
-      </i>
-      <span class="block text-xs font-bold">
-       Duas
-      </span>
-     </div>
-     <div class="text-center">
-      <i class="fas fa-beads text-gray-500 text-2xl">
-      </i>
-      <span class="block text-xs font-bold">
-       Azkar
-      </span>
-     </div>
-     <div class="text-center">
-      <i class="fas fa-book text-gray-500 text-2xl">
-      </i>
-      </span>
-     </div>
-     <div class="text-center">
-      <i class="fas fa-ellipsis-h text-gray-500 text-2xl">
-      </i>
-      <span class="block text-xs font-bold">
-       More
-      </span>
-     </div>
+
+     <!--Home Icon -->
+      <div class="text-center cursor-pointer" onclick="window.location.href='index.html'">
+        <i class="fas fa-home text-gray-500 text-2xl"></i>
+        <span class="block text-xs font-bold">Home</span>
+      </div>
+      <!-- Duas Icon -->
+      <div class="text-center cursor-pointer" onclick="window.location.href='duadhikr.html'">
+        <i class="fas fa-praying-hands text-gray-500 text-2xl"></i>
+        <span class="block text-xs font-bold">Duas</span>
+      </div>
+  
+      
+  
+      <!-- Book Icon -->
+      <div class="text-center cursor-pointer" onclick="window.location.href='islamic_books/islamicbooks.html'">
+        <i class="fas fa-book text-gray-500 text-2xl"></i>
+        <span class="block text-xs font-bold">Books/کتابیں</span>
+      </div>
+  
+      <!-- More Icon -->
+      <div class="text-center cursor-pointer" oncli="window.location.href='more.html'">
+        <i class="fas fa-ellipsis-h text-gray-500 text-2xl"></i>
+        <span class="block text-xs font-bold">More</span>
+      </div>
     </div>
-   </footer>
-  </div>
+  </footer>
+  
   <!-- Morning Azkar Page -->
   <div class="page hidden" id="morningAzkarPage">
    <!-- Header Section -->

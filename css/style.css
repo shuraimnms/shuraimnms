@@ -62,3 +62,47 @@ img {
     max-width: 100%;  /* Ensures images never exceed the container's width */
     height: auto;     /* Maintains aspect ratio */
 }
+/* Default to light mode */
+body {
+  font-family: 'Amiri', serif;
+  background-color: #f7fafc; /* Light mode background */
+  color: #1a202c; /* Light mode text */
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #2d3748; /* Dark mode background */
+  color: #e2e8f0; /* Dark mode text */
+}
+
+button#theme-toggle {
+  transition: background-color 0.3s ease;
+}
+
+button#theme-toggle.dark {
+  background-color: #2d3748;
+}
+/* Light Mode */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.text-light {
+    color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.text-dark {
+    color: #ffffff;
+}
+
+/* Calendar Icon Color Change for Dark Mode */
+body.dark-mode .fa-calendar-alt {
+    color: #fff;
+}
