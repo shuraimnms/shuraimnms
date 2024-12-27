@@ -120,13 +120,47 @@
     <img alt="Subtle graphic of a sunrise" class="mx-auto mt-2" height="100" src="https://storage.googleapis.com/a1aa/image/uo4tseKonn28ai5yOEr4JzwxgV9TlfzL6y0VZvqcsighvSuTA.jpg" width="100"/>
    </section>
    <!-- Main Features (Interactive Cards) -->
-   <main class="p-4 space-y-4">
-    <!-- Daily Dua Card -->
-    <div class="bg-blue-100 p-4 rounded-lg shadow-md">
-     <h2 class="text-xl font-semibold font-bold">
-      Daily Dua
-     </h2>
+   <!-- Main Features (Interactive Cards) -->
+<main class="p-4 space-y-4">
+   <!-- Daily Dua Card -->
+   <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+    <h2 class="text-xl font-semibold font-bold">
+     Daily Dua
+    </h2>
 
+ <!-- Box where Dua is displayed (with a different background color) -->
+ <div class="bg-green-100 p-4 rounded-lg mt-4">
+   <p class="text-md font-semibold">
+     <!-- Your Dua content here -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Daily Dua</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+ <div class="container mx-auto px-4 py-8">
+   <!-- Daily Dua Section -->
+   <div class="dua-section">
+     <h2 class="title mb-2 text-center text-2xl font-bold text-gray-800">Daily Dua</h2>
+     <div id="daily-dua" class="text-center bg-white shadow-md rounded-lg p-6">
+       <!-- Dua will be dynamically inserted here -->
+     </div>
+   </div>
+ </div>
+
+ <!-- Link to app.js -->
+ <script src="app.js"></script>
+</body>
+</html>
+
+      <div class="dates">
+        <p id="gregorian-date"></p>
+        <p id="hijri-date"></p>
+      </div>
+    </div>
   <!-- Box where Dua is displayed (with a different background color) -->
   <div class="bg-green-100 p-4 rounded-lg mt-4">
     <p class="text-md font-semibold">
@@ -242,7 +276,15 @@
         </span>
       </div>
   
-  
+      <!-- Tasbeeh -->
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
+        <div class="bg-green-500 text-white p-4 rounded-full">
+          <i class="fas fa-praying-hands"></i>
+        </div>
+        <span class="mt-2 text-sm font-bold">
+          Tasbeeh
+        </span>
+      </div>
       <!-- Tasbeeh -->
       <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
         <div class="bg-green-500 text-white p-4 rounded-full">
