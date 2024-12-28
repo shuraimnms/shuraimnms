@@ -252,18 +252,10 @@
           Tasbeeh
         </span>
       </div>
-      <!-- Tasbeeh -->
-      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
-        <div class="bg-green-500 text-white p-4 rounded-full">
-          <i class="fas fa-praying-hands"></i>
-        </div>
-        <span class="mt-2 text-sm font-bold">
-          Tasbeeh
-        </span>
-      </div>
+ 
   <!-- dua azkar -->
-      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='duadhikr.html_dhikr/tasbeeh.html'">
-        <div class="bg-green-500 text-white p-4 rounded-full">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='duadhikr.html'">
+        <div class="bg-pink-500 text-white p-4 rounded-full">
           <i class="fas fa-praying-hands"></i>
         </div>
         <span class="mt-2 text-sm font-bold">
@@ -337,50 +329,7 @@
     </div>
   </footer>
   
-  <!-- Morning Azkar Page -->
-  <div class="page hidden" id="morningAzkarPage">
-   <!-- Header Section -->
-   <header class="flex justify-between items-center p-4 bg-white shadow-md">
-    <div class="flex items-center">
-     <i class="fas fa-arrow-left text-xl cursor-pointer" onclick="goBack()">
-     </i>
-     <h2 class="ml-2 text-xl font-semibold font-bold">
-      Morning Azkar
-     </h2>
-    </div>
-    <i class="fas fa-cog text-xl">
-    </i>
-   </header>
-   <!-- Introduction Card -->
-   <section class="p-4 bg-white shadow-md">
-    <h3 class="text-lg font-semibold font-bold">
-     Start your day with the blessings of remembrance
-    </h3>
-    <p class="mt-2 text-gray-700 font-bold">
-     The morning azkar are a collection of supplications and remembrances that help you start your day with the blessings and protection of Allah.
-    </p>
-    <a class="text-blue-500 mt-2 inline-block font-bold" href="#">
-     Read More
-    </a>
-   </section>
-   </main>
-  </div>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Date Update</title>
-    <style>
-        /* Styling for the date */
-        #date {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+
 </head>
 <body>
     <script>
@@ -406,10 +355,154 @@
     </script>
     
 
-        // Call the function to update the date
-        updateDate();
-    </script>
+        
 </body>
+<style>
+  body {
+      font-family: 'Amiri', serif;
+  }
+
+  /* Chatbot sidebar styling */
+  #chatbotSidebar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px;
+  }
+
+  #chatbotSidebar.open {
+      display: flex;
+  }
+
+  #chatHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  #chatHeader .close-btn {
+      cursor: pointer;
+      font-size: 20px;
+  }
+
+  #chatContent {
+      flex-grow: 1;
+      overflow-y: auto;
+      margin-top: 10px;
+  }
+
+  #chatInput {
+      display: flex;
+      margin-top: 10px;
+  }
+
+  #chatInput input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+  }
+
+  #chatInput button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+  }
+
+  /* Floating button to open chat */
+  #openChatButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+  }
+
+  #openChatButton:hover {
+      background-color: #45a049;
+  }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Other content here -->
+</div>
+
+<!-- Floating Button to Open Chat -->
+<div id="openChatButton" onclick="toggleChatbot()">
+  <img src="images/deengpt_icon.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+</div>
+
+
+<!-- Chatbot Sidebar -->
+<div id="chatbotSidebar">
+  <div id="chatHeader">
+      <h3 class="text-xl font-bold">DeenGPT Chatbot</h3>
+      <span class="close-btn" onclick="toggleChatbot()">X</span>
+  </div>
+  <div id="chatContent">
+      <!-- Chat messages will appear here -->
+  </div>
+  <div id="chatInput">
+      <input type="text" id="userMessage" placeholder="Ask something..." />
+      <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  // Toggle chatbot visibility
+  function toggleChatbot() {
+      const chatbot = document.getElementById('chatbotSidebar');
+      chatbot.classList.toggle('open');
+  }
+
+  // Handle sending a message to the chatbot
+  function sendMessage() {
+      const userMessage = document.getElementById('userMessage').value;
+      if (userMessage.trim() !== '') {
+          displayMessage(userMessage, 'user');
+          document.getElementById('userMessage').value = '';  // Clear the input
+          getChatbotResponse(userMessage);
+      }
+  }
+
+  // Display message in the chat window
+  function displayMessage(message, sender) {
+      const chatContent = document.getElementById('chatContent');
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add(sender === 'user' ? 'text-right' : 'text-left');
+      messageDiv.innerText = message;
+      chatContent.appendChild(messageDiv);
+      chatContent.scrollTop = chatContent.scrollHeight;  // Scroll to the bottom
+  }
+
+  // Get response from DeenGPT (simulate here for example)
+  function getChatbotResponse(message) {
+      const botResponse = 'Assalamualikum, we will be available soon: ' + message;
+      setTimeout(() => {
+          displayMessage(botResponse, 'bot');
+      }, 1000);
+  }
+</script>
+
+</body>
+</html>
 </html>
 
 </body>
