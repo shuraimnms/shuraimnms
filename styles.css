@@ -146,11 +146,11 @@ button:hover, .rounded-full:hover {
 }
 
 .mt-4 {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .mb-4 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .ml-2 {
@@ -408,6 +408,14 @@ button:hover, .rounded-full:hover {
 
 /* Mobile-friendly styles */
 @media (max-width: 600px) {
+  .mt-4 {
+    margin-top: 1rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+
   .ml-2 {
     margin-left: 0.5rem;
   }
@@ -417,10 +425,6 @@ button:hover, .rounded-full:hover {
   }
 
   .w-full {
-    width: 100%;
-  }
-
-  .sm\:w-1\/2 {
     width: 100%;
   }
 
@@ -487,6 +491,17 @@ button:hover, .rounded-full:hover {
 
   .text-lg {
     font-size: 1.125rem;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 }
 
