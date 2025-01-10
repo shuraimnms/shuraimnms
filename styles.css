@@ -1,14 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+/* Global Styles */
 
-body {
-  font-family: 'Amiri', serif;
-  background-color: #121212;
-  color: #e0e0e0;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Mobile-specific styles */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+  .header {
+    font-size: 18px;
+  }
+  .nav {
+    display: block;
+    width: 100%;
+  }
+  .nav a {
+    display: block;
+    padding: 10px;
+  }
+}
+
+/* Very small screens (portrait mobile) */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+    padding: 5px;
+  }
+  .header {
+    font-size: 16px;
+  }
+}
+
+/* Folder Styles */
+
+.folder {
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.folder:hover {
+  border-color: #00ff00;
+}
+
+.folder-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #000000;
+}
+
+.folder-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  color: #000000;
+}
+
+/* Unique Card Colors */
+
+.bg-morning-azkar {
+  background-color: #fff9c4;
+}
+
+.bg-evening-azkar {
+  background-color: #bbdefb;
+}
+
+.bg-dua-dhikr {
+  background-color: #c8e6c9;
+}
+
+.bg-feeling {
+  background-color: #ffe0b2;
+}
+
+.bg-ai-dua {
+  background-color: #d1c4e9;
+}
+
+/* Daily Dua Section */
+
+.bg-daily-dua {
+  background-color: #94cac6;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #0dc735;
+  box-shadow: 0 0 10px #025ec7;
+  margin: 1rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-light {
+  border: 1px solid #60a0db;
+}
+
+.text-heading {
+  font-family: 'Merriweather', serif;
+  color: #080606;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.text-dua {
+  font-family: 'Amiri', serif;
+  color: #080606;
+  border: 1px solid #07f37d;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* ZikrMate Lighting Effect */
+
+.zikrmate-lighting {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+  animation: glitter 1.5s infinite;
+}
+
+@keyframes glitter {
+  0%, 100% {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 160px #00ff00;
+  }
+}
+
+/* Container and Item Styles */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex: 1 1 100%;
+  }
+}
+
+/* Header and Footer Styles */
 
 header, footer {
   background-color: #1f1f1f;
@@ -253,164 +420,12 @@ button:hover, .rounded-full:hover {
   font-size: 1.5rem;
 }
 
-/* ZikrMate Lighting Effect */
-.zikrmate-lighting {
-  color: #00ff00;
-  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
-  animation: glitter 1.5s infinite;
-}
-
-@keyframes glitter {
-  0%, 100% {
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
-  }
-  50% {
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 160px #00ff00;
-  }
-}
-
-/* Folder Styles */
-.folder {
-  border: 1px solid #444;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  cursor: pointer;
-}
-
-.folder:hover {
-  border-color: #00ff00;
-}
-
-.folder-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem; /* Increased font size */
-  font-weight: 900;
-  color: #000000; /* Changed to black */
-}
-
-.folder-description {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem; /* Increased font size */
-  color: #000000; /* Changed to black */
-}
-
-/* Unique Card Colors */
-.bg-morning-azkar {
-  background-color: #fff9c4; /* Light Yellow */
-}
-
-.bg-evening-azkar {
-  background-color: #bbdefb; /* Light Blue */
-}
-
-.bg-dua-dhikr {
-  background-color: #c8e6c9; /* Light Green */
-}
-
-.bg-feeling {
-  background-color: #ffe0b2; /* Light Orange */
-}
-
-.bg-ai-dua {
-  background-color: #d1c4e9; /* Light Purple */
-}
-
-/* Daily Dua Section */
-.bg-daily-dua {
-  background-color: #94cac6; /* Light color */
-  padding: 2rem;
-  border-radius: 0.5rem;
-  border: 1px solid #0dc735; /* Subtle border */
-  box-shadow: 0 0 10px #025ec7; /* Subtle shadow */
-  margin: 1rem 0; /* Add some margin for spacing */
-  max-width: 600px; /* Limit the width */
-  margin-left: auto; /* Center align */
-  margin-right: auto; /* Center align */
-}
-
-.border-light {
-  border: 1px solid #60a0db; /* Subtle border */
-}
-
-.text-heading {
-  font-family: 'Merriweather', serif;
-  color: #080606; /* Darker color for better readability */
-  font-size: 1.5rem; /* Increase font size */
-  text-align: center; /* Center align the heading */
-}
-
-.text-dua {
-  font-family: 'Amiri', serif;
-  color: #080606; /* Darker color for better readability */
-  border: 1px solid #07f37d; /* Subtle border */
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1.2rem; /* Increase font size */
-  text-align: center; /* Center align the text */
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-  .flex {
-    flex-direction: column;
-  }
-
-  .space-x-4 {
-    margin-left: 0;
-  }
-
-  .space-x-2 {
-    margin-left: 0;
-  }
-
-  .p-4 {
-    padding: 0.5rem;
-  }
-
-  .p-2 {
-    padding: 0.25rem;
-  }
-
-  .mt-4 {
-    margin-top: 0.5rem;
-  }
-
-  .mb-4 {
-    margin-bottom: 0.5rem;
-  }
-
-  .ml-2 {
-    margin-left: 0.25rem;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .w-full {
-    width: 100%;
-  }
-
-  .sm\:w-1\/2 {
-    width: 100%;
-  }
-
-  .md\:w-1\/3 {
-    width: 100%;
-  }
-
-  .fixed {
-    position: relative;
-  }
-}
-
 .date-box {
   position: absolute;
   top: 10px;
   right: 10px;
   background-color: #f0f0f0;
+  border:
   border: 1px solid #e2dbdb;
   border-radius: 8px;
   padding: 10px;
@@ -424,7 +439,9 @@ button:hover, .rounded-full:hover {
   font-size: 14px;
   margin: 0;
 }
+
 /* Default styles for desktop and larger screens */
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -437,55 +454,66 @@ body {
 }
 
 /* Mobile-specific styles */
+
 @media (max-width: 768px) {
   body {
-      font-size: 14px;
-      padding: 10px;
+    font-size: 14px;
+    padding: 10px;
   }
-
   .container {
-      padding: 0;
+    padding: 10px;
   }
-
   .header {
-      font-size: 18px;
+    font-size: 18px;
   }
-
   .nav {
-      display: block;
-      width: 100%;
+    display: block;
+    width: 100%;
   }
-
   .nav a {
-      display: block;
-      padding: 10px;
+    display: block;
+    padding: 10px;
   }
 }
 
 /* Very small screens (portrait mobile) */
+
 @media (max-width: 480px) {
   body {
-      font-size: 12px;
-      padding: 5px;
+    font-size: 12px;
+    padding: 5px;
   }
-
   .header {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
+/* Tablet-specific styles */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+    padding: 15px;
+  }
+  .container {
+    padding: 15px;
+  }
+  .header {
+    font-size: 20px;
+  }
 }
 
-.item {
-  flex: 1 1 30%; /* This means the items will take up 30% of the container's width */
-  margin: 10px;
-}
+/* Large desktop-specific styles */
 
-@media (max-width: 768px) {
-  .item {
-      flex: 1 1 100%; /* On smaller screens, the items will take up full width */
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+    padding: 20px;
+  }
+  .container {
+    padding: 20px;
+  }
+  .header {
+    font-size: 24px;
   }
 }
