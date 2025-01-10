@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Array of duas (you can customize the duas as needed)
 const dailyDuas = [
     {
@@ -72,3 +73,44 @@ async function fetchHijriDate() {
 
 fetchHijriDate();
 
+=======
+// app.js
+
+// Wait for the DOM to fully load
+document.addEventListener("DOMContentLoaded", function () {
+    const duaContainer = document.getElementById("daily-dua");
+
+    // Duas for each day of the week
+    const weeklyDuas = {
+        Monday: "اللهم اجعلنا من التوابين واجعلنا من المتطهرين.",
+        Tuesday: "اللهم زدنا علماً نافعاً وعملاً صالحاً.",
+        Wednesday: "اللهم اهدنا الصراط المستقيم.",
+        Thursday: "اللهم بارك لنا في يومنا هذا واجعله مباركاً.",
+        Friday: "اللهم اجعلنا من الذين يستمعون القول فيتبعون أحسنه.",
+        Saturday: "اللهم ارزقنا السكينة والطمأنينة في قلوبنا.",
+        Sunday: "اللهم اجعلنا من عبادك الصالحين."
+    };
+
+    // Get today's day name
+    const today = new Date();
+    const options = { weekday: "long" }; // Format to get the full weekday name
+    const dayName = today.toLocaleDateString("en-US", options); // e.g., "Monday"
+
+    // Display the dua for the current day
+    if (duaContainer) {
+        duaContainer.innerHTML = `
+            <p class="text-gray-700 text-lg font-semibold">
+                <span class="text-green-600">${dayName}:</span> ${weeklyDuas[dayName] || "No dua found for today!"}
+            </p>
+        `;
+    } else {
+        console.error("Dua container not found!");
+    }
+});
+
+function openSettings() {
+    // Add your settings panel code here
+    console.log("Settings button clicked!");
+  }
+  
+>>>>>>> 800309d (Deploy ZikrMate website)

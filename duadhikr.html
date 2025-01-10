@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dhikr Categories</title>
@@ -89,5 +90,92 @@
       <p class="text-gray-600 text-xs mt-1">“There is no deity but Allah.”</p>
     </div>
   </div>
+=======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dua & Dhikr</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function showDeveloperInfo() {
+      // Show the text at the top
+      document.getElementById('developer-info').style.display = 'block';
+    }
+  </script>
+</head>
+<body class="bg-gradient-to-r from-green-100 to-green-200 min-h-screen" onclick="showDeveloperInfo()">
+  <!-- Developer Info Header -->
+  <div id="developer-info" class="fixed top-0 left-0 w-full bg-gray-800 text-white text-xs text-center py-1 hidden">
+    Developed by Shuraim
+  </div>
+
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Dua & Dhikr</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar mb-8">
+      <input type="text" id="searchInput" placeholder="Search for Dua & Dhikr..." class="p-4 border-2 border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-green-500">
+    </div>
+
+    <!-- Grid for Dua & Dhikr Cards -->
+    <div id="duadhikrCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <!-- Morning Dhikr Card -->
+      <a href="morning_azkar/morning_azkar.html" class="block duadhikr-card bg-blue-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="morning">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-blue-800">Morning Dhikr</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses in the morning.</p>
+        </div>
+      </a>
+
+      <!-- Evening Dhikr Card -->
+      <a href="evening_azkar/evening_azkar.html" class="block duadhikr-card bg-yellow-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="evening">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-yellow-800">Evening Dhikr</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses in the evening.</p>
+        </div>
+      </a>
+
+      <!-- Before Sleep Dhikr Card -->
+      <a href="before_sleep_azkar/before_sleep.html" class="block duadhikr-card bg-purple-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="sleep">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-purple-800">Before Sleep Dhikr</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses before sleeping.</p>
+        </div>
+      </a>
+
+      <!-- Salah Dhikr Card -->
+      <a href="salah_azkar/salah_azkar.html" class="block duadhikr-card bg-green-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="salah">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-green-800">Salah Dhikr</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses during Salah.</p>
+        </div>
+      </a>
+
+      <!-- Ruqyah & Illness Card -->
+      <a href="ruqyah_illness/ruqyah.html" class="block duadhikr-card bg-red-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="illness">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-red-800">Ruqyah & Illness</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for healing and protection.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+      var input = this.value.toLowerCase();
+      var cards = document.querySelectorAll('.duadhikr-card');
+
+      cards.forEach(function(card) {
+        var category = card.getAttribute('data-category');
+        if (category.toLowerCase().includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+>>>>>>> 800309d (Deploy ZikrMate website)
 </body>
 </html>
