@@ -146,15 +146,15 @@ button:hover, .rounded-full:hover {
 }
 
 .mt-4 {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 }
 
 .mb-4 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .ml-2 {
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
 }
 
 .space-x-4 > * + * {
@@ -170,7 +170,7 @@ button:hover, .rounded-full:hover {
 }
 
 .sm\:w-1\/2 {
-  width: 100%;
+  width: 50%;
 }
 
 .md\:w-1\/3 {
@@ -406,105 +406,6 @@ button:hover, .rounded-full:hover {
   }
 }
 
-/* Mobile-friendly styles */
-@media (max-width: 600px) {
-  .mt-4 {
-    margin-top: 1rem;
-  }
-
-  .mb-4 {
-    margin-bottom: 1rem;
-  }
-
-  .ml-2 {
-    margin-left: 0.5rem;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .w-full {
-    width: 100%;
-  }
-
-  /* Additional mobile-specific styles */
-  .p-1 {
-    padding: 0.25rem;
-  }
-
-  .rounded-lg {
-    border-radius: 0.5rem;
-  }
-
-  .border-gray-300 {
-    border-color: #d1d5db;
-  }
-
-  .bg-purple-500 {
-    background-color: #6b46c1;
-  }
-
-  .text-white {
-    color: #ffffff;
-  }
-
-  .text-xs {
-    font-size: 0.75rem;
-  }
-
-  .font-bold {
-    font-weight: 700;
-  }
-
-  .cursor-pointer {
-    cursor: pointer;
-  }
-
-  .flex {
-    display: flex;
-  }
-
-  .flex-col {
-    flex-direction: column;
-  }
-
-  .items-center {
-    align-items: center;
-  }
-
-  .border {
-    border-width: 1px;
-  }
-
-  .p-2 {
-    padding: 0.5rem;
-  }
-
-  .rounded-full {
-    border-radius: 9999px;
-  }
-
-  .mt-1 {
-    margin-top: 0.25rem;
-  }
-
-  .text-lg {
-    font-size: 1.125rem;
-  }
-
-  .logo-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-}
-
 .date-box {
   position: absolute;
   top: 10px;
@@ -522,4 +423,69 @@ button:hover, .rounded-full:hover {
   font-family: 'Arial', sans-serif;
   font-size: 14px;
   margin: 0;
+}
+/* Default styles for desktop and larger screens */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  .container {
+      padding: 0;
+  }
+
+  .header {
+      font-size: 18px;
+  }
+
+  .nav {
+      display: block;
+      width: 100%;
+  }
+
+  .nav a {
+      display: block;
+      padding: 10px;
+  }
+}
+
+/* Very small screens (portrait mobile) */
+@media (max-width: 480px) {
+  body {
+      font-size: 12px;
+      padding: 5px;
+  }
+
+  .header {
+      font-size: 16px;
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1 1 30%; /* This means the items will take up 30% of the container's width */
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .item {
+      flex: 1 1 100%; /* On smaller screens, the items will take up full width */
+  }
 }
