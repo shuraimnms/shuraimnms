@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "git-push",
+			"command": "git",
+			"args": [
+				"push",
+				"origin",
+				"gh-pages"
+			],
+			"presentation": {
+				"reveal": "silent"
+			}
+		}
+	]
+}

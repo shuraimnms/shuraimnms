@@ -1,210 +1,3 @@
-<<<<<<< HEAD
-<html>
- <head><meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>
-   ZikrMate Home Page       
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-            font-family: 'Amiri', serif;
-        }
-  </style>
-  <script>
-   let pageStack = [];
-
-        function navigateTo(pageId) {
-            const currentPage = document.querySelector('.page:not(.hidden)');
-            if (currentPage) {
-                pageStack.push(currentPage.id);
-                currentPage.classList.add('hidden');
-            }
-            document.getElementById(pageId).classList.remove('hidden');
-        }
-
-        function goBack() {
-            if (pageStack.length > 0) {
-                const previousPageId = pageStack.pop();
-                document.querySelector('.page:not(.hidden)').classList.add('hidden');
-                document.getElementById(previousPageId).classList.remove('hidden');
-            }
-        }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Backspace' || event.key === 'Escape') {
-                goBack();
-            }
-        });
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        function handleGesture() {
-            if (touchEndX < touchStartX) {
-                // Swipe left
-            }
-            if (touchEndX > touchStartX) {
-                goBack(); // Swipe right
-            }
-        }
-
-        document.addEventListener('touchstart', function(event) {
-            touchStartX = event.changedTouches[0].screenX;
-        });
-
-        document.addEventListener('touchend', function(event) {
-            touchEndX = event.changedTouches[0].screenX;
-            handleGesture();
-        });
-
-        function playAudio(audioId) {
-            const audioElement = document.getElementById(audioId);
-            if (audioElement) {
-                audioElement.play();
-            }
-        }
-  </script>
- </head>
- <body class="bg-gray-100 text-gray-900">
-  <!-- Home Page -->
-  <div class="page" id="homePage">
-      <!-- Header Section -->
-      <header class="flex justify-between items-center p-4 bg-white shadow-md">
-          <!-- Logo and Title on the Left -->
-          <div class="flex items-center">
-              <img alt="ZikrMate logo in a sleek, Islamic font" class="h-10 w-10" height="50" src="images/logo.png" width="50" />
-              <span class="ml-2 text-xl font-bold">
-                  ZikrMate
-              </span>
-          </div>
-          
-          <!-- Content aligned to the Right (Dates and Theme Toggle) -->
-          <div class="flex items-center space-x-4">
-              <div class="text-right">
-                  <div class="text-sm font-bold" id="islamic-date">
-                      <!-- Islamic Date will update here -->
-                  </div>
-                  <div class="text-xs text-gray-500 font-bold" id="gregorian-date">
-                      <!-- Gregorian Date will update here -->
-                  </div>
-              </div>
-              <button id="theme-toggle" class="p-2 bg-gray-200 rounded-full">
-                  <i id="theme-icon" class="fas fa-sun text-yellow-500"></i>
-              </button>
-          </div>
-      </header>
-
-      <!-- Other Page Content -->
-      <div class="relative">
-          <div class="flex flex-wrap justify-between">
-              <div class="w-full sm:w-1/2 md:w-1/3 p-2">
-                  <!-- Content here -->
-              </div>
-          </div>
-      </div>
-  </div>
-</body>
-
-
-    </div>
-    
-     </div>
-     
-    </div>
-        <!-- Developed by Shuraim -->
-        <div class="text-xs text-gray-400">
-            Developed by Shuraim
-        </div>
-    </div>
-   </header>
-   <!-- Greeting Message -->
-   <section class="p-4 text-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
-    <h1 class="text-2xl font-semibold font-bold">
-     Assalamu Alaikum/ السلام علیکم! Start your day with Bismillah
-    </h1>
-    
-   </section>
-   <!-- Main Features (Interactive Cards) -->
-  
-
-
- <!-- Box where Dua is displayed (with a different background color) -->
- <div class="bg-green-100 p-4 rounded-lg mt-4">
-   <p class="text-md font-semibold">
-  
-</head>
-<body class="bg-gray-100">
- <div class="container mx-auto px-4 py-8">
-   <!-- Daily Dua Section -->
-   <div class="dua-section">
-     <h2 class="title mb-2 text-center text-2xl font-bold text-gray-800">Daily Dua</h2>
-     <div id="daily-dua" class="text-center bg-white shadow-md rounded-lg p-6">
-       <!-- Dua will be dynamically inserted here -->
-     </div>
-   </div>
- </div>
-
- <!-- Link to app.js -->
- <script src="app.js"></script>
-</body>
-</html>
-
-   
-
-    </div>
-  </div>
-
-  <!-- Link to app.js -->
-  <script src="app.js"></script>
-</body>
-</html>
-
-    </div>
-    <!-- Morning Azkar/صبح کا اذکار Card -->
-    <div class="bg-yellow-100 p-4 rounded-lg shadow-md" onclick="navigateTo('morningAzkarPage')">
-     <div class="flex items-center">
-      <i class="fas fa-sun text-yellow-500 text-2xl">
-     </i>
-<h2 class="ml-2 text-xl font-semibold font-bold">
-  Morning Azkar/صبح کا اذکار
-</h2>
-</div>
-<div class="mt-4 flex space-x-2">
-  <a href="morning_azkar/morning_azkar.html">
-    <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-      Read Azkar
-    </button>
-  </a>
-
-     </div>
-    </div><!-- Evening Azkar/شام کا اذکار Card -->
-    <div class="bg-purple-100 p-4 rounded-lg shadow-md mb-4">
-      <div class="flex items-center">
-        <i class="fas fa-moon text-blue-500 text-2xl"></i>
-        <h2 class="ml-2 text-xl font-semibold font-bold">
-          Evening Azkar/شام کا اذکار
-        </h2>
-      </div>
-      <div class="mt-4 flex space-x-2">
-        <a href="evening_azkar/evening_azkar.html">
-          <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-            Read Azkar
-          </button>
-        </a>
-      </div>
-    </div>
-    
-  <!-- Dua and Dhikr Folder -->
-<div class="bg-yellow-100 p-4 rounded-lg shadow-md mb-4">
-    <div class="flex items-center">
-      <i class="fas fa-sun text-yellow-500 text-2xl"></i>
-      <h2 class="ml-2 text-xl font-semibold font-bold">
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -316,33 +109,10 @@
     <div class="flex items-center">
       <i class="fas fa-sun text-yellow-500 text-2xl"></i>
       <h2 class="ml-2 folder-title">
->>>>>>> 800309d (Deploy ZikrMate website)
         Dua and Dhikr/دعا اور ذکر
       </h2>
     </div>
     <div class="mt-4 flex space-x-2">
-<<<<<<< HEAD
-      <a href="duadhikr.html">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-          Open Dhikr
-        </button>
-      </a>
-    </div>
-  </div>
-  
-  <!-- Feeling Folder -->
-<div class="bg-green-100 p-4 rounded-lg shadow-md cursor-pointer mb-4">
-    <div class="flex items-center">
-      <i class="fas fa-clock text-blue-500 text-2xl"></i>
-      <h2 class="ml-2 text-xl font-semibold font-bold">
-        I am feeling/میں محسوس کر رہا ہوں
-      </h2>
-    </div>
-    <p class="mt-2 text-gray-700 font-bold">
-      Check out the duas for what you feel
-    </p>
-    <!-- Link to iamfeeling.html -->
-=======
       <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
         Open Dhikr
       </button>
@@ -360,88 +130,12 @@
     <p class="mt-2 folder-description">
       Check out the duas for what you feel
     </p>
->>>>>>> 800309d (Deploy ZikrMate website)
     <a href="iamfeeling.html">
       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded font-bold">
         View All
       </button>
     </a>
   </div>
-<<<<<<< HEAD
-  
-  
-
-<!-- Quick Access Row (Horizontal Scroll) -->
-<section class="p-4 bg-white shadow-md">
-  <div class="flex space-x-4 overflow-x-auto">
-    
-    <!-- Quran -->
-    <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='quran.html'">
-      <div class="bg-blue-500 text-white p-2 rounded-full">
-        <i class="fas fa-book-open text-lg"></i>
-      </div>
-      <span class="mt-1 text-xs font-bold">
-        Quran
-      </span>
-    </div>
-
-    <!-- Tasbeeh -->
-    <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
-      <div class="bg-green-500 text-white p-2 rounded-full">
-        <i class="fas fa-praying-hands text-lg"></i>
-      </div>
-      <span class="mt-1 text-xs font-bold">
-        Tasbeeh
-      </span>
-    </div>
-
-    <!-- Dua Azkar -->
-    <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='duadhikr.html'">
-      <div class="bg-pink-500 text-white p-2 rounded-full">
-        <i class="fas fa-praying-hands text-lg"></i>
-      </div>
-      <span class="mt-1 text-xs font-bold">
-        Dua Azkar
-      </span>
-    </div>
-
-    <!-- Calendar -->
-    <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='calendar.html'">
-      <div class="bg-yellow-500 text-white p-2 rounded-full">
-        <i class="fas fa-calendar-alt text-lg"></i>
-      </div>
-      <span class="mt-1 text-xs font-bold">
-        Calendar
-      </span>
-    </div>
-
-    <!-- Ruqyah -->
-    <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='ruqyah_illness/ruqyah.html'">
-      <div class="bg-red-500 text-white p-2 rounded-full">
-        <i class="fas fa-shield-alt text-lg"></i>
-      </div>
-      <span class="mt-1 text-xs font-bold">
-        Ruqyah
-      </span>
-    </div>
-
-    <!-- Reminders -->
-    <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='reminders.html'">
-      <div class="bg-purple-500 text-white p-2 rounded-full">
-        <i class="fas fa-bell text-lg"></i>
-      </div>
-      <span class="mt-1 text-xs font-bold">
-        Reminders
-      </span>
-    </div>
-
-  </div>
-</section>
-
-  
-
-  
-=======
 
   <!-- AI Dua Giver Folder -->
   <div class="folder bg-ai-dua" onclick="window.location.href='ai_dua_generator/ai-dua-giver.html'">
@@ -528,16 +222,11 @@
     </div>
   </section>
 
->>>>>>> 800309d (Deploy ZikrMate website)
   <!-- Footer Section -->
   <footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
     <div class="flex justify-around p-2">
 
-<<<<<<< HEAD
-     <!--Home Icon -->
-=======
       <!-- Home Icon -->
->>>>>>> 800309d (Deploy ZikrMate website)
       <div class="text-center cursor-pointer" onclick="window.location.href='index.html'">
         <i class="fas fa-home text-gray-500 text-2xl"></i>
         <span class="block text-xs font-bold">Home</span>
@@ -545,223 +234,22 @@
       <!-- Duas Icon -->
       <div class="text-center cursor-pointer" onclick="window.location.href='duadhikr.html'">
         <i class="fas fa-praying-hands text-gray-500 text-2xl"></i>
-<<<<<<< HEAD
-        <span class="block text-xs font-bold">Duas</span>
-      </div>
-  
-      
-  
-=======
         <span class="block text-xs font-bold">Duas/Dhikr</span>
       </div>
 
->>>>>>> 800309d (Deploy ZikrMate website)
       <!-- Book Icon -->
       <div class="text-center cursor-pointer" onclick="window.location.href='islamic_books/islamicbooks.html'">
         <i class="fas fa-book text-gray-500 text-2xl"></i>
         <span class="block text-xs font-bold">Books/کتابیں</span>
       </div>
-<<<<<<< HEAD
-  
-      <!-- Deen GPT Icon -->
-      <div class="text-center cursor-pointer" oncli="window.location.href='more.html'">
-=======
 
       <!-- Deen GPT Icon -->
       <div class="text-center cursor-pointer" onclick="window.location.href='more.html'">
->>>>>>> 800309d (Deploy ZikrMate website)
         <i class="fas fa-ellipsis-h text-gray-500 text-2xl"></i>
         <span class="block text-xs font-bold">Deen GPT</span>
       </div>
     </div>
   </footer>
-<<<<<<< HEAD
-</span>
-</div>
-</div>
-</section>
-
-//function
-  
-
-</head>
-<body>
-    <script>
-        // Function to update the Gregorian date
-        function updateGregorianDate() {
-            const today = new Date();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const formattedDate = today.toLocaleDateString('en-US', options);
-            document.getElementById("gregorian-date").textContent = formattedDate;
-        }
-    
-        // Function to calculate the Islamic date (Hijri)
-        function updateIslamicDate() {
-            const today = new Date();
-            const hijriDateOptions = { calendar: "islamic", day: "numeric", month: "long", year: "numeric" };
-            const hijriDate = today.toLocaleDateString('en-SA', hijriDateOptions);
-            document.getElementById("islamic-date").textContent = hijriDate;
-        }
-    
-        // Call both functions on page load
-        updateGregorianDate();
-        updateIslamicDate();
-    </script>
-    
-
-        
-</body>
-<style>
-  body {
-      font-family: 'Amiri', serif;
-  }
-
-  /* Chatbot sidebar styling */
-  #chatbotSidebar {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      height: 400px;
-      background-color: #f0f0f0;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: none;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 10px;
-  }
-
-  #chatbotSidebar.open {
-      display: flex;
-  }
-
-  #chatHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-  #chatHeader .close-btn {
-      cursor: pointer;
-      font-size: 20px;
-  }
-
-  #chatContent {
-      flex-grow: 1;
-      overflow-y: auto;
-      margin-top: 10px;
-  }
-
-  #chatInput {
-      display: flex;
-      margin-top: 10px;
-  }
-
-  #chatInput input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-  }
-
-  #chatInput button {
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-left: 10px;
-      cursor: pointer;
-  }
-
-  /* Floating button to open chat */
-  #openChatButton {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-  }
-
-  #openChatButton:hover {
-      background-color: #45a049;
-  }
-</style>
-</head>
-<body class="bg-gray-100 text-gray-900">
-
-  <!-- Other content here -->
-</div>
-
-<!-- Floating Button to Open Chat -->
-<div id="openChatButton" onclick="toggleChatbot()">
-  <img src="images/deengpt_icon.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
-</div>
-
-
-<!-- Chatbot Sidebar -->
-<div id="chatbotSidebar">
-  <div id="chatHeader">
-      <h3 class="text-xl font-bold">DeenGPT Chatbot</h3>
-      <span class="close-btn" onclick="toggleChatbot()">X</span>
-  </div>
-  <div id="chatContent">
-      <!-- Chat messages will appear here -->
-  </div>
-  <div id="chatInput">
-      <input type="text" id="userMessage" placeholder="Ask something..." />
-      <button onclick="sendMessage()">Send</button>
-  </div>
-</div>
-
-<script>
-  // Toggle chatbot visibility
-  function toggleChatbot() {
-      const chatbot = document.getElementById('chatbotSidebar');
-      chatbot.classList.toggle('open');
-  }
-
-  // Handle sending a message to the chatbot
-  function sendMessage() {
-      const userMessage = document.getElementById('userMessage').value;
-      if (userMessage.trim() !== '') {
-          displayMessage(userMessage, 'user');
-          document.getElementById('userMessage').value = '';  // Clear the input
-          getChatbotResponse(userMessage);
-      }
-  }
-
-  // Display message in the chat window
-  function displayMessage(message, sender) {
-      const chatContent = document.getElementById('chatContent');
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add(sender === 'user' ? 'text-right' : 'text-left');
-      messageDiv.innerText = message;
-      chatContent.appendChild(messageDiv);
-      chatContent.scrollTop = chatContent.scrollHeight;  // Scroll to the bottom
-  }
-
-  // Get response from DeenGPT (simulate here for example)
-  function getChatbotResponse(message) {
-      const botResponse = 'Assalamualikum, we will be available soon: ' + message;
-      setTimeout(() => {
-          displayMessage(botResponse, 'bot');
-      }, 1000);
-  }
-</script>
-
-</body>
-</html>
-</html>
-
-</body>
-</html>
-=======
 
   <!-- Chat Bot Integration -->
   <div id="chatbot" class="fixed bottom-16 right-4">
@@ -839,4 +327,3 @@
   </div>
 </body>
 </html>
->>>>>>> 800309d (Deploy ZikrMate website)
