@@ -94,7 +94,7 @@
     <div class="flex items-center">
       <i class="fas fa-moon text-blue-500 text-2xl"></i>
       <h2 class="ml-2 folder-title">
-        Evening Azkar/شام کی نماز
+        Evening Azkar/شام کی اذکار
       </h2>
     </div>
     <div class="mt-4 flex space-x-2">
@@ -124,7 +124,7 @@
     <div class="flex items-center">
       <i class="fas fa-clock text-blue-500 text-2xl"></i>
       <h2 class="ml-2 folder-title">
-        I am feeling/میں محسوس کر رہا ہوں
+       feeling/ محسوس 
       </h2>
     </div>
     <p class="mt-2 folder-description">
@@ -222,70 +222,43 @@
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
-    <div class="flex justify-around p-2">
-
-      <!-- Home Icon -->
-      <div class="text-center cursor-pointer" onclick="window.location.href='index.html'">
-        <i class="fas fa-home text-gray-500 text-2xl"></i>
-        <span class="block text-xs font-bold">Home</span>
-      </div>
-      <!-- Duas Icon -->
-      <div class="text-center cursor-pointer" onclick="window.location.href='duadhikr.html'">
-        <i class="fas fa-praying-hands text-gray-500 text-2xl"></i>
-        <span class="block text-xs font-bold">Duas/Dhikr</span>
-      </div>
-
-      <!-- Book Icon -->
-      <div class="text-center cursor-pointer" onclick="window.location.href='islamic_books/islamicbooks.html'">
-        <i class="fas fa-book text-gray-500 text-2xl"></i>
-        <span class="block text-xs font-bold">Books/کتابیں</span>
-      </div>
-
-      <!-- Deen GPT Icon -->
-      <div class="text-center cursor-pointer" onclick="window.location.href='more.html'">
-        <i class="fas fa-ellipsis-h text-gray-500 text-2xl"></i>
-        <span class="block text-xs font-bold">Deen GPT</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Chat Bot Integration -->
-  <div id="chatbot-container">
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input-container">
-      <input type="text" id="chatbot-input" placeholder="Type a message...">
-      <button id="chatbot-send">Send</button>
-    </div>
+  <div id="date-container" class="date-box">
+    <div id="gregorian-date" class="date-text"></div>
+    <div id="islamic-date" class="date-text"></div>
   </div>
 
+  <!-- Footer Section -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
+  <div class="flex justify-between items-center p-4">
+
+    <!-- Home Icon -->
+    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='index.html'">
+      <i class="fas fa-home text-gray-500 text-4xl"></i> <!-- Increased icon size -->
+      <span class="text-gray-500 text-base font-bold mt-1">Home</span> <!-- Ensure text is visible -->
+    </div>
+
+    <!-- Duas/Dhikr Icon -->
+    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='duadhikr.html'">
+      <i class="fas fa-praying-hands text-gray-500 text-4xl"></i> <!-- Increased icon size -->
+      <span class="text-gray-500 text-base font-bold mt-1">Duas/Dhikr</span> <!-- Ensure text is visible -->
+    </div>
+
+    <!-- Books Icon -->
+    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='islamic_books/islamicbooks.html'">
+      <i class="fas fa-book text-gray-500 text-4xl"></i> <!-- Increased icon size -->
+      <span class="text-gray-500 text-base font-bold mt-1">Books/کتابیں</span> <!-- Ensure text is visible -->
+    </div>
+
+    <!-- More Icon -->
+    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='more.html'">
+      <i class="fas fa-ellipsis-h text-gray-500 text-4xl"></i> <!-- Increased icon size -->
+      <span class="text-gray-500 text-base font-bold mt-1">More</span> <!-- Ensure text is visible -->
+    </div>
+
+  </div>
+</footer>
+
   <script>
-    const input = document.getElementById('chatbot-input');
-    const sendButton = document.getElementById('chatbot-send');
-    const messagesContainer = document.getElementById('chatbot-messages');
-
-    sendButton.addEventListener('click', () => {
-      const message = input.value.trim();
-      if (message) {
-        const userMessage = document.createElement('div');
-        userMessage.className = 'message user-message';
-        userMessage.textContent = message;
-        messagesContainer.appendChild(userMessage);
-        input.value = '';
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
-        // Simulate bot response
-        setTimeout(() => {
-          const botMessage = document.createElement('div');
-          botMessage.className = 'message bot-message';
-          botMessage.textContent = 'This is a simulated response.';
-          messagesContainer.appendChild(botMessage);
-          messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }, 1000);
-      }
-    });
-
     // Function to get the Islamic date
     function getIslamicDate() {
       const islamicMonths = ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"];
@@ -305,9 +278,5 @@
     document.getElementById('gregorian-date').innerText = getGregorianDate();
     document.getElementById('islamic-date').innerText = getIslamicDate();
   </script>
-  <div id="date-container" class="date-box">
-    <div id="gregorian-date" class="date-text"></div>
-    <div id="islamic-date" class="date-text"></div>
-  </div>
 </body>
 </html>

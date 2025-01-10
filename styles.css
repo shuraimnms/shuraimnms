@@ -178,8 +178,8 @@ body {
 /* Header and Footer Styles */
 
 header, footer {
-  background-color: #1f1f1f;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #085477;
+  box-shadow: 0 4px 6px rgba(51, 211, 163, 0.1);
 }
 
 button, .rounded-full {
@@ -197,7 +197,7 @@ button:hover, .rounded-full:hover {
 }
 
 .bg-gradient-to-r {
-  background: linear-gradient(to right, #14a11b, #1fb11a);
+  background: linear-gradient(to right, #48e234, #28cfcf);
 }
 
 .shadow-md {
@@ -425,16 +425,15 @@ button:hover, .rounded-full:hover {
   top: 10px;
   right: 10px;
   background-color: #f0f0f0;
-  border:
   border: 1px solid #e2dbdb;
   border-radius: 8px;
   padding: 10px;
   text-align: right;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(252, 248, 248, 0.1);
 }
 
 .date-text {
-  color: green;
+  color: rgb(79, 151, 79);
   font-family: 'Arial', sans-serif;
   font-size: 14px;
   margin: 0;
