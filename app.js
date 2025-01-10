@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Array of duas (you can customize the duas as needed)
 const dailyDuas = [
     {
@@ -73,7 +73,7 @@ async function fetchHijriDate() {
 
 fetchHijriDate();
 
-=======
+
 // app.js
 
 // Wait for the DOM to fully load
@@ -113,4 +113,3 @@ function openSettings() {
     console.log("Settings button clicked!");
   }
   
->>>>>>> 800309d (Deploy ZikrMate website)
