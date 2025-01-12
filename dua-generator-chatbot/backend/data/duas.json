@@ -1,0 +1,93 @@
+{
+  "health": {
+    "topic": "health",
+    "arabic": "اللهم اشفني شفاءً لا يغادر سقماً",
+    "transliteration": "Allahumma ashfini shifa'an la yughadiru saqman",
+    "translation": "O Allah, grant me a cure that leaves no illness behind.",
+    "reference": "Sunan Ibn Majah"
+  },
+  "guidance": {
+    "topic": "guidance",
+    "arabic": "اللهم اهدنا إلى الصراط المستقيم",
+    "transliteration": "Allahumma ihdina ila as-sirat al-mustaqim",
+    "translation": "O Allah, guide us to the straight path.",
+    "reference": "Quran 1:6"
+  },
+  "success": {
+    "topic": "success",
+    "arabic": "اللهم ارزقني النجاح في مساعي",
+    "transliteration": "Allahumma ruzuqni an-najah fi masa'i",
+    "translation": "O Allah, grant me success in my endeavors.",
+    "reference": "Sahih Muslim"
+  },
+  "protection": {
+    "topic": "protection",
+    "arabic": "اللهم احفظني من شر كل شيطان",
+    "transliteration": "Allahumma ahfazni min sharri kulli shaytan",
+    "translation": "O Allah, protect me from the evil of every devil.",
+    "reference": "Sunan Ibn Majah"
+  },
+  "forgiveness": {
+    "topic": "forgiveness",
+    "arabic": "اللهم اغفر لي ذنوبي",
+    "transliteration": "Allahumma ighfir li dhanubi",
+    "translation": "O Allah, forgive me my sins.",
+    "reference": "Quran 3:193"
+  },
+  "wealth": {
+    "topic": "wealth",
+    "arabic": "اللهم ارزقني رزقاً حلالاً",
+    "transliteration": "Allahumma ruzuqni rizqan halalan",
+    "translation": "O Allah, grant me lawful provision.",
+    "reference": "Sahih Muslim"
+  },
+  "marriage": {
+    "topic": "marriage",
+    "arabic": "اللهم ارزقني زوجة صالحة",
+    "transliteration": "Allahumma ruzuqni zawjatan salihatan",
+    "translation": "O Allah, grant me a righteous spouse.",
+    "reference": "Sunan Ibn Majah"
+  },
+  "children": {
+    "topic": "children",
+    "arabic": "اللهم ارزقني ذرية صالحة",
+    "transliteration": "Allahumma ruzuqni dhurriyatan salihatan",
+    "translation": "O Allah, grant me righteous offspring.",
+    "reference": "Quran 25:74"
+  },
+  "knowledge": {
+    "topic": "knowledge",
+    "arabic": "اللهم ارزقني العلم النافع",
+    "transliteration": "Allahumma ruzuqni al-ilm an-nafi",
+    "translation": "O Allah, grant me beneficial knowledge.",
+    "reference": "Sahih Muslim"
+  },
+  "safety": {
+    "topic": "safety",
+    "arabic": "اللهم احفظني من كل سوء",
+    "transliteration": "Allahumma ahfazni min kulli su",
+    "translation": "O Allah, protect me from all evil.",
+    "reference": "Sunan Ibn Majah"
+  },
+  "patience": {
+    "topic": "patience",
+    "arabic": "اللهم ارزقني الصبر",
+    "transliteration": "Allahumma ruzuqni as-sabr",
+    "translation": "O Allah, grant me patience.",
+    "reference": "Quran 2:153"
+  },
+  "gratitude": {
+    "topic": "gratitude",
+    "arabic": "اللهم ارزقني الشكر",
+    "transliteration": "Allahumma ruzuqni ash-shukr",
+    "translation": "O Allah, grant me gratitude.",
+    "reference": "Sahih Muslim"
+  },
+  "repentance": {
+    "topic": "repentance",
+    "arabic": "اللهم ارزقني التوبة",
+    "transliteration": "Allahumma ruzuqni at-tawbah",
+    "translation": "O Allah, grant me repentance.",
+    "reference": "Quran 3:193"
+  }
+}

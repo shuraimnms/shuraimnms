@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   padding: 20px;
-  margin: 0;
+  font-size: 18px;
 }
 
 .container {
@@ -124,14 +124,14 @@ body {
 
 .text-heading {
   font-family: 'Merriweather', serif;
-  color: #080606;
+  color: #65c548;
   font-size: 1.5rem;
   text-align: center;
 }
 
 .text-dua {
   font-family: 'Amiri', serif;
-  color: #080606;
+  color: #0cf333;
   border: 1px solid #07f37d;
   padding: 10px;
   border-radius: 5px;
@@ -285,7 +285,7 @@ button:hover, .rounded-full:hover {
 }
 
 .bg-blue-100 {
-  background-color: #bbdefb;
+  background-color: #817ae4;
 }
 
 .bg-light-blue {
@@ -445,11 +445,13 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   padding: 20px;
+  font-size: 18px;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 /* Mobile-specific styles */
@@ -515,4 +517,12 @@ body {
   .header {
     font-size: 24px;
   }
+}
+
+/* Lighting Blue Radium Effect */
+
+.lighting-blue-radium {
+  font-family: 'Radium', sans-serif; /* Ensure you have the Radium font available */
+  color: #48e234; /* Lighting blue color */
+  text-shadow: 0 0 5px #48e234, 0 0 10px #48e234, 0 0 15px #48e234, 0 0 20px #48e234, 0 0 25px #48e234;
 }

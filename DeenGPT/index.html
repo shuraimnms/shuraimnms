@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeenGPT Chat</title>
+    <style>
+        #chatResponse {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ask a Question</h1>
+    <input type="text" id="userInput" placeholder="Enter your question..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <div id="chatResponse"></div>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById("userInput").value;
+
+            if (!input) {
+                alert("Please enter a message.");
+                return;
+            }
+
+            console.log("Sending message:", input);  // Log the input to the console
+
+            // Send the input to the server using POST request
+            const response = await fetch('http://127.0.0.1:5000/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "input": input })  // Ensure the correct JSON structure
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                document.getElementById("chatResponse").innerText = result.response;
+            } else {
+                document.getElementById("chatResponse").innerText = "Error: " + result.error;
+            }
+        }
+    </script>
+
+</body>
+</html>

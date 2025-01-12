@@ -55,39 +55,45 @@
   </section>
 
   <!-- Main Features (Interactive Cards) -->
-
-  <!-- Box where Dua is displayed (with a different background color) -->
-  <div class="bg-green-100 p-4 rounded-lg mt-4">
-    <p class="text-md font-semibold">
-  
-      
-      <!-- Daily Dua Section -->
-      <div class="dua-section bg-daily-dua">
-        <h2 class="title mb-2 text-center text-2xl font-bold text-heading">Daily Dua</h2>
-        <div id="daily-dua" class="text-center bg-white shadow-md rounded-lg p-6 border-light">
-          <p class="text-dua">
-          </p>
-        </div>
-      </div>
-      
-
-  <!-- Link to app.js -->
-  <script src="app.js"></script>
-
-  <!-- Morning Azkar/صبح کا اذکار Card -->
-  <div class="folder bg-morning-azkar" onclick="window.location.href='morning_azkar/morning_azkar.html'">
-    <div class="flex items-center">
-      <i class="fas fa-sun text-yellow-500 text-2xl"></i>
-      <h2 class="ml-2 folder-title">
-        Morning Azkar/صبح کی اذکار
-      </h2>
-    </div>
-    <div class="mt-4 flex space-x-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-        Read Azkar
-      </button>
+<!-- Container for the Daily Dua Section -->
+<div class="bg-green-100 p-4 rounded-lg mt-4">
+  <!-- Daily Dua Section -->
+  <div class="dua-section bg-daily-dua">
+    <h2 class="title mb-2 text-center text-2xl font-bold text-heading">Daily Dua</h2>
+    <div id="daily-dua" class="text-center bg-white shadow-md rounded-lg p-6 border-light">
+      <p class="text-dua radium-effect">
+        <!-- English Dua content will be dynamically loaded here -->
+      </p>
     </div>
   </div>
+
+  <!-- Arabic Dua Section -->
+  <div class="arabic-dua lighting-blue-radium mt-4">
+    <p id="arabic-dua" class="radium-effect">
+      <!-- Arabic Dua content will also be dynamically loaded here -->
+    </p>
+  </div>
+</div>
+
+<!-- Link to app.js -->
+<script src="app.js"></script>
+
+
+
+    <!-- Morning Azkar/صبح کا اذکار Card -->
+    <div class="folder bg-morning-azkar" onclick="window.location.href='morning_azkar/morning_azkar.html'">
+      <div class="flex items-center">
+        <i class="fas fa-sun text-yellow-500 text-2xl"></i>
+        <h2 class="ml-2 folder-title">
+          Morning Azkar/صبح کی اذکار
+        </h2>
+      </div>
+      <div class="mt-4 flex space-x-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+          Read Azkar
+        </button>
+      </div>
+    </div>
 
   <!-- Evening Azkar/شام کا اذکار Card -->
   <div class="folder bg-evening-azkar" onclick="window.location.href='evening_azkar/evening_azkar.html'">
@@ -137,18 +143,18 @@
     </a>
   </div>
 
-  <!-- AI Dua Giver Folder -->
-  <div class="folder bg-ai-dua" onclick="window.location.href='ai_dua_generator/ai-dua-giver.html'">
+  <!-- AI Dua Giver Finder -->
+  <div class="folder bg-ai-dua" onclick="window.location.href='dua-generator-chatbot/frontend/index.html'">
     <div class="flex items-center">
       <i class="fas fa-robot text-gray-500 text-2xl"></i>
       <h2 class="ml-2 folder-title">
-        AI Dua Generator
+        AI Dua Finder
       </h2>
     </div>
     <p class="mt-2 folder-description">
       Get personalized duas from our AI assistant
     </p>
-    <a href="ai_dua_generator/ai-dua-giver.html">
+    <a href="dua-generator-chatbot/frontend/index.html">
       <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded font-bold">
         Try Now
       </button>
@@ -217,8 +223,6 @@
         <span class="mt-1 text-xs font-bold">
           Reminders
         </span>
-      </div>
-
     </div>
   </section>
 

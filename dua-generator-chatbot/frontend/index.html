@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZikrMate AI Dua Finder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ZikrMate AI Dua Generator</h1>
+        <p>Let AI assist you in generating personalized Islamic supplications</p>
+    </header>
+
+    <div class="container">
+        <h2>Generate Your Dua</h2>
+        <textarea id="duaInput" placeholder="Type your topic or need for a dua (e.g., guidance, health, success)..."></textarea>
+        <button onclick="generateDua()">Generate Dua</button>
+
+        <div id="result" style="margin-top: 20px; font-size: 1.1rem; color: #fff;">
+            <div id="dua-topic"></div>
+            <div id="dua-arabic"></div>
+            <div id="dua-transliteration"></div>
+            <div id="dua-translation"></div>
+            <div id="dua-reference"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by <a href="https://shuraimtech.blogspot.com" target="_blank">Shuraim</a> | © 2025 ZikrMate</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
