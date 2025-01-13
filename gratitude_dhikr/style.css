@@ -1,163 +1,183 @@
-/* General Styles */
+/* General Body Styling */
 body {
-    font-family: 'Tajawal', sans-serif;
-    background: #121212;
-    color: #1dadd1;
+    font-family: 'Amiri', 'Scheherazade', 'Tajawal', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Elegant dark gradient */
+    color: #ffffff;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 50px;
-}
-
-/* Title Styles */
+/* Title Styling */
 .title {
+    font-size: 3rem;
     text-align: center;
-    font-size: 3.5rem;
-    margin-bottom: 30px;
-    color: #f39c12;
-    /* Unique Lighting Effect for Gratitude Dhikr */
-    text-shadow: 0 0 20px rgba(241, 196, 15, 1), 0 0 30px rgba(241, 196, 15, 0.7), 0 0 40px rgba(241, 196, 15, 0.5);
+    color: #f1c40f;
+    margin: 20px 10px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
-/* Dua Section Styles */
+/* Container for all dua sections */
+.container {
+    max-width: 90%; /* Responsive width */
+    width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle overlay */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Individual Dua Section */
 .dua-section {
-    background-color: #1c1c1c;
-    margin: 20px 0;
+    background: rgba(0, 0, 0, 0.7);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Text Styles */
+.dua-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7); /* On hover interaction */
+}
+
+/* Title inside each dua section */
 .dua-section h2 {
-    font-size: 1.8rem; /* Smaller font size for dua headings */
-    color: #3498db;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
+    color: #f1c40f;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Arabic Text Styling */
+.arabic-text {
+    font-size: 1.8rem;
+    color: #f39c12;
     margin-bottom: 20px;
     text-align: center;
-    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     font-weight: bold;
-    /* Lighting effect for the heading */
-    text-shadow: 0 0 10px rgba(52, 152, 219, 1), 0 0 20px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.6);
+    line-height: 2;
 }
 
-.arabic-text {
-    font-size: 2.5rem; /* Larger Arabic text */
-    text-align: center;
-    color: #ecf0f1;
-    font-family: 'Scheherazade', serif;
-    font-weight: bold; /* Making Arabic text bold */
-    margin-top: 15px;
-}
-
+/* Roman-Urdu Text Styling */
 .roman-urdu-text {
+    font-size: 1.6rem;
+    color: #e67e22;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 1.6rem; /* Slightly larger Roman Urdu text */
-    color: #16a085; /* Vibrant and clearer color for Roman Urdu */
-    font-weight: 600; /* Making Roman Urdu text bold and clearer */
-    line-height: 1.8;
-    margin-top: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    font-style: italic;
 }
 
+/* Translation Text Styling */
 .translation {
-    font-size: 1.5rem; /* Larger translation text */
+    font-size: 1.5rem;
     color: #ecf0f1;
-    margin-top: 15px;
+    margin-bottom: 20px;
     text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Reference Styles with New Color */
+/* Reference Text Styling */
 .reference {
-    font-size: 1.2rem;
-    color: #1abc9c; /* Cool turquoise color for the reference */
-    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #bdc3c7;
     text-align: center;
+    font-style: italic;
+    margin-top: 10px;
 }
 
-/* Responsive Design for Small Screens */
+/* Button Styling (Optional, if you want buttons for actions) */
+.button {
+    display: inline-block;
+    background: #f1c40f;
+    color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
 @media (max-width: 1200px) {
     .title {
         font-size: 2.5rem;
     }
-
-    .dua-section {
-        padding: 25px;
-    }
-
     .dua-section h2 {
+        font-size: 1.8rem;
+    }
+    .arabic-text {
         font-size: 1.6rem;
     }
-
-    .arabic-text {
-        font-size: 2rem;
+    .roman-urdu-text,
+    .translation {
+        font-size: 1.4rem;
     }
-
-    .roman-urdu-text, .translation {
+    .reference {
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        width: 100%;
-        padding-top: 30px;
-    }
-
     .title {
-        font-size: 2rem;
-        margin-bottom: 20px;
+        font-size: 2.2rem;
     }
-
+    .container {
+        padding: 15px;
+    }
     .dua-section {
-        padding: 20px;
-        margin: 15px 0;
+        padding: 25px;
     }
-
     .dua-section h2 {
-        font-size: 1.4rem;
-    }
-
-    .arabic-text {
         font-size: 1.6rem;
     }
-
-    .roman-urdu-text, .translation {
+    .arabic-text,
+    .roman-urdu-text,
+    .translation {
+        font-size: 1.3rem;
+    }
+    .reference {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
     .title {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        margin: 10px 5px;
     }
-
+    .container {
+        padding: 10px;
+    }
     .dua-section {
-        padding: 15px;
+        padding: 20px;
     }
-
     .dua-section h2 {
+        font-size: 1.4rem;
+    }
+    .arabic-text,
+    .roman-urdu-text,
+    .translation {
         font-size: 1.2rem;
     }
-
-    .arabic-text {
-        font-size: 1.3rem;
-    }
-
-    .roman-urdu-text, .translation {
-        font-size: 1rem;
-    }
-
     .reference {
         font-size: 1rem;
     }
