@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Dhikr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #9bd1c4;
+            font-family: 'Open Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+            background-image: linear-gradient(135deg, #9bd1c4, #b2c7c2);
+        }
+
+        .title {
+            color: #2c3e50;
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Amiri', serif;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            height: 70vh;
+            overflow-y: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .dua-section {
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-family: "Amiri", "Scheherazade", "Noto Naskh Arabic", serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #f8f8f8;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dua-section:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .dua-section:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        .dua-section:nth-child(even) {
+            background-color: #e0f7fa;
+        }
+
+        .arabic-text {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .roman-urdu-text {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .reference {
+            font-size: 1rem;
+            color: #7f8c8d;
+            text-align: right;
+        }
+
+        .translation {
+            font-size: 1.1rem;
+            color: #34495e;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* Text Effects */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Gratitude Dhikr</div>
+    <div class="container">
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Praising Allah in Abundance</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ،  
+                وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ.
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Subḥānallāhi wa biḥamdihi, ʿadada khalqihi, wa riḍā nafsihi,  
+                wa zinata ʿarshihi wa midāda kalimātihi.
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "Glory is to Allah, and praise is to Him, equal to the number of His creation,  
+                and equal to the pleasure of His Self, and equal to the weight of His Throne,  
+                and equal to the ink of His words."
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih Muslim 2694
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Praising Allah</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Subḥānallāhi wa biḥamdihi.
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "Glory is to Allah, and praise is to Him."
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih Muslim 2694
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Seeking Allah's Help and Guidance</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                يَاحَيُّ، يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ،  
+                أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ.
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Yā ḥayyū, yā qayyūm, birahmatika astaghīth,  
+                aṣliḥ lī shāni kulla-hu, wa lā tukilnī ilā nafsī ṭarfata ʿaynin.
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "O Ever-Living, O Sustainer of existence, I seek Your help with Your mercy.  
+                Set right for me all of my affairs, and do not leave me to myself for the blink of an eye."
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Tirmidhi 3502
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Acknowledging Allah's Oneness and Power</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ،  
+                لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Lā ilāha illā Allāhu waḥdahu lā sharīka lahu,  
+                lahu al-mulku walahu al-ḥamdu wa huwa ʿalā kulli shay’in qadīr.
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "There is no god but Allah, alone, with no partner.  
+                To Him belongs the dominion and to Him belongs all praise,  
+                and He has power over everything."
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 6349, Sahih Muslim 2696
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Contentment with Allah, Islam, and the Prophet</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                رَضِيتُ باللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِيناً،  
+                وَبِمُحَمَّدٍ صَلَى اللَّهُ عَلِيهِ وَسَلَّمَ نَبِيَّاً.
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Raḍītu billāhi rabbā, wa bil-islāmi dīnā,  
+                wa bi Muḥammadin ṣallallāhu ʿalayhi wa sallam nabiyyā.
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "I am pleased with Allah as my Lord, with Islam as my religion,  
+                and with Muhammad (peace and blessings be upon him) as my Prophet."
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Abu Dawood 1529, Tirmidhi 3389
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Praising Allah's Greatness</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                اللَّهُ أَكْبَرُ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Allāhu akbar
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "Allah is the greatest"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 4204
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Expressing Gratitude to Allah</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                أَلْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Al-ḥamdu lillāhi rabbil-‘ālamīn
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "All praise is due to Allah, the Lord of all the worlds"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Surah Al-Fatihah 1:2
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Acknowledging Allah's Favors</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Ash-hadu an lā ilāha illā Allāhu waḥdahu lā sharīka lahu
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "I bear witness that there is no god but Allah, alone, with no partner"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 6339
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Seeking Allah's Forgiveness</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ عَمَدًا أَوْ خَطَأً
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Astaghfirullāha rabbī min kulli dhanbin adhnabtuhu ‘amdan aw khaṭa’an
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "I seek forgiveness from Allah, my Lord, for every sin I have committed intentionally or unintentionally"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 6307
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Expressing Gratitude for Allah's Mercy</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                رَبِّ أَشْكُرُكَ لِمَا أَنْعَمْتَ عَلَيَّ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Rabbī ashkuruka limā an‘amta ‘alayy
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "My Lord, I thank You for the blessings You have bestowed upon me"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 6344
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Acknowledging Allah's Power and Wisdom</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Lā ḥawla wa lā quwwata illā billāhi al-‘aliyyi al-‘aẓīm
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "There is no power or strength except with Allah, the Most High, the Most Great"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 6384
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Seeking Allah's Protection</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                أَعُوذُ بِاللَّهِ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                A‘ūdhu billāhi min sharri nafsī wa min sharri ash-shayṭān
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "I seek refuge in Allah from the evil of my own self and from the evil of Satan"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Sahih al-Bukhari 6385
+            </p>
+        </div>
+        <div class="dua-section">
+            <h2 class="title mb-2">Dua for Expressing Gratitude for Allah's Guidance</h2>
+            <p class="arabic-text text-gray-100 text-lg">
+                الْحَمْدُ لِلَّهِ الَّذِي هَدَانَا لِهَذَا وَمَا كُنَّا لِنَهْتَدِيَ لَوْلَا أَنْ هَدَانَا اللَّهُ
+                <br>(3X)
+            </p>
+            <p class="roman-urdu-text text-gray-200 text-lg">
+                Al-ḥamdu lillāhi alladhī hadānā lihādhā wa mā kunnā linahtadiya lawlā an hadānā Allāh
+            </p>
+            <p class="translation text-gray-300 text-lg">
+                "All praise is due to Allah, Who guided us to this, and we would not have been guided if Allah had not guided us"
+            </p>
+            <p class="text-gray-500 text-lg">
+                Reference: Surah Al-A‘raf 7:43
+            </p>
+        </div>
+    </div>
+</body>
+</html>
