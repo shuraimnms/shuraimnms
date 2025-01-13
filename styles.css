@@ -54,6 +54,7 @@ body {
   }
 }
 
+
 /* Folder Styles */
 
 .folder {
@@ -480,7 +481,16 @@ body {
 /* Very small screens (portrait mobile) */
 
 @media (max-width: 480px) {
-  body {
+  body {body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
     font-size: 12px;
     padding: 5px;
   }
@@ -525,4 +535,14 @@ body {
   font-family: 'Radium', sans-serif; /* Ensure you have the Radium font available */
   color: #48e234; /* Lighting blue color */
   text-shadow: 0 0 5px #48e234, 0 0 10px #48e234, 0 0 15px #48e234, 0 0 20px #48e234, 0 0 25px #48e234;
+}
+
+html, body {
+  height: 100%; /* Ensures the full height of the viewport is covered */
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Full black background */
+  color: #fff; /* White text for readability */
+  font-family: 'Amiri', 'Scheherazade', 'Tajawal', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
