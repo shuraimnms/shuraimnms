@@ -2,11 +2,10 @@
 body {
     font-family: 'Tajawal', sans-serif;
     background: #121212;
-    color: #ecf0f1;
+    color: #1dadd1;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 .container {
@@ -18,10 +17,11 @@ body {
 /* Title Styles */
 .title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 30px;
     color: #f39c12;
-    text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12;
+    /* Unique Lighting Effect for Gratitude Dhikr */
+    text-shadow: 0 0 20px rgba(241, 196, 15, 1), 0 0 30px rgba(241, 196, 15, 0.7), 0 0 40px rgba(241, 196, 15, 0.5);
 }
 
 /* Dua Section Styles */
@@ -30,75 +30,53 @@ body {
     margin: 20px 0;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-/* Hover Effect for Dua Section */
-.dua-section:hover {
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.5);
-    transform: scale(1.03);
-}
-
-/* Border Lighting */
-.dua-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    background: linear-gradient(45deg, rgba(0,255,255,0.5), rgba(0,0,255,0.5), rgba(255,0,255,0.5));
-    background-size: 400% 400%;
-    animation: glowing 3s ease-in-out infinite;
-    z-index: -1;
-}
-
-/* Border Animation */
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 400%; }
-    100% { background-position: 0 0; }
 }
 
 /* Text Styles */
 .dua-section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Smaller font size for dua headings */
     color: #3498db;
     border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
     margin-bottom: 20px;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* Lighting effect for the heading */
+    text-shadow: 0 0 10px rgba(52, 152, 219, 1), 0 0 20px rgba(52, 152, 219, 0.8), 0 0 30px rgba(52, 152, 219, 0.6);
 }
 
 .arabic-text {
-    font-size: 1.6rem;
+    font-size: 2.5rem; /* Larger Arabic text */
     text-align: center;
     color: #ecf0f1;
     font-family: 'Scheherazade', serif;
-    text-shadow: 0 0 5px #ecf0f1, 0 0 10px #ecf0f1;
+    font-weight: bold; /* Making Arabic text bold */
+    margin-top: 15px;
 }
 
 .roman-urdu-text {
     text-align: center;
-    font-size: 1.2rem;
-    color: #7f8c8d;
+    font-size: 1.6rem; /* Slightly larger Roman Urdu text */
+    color: #16a085; /* Vibrant and clearer color for Roman Urdu */
+    font-weight: 600; /* Making Roman Urdu text bold and clearer */
+    line-height: 1.8;
     margin-top: 15px;
 }
 
 .translation {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Larger translation text */
     color: #ecf0f1;
     margin-top: 15px;
     text-align: center;
 }
 
+/* Reference Styles with New Color */
 .reference {
-    font-size: 1rem;
-    color: #95a5a6;
+    font-size: 1.2rem;
+    color: #1abc9c; /* Cool turquoise color for the reference */
     margin-top: 10px;
     text-align: center;
 }
@@ -114,15 +92,15 @@ body {
     }
 
     .dua-section h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .arabic-text {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
 
     .roman-urdu-text, .translation {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -147,15 +125,15 @@ body {
     }
 
     .dua-section h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .arabic-text {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     .roman-urdu-text, .translation {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 }
 
@@ -169,18 +147,18 @@ body {
     }
 
     .dua-section h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .arabic-text {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .roman-urdu-text, .translation {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .reference {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
