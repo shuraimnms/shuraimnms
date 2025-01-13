@@ -3,150 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gratitude Dua</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(145deg, #1e3c72, #2a5298); /* Dark blue gradient */
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #f0f0f0;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            height: 80vh;
-            overflow-y: auto;
-            padding: 30px;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.7); /* Slight dark overlay */
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-        }
-        .title {
-            font-size: 3.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 30px;
-            color: #ff9900; /* Golden text color */
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            background: linear-gradient(45deg, #ff6347, #ff9900); /* Gradient text */
-            -webkit-background-clip: text;
-            background-clip: text;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 99, 71, 0.7);
-        }
-        .dua-section {
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 10px;
-            background-color: #222222;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-        }
-        .dua-section:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-        }
-        .dua-section:nth-child(odd) {
-            background-color: #333333;
-        }
-        .dua-section:nth-child(even) {
-            background-color: #444444;
-        }
-        .dua-section h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 15px;
-            color: #ffcc00; /* Yellow header text */
-        }
-        .arabic-text {
-            font-family: "Amiri", "Scheherazade", serif;
-            font-size: 1.7rem;
-            line-height: 1.5;
-            text-align: center;
-            color: #f7c57c; /* Soft light color for Arabic text */
-        }
-        .roman-urdu-text {
-            font-size: 1.4rem;
-            font-weight: 300;
-            text-align: center;
-            color: #f0f0f0;
-            margin: 15px 0;
-        }
-        .translation {
-            font-size: 1.3rem;
-            text-align: center;
-            font-weight: 400;
-            color: #ffffff;
-            margin: 10px 0;
-        }
-        .reference {
-            font-size: 1.1rem;
-            text-align: center;
-            color: #888888;
-            margin-top: 15px;
-        }
-        .text-lg {
-            margin-bottom: 1.5rem;
-        }
-        @media (max-width: 768px) {
-            .title {
-                font-size: 2.5rem;
-            }
-            .dua-section h2 {
-                font-size: 1.5rem;
-            }
-            .arabic-text {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+    <title>Gratitude Dhikr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Scheherazade&family=Tajawal:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="title">Gratitude Dhikr</div>
     <div class="container">
         <div class="dua-section">
             <h2 class="title mb-2">Dua for Praising Allah in Abundance</h2>
-            <p class="arabic-text text-gray-100 text-lg">
+            <p class="arabic-text">
                 سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ،  
                 وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ.
             </p>
-            <p class="roman-urdu-text text-gray-200 text-lg">
+            <p class="roman-urdu-text">
                 Subḥānallāhi wa biḥamdihi, ʿadada khalqihi, wa riḍā nafsihi,  
                 wa zinata ʿarshihi wa midāda kalimātihi.
             </p>
-            <p class="translation text-gray-300 text-lg">
+            <p class="translation">
                 "Glory is to Allah, and praise is to Him, equal to the number of His creation,  
                 and equal to the pleasure of His Self, and equal to the weight of His Throne,  
                 and equal to the ink of His words."
             </p>
-            <p class="text-gray-500 text-lg">
+            <p class="reference">
                 Reference: Sahih Muslim 2694
             </p>
         </div>
         <div class="dua-section">
             <h2 class="title mb-2">Dua for Praising Allah</h2>
-            <p class="arabic-text text-gray-100 text-lg">
+            <p class="arabic-text">
                 سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.
                 <br>(3X)
             </p>
-            <p class="roman-urdu-text text-gray-200 text-lg">
+            <p class="roman-urdu-text">
                 Subḥānallāhi wa biḥamdihi.
             </p>
-            <p class="translation text-gray-300 text-lg">
+            <p class="translation">
                 "Glory is to Allah, and praise is to Him."
             </p>
-            <p class="text-gray-500 text-lg">
+            <p class="reference">
                 Reference: Sahih Muslim 2694
             </p>
         </div>
+    </div>
+
         <div class="dua-section">
             <h2 class="title mb-2">Dua for Seeking Allah's Help and Guidance</h2>
             <p class="arabic-text text-gray-100 text-lg">
