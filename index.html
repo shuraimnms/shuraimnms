@@ -1,258 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZikrMate Home Page</title>
-  <link href="styles.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri&amp;display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZikrMate</title>
+    <style>
+        /* Full-page styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('images/welcome.jpg'); /* Your welcome image */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Amiri', serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Islamic border style */
+        ::before, ::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 15px solid #d4af37; /* Gold color border */
+            z-index: -1;
+        }
+
+        /* Adding an elegant gradient overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+            z-index: 0;
+        }
+
+        /* Typing text style */
+        .text {
+            font-size: 5rem;
+            color: #fff;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 3px;
+            padding: 20px;
+            animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+            z-index: 1;
+        }
+
+        /* Typing animation effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Blinking caret effect */
+        @keyframes blinkCaret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Color transition for the text */
+        .text span {
+            animation: colorChange 5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff4500; } /* Red */
+            20% { color: #ff6347; } /* Tomato */
+            40% { color: #32cd32; } /* Lime Green */
+            60% { color: #1e90ff; } /* Dodger Blue */
+            80% { color: #9932cc; } /* Dark Orchid */
+            100% { color: #f5deb3; } /* Wheat */
+        }
+
+        /* Responsive design for different screen sizes */
+        @media (max-width: 768px) {
+            .text {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text {
+                font-size: 2.5rem;
+            }
+        }
+
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <!-- Home Page -->
-  <div class="page" id="homePage">
-    <!-- Header Section -->
-    <header class="flex justify-between items-center p-4 bg-white shadow-md">
-      <!-- Logo and Title on the Left -->
-      <div class="flex items-center">
-        <img alt="ZikrMate logo in a sleek, Islamic font" class="h-10 w-10" height="50" src="images/logo.png" width="50" />
-        <span class="ml-2 text-xl font-bold zikrmate-lighting">
-          ZikrMate
-        </span>
-      </div>
-      
-      <!-- Content aligned to the Right (Dates and Theme Toggle) -->
-      <div class="flex items-center space-x-4">
-        <div class="text-right">
-          <div class="text-sm font-bold" id="islamic-date">
-            <!-- Islamic Date will update here -->
-          </div>
-          <div class="text-xs text-gray-500 font-bold" id="gregorian-date">
-            <!-- Gregorian Date will update here -->
-          </div>
-        </div>
-        <button id="theme-toggle" class="p-2 bg-gray-200 rounded-full">
-          <i id="theme-icon" class="fas fa-sun text-yellow-500"></i>
-        </button>
-      </div>
-    </header>
+<body>
 
-    <!-- Other Page Content -->
-    <div class="relative">
-      <div class="flex flex-wrap justify-between">
-        <div class="w-full sm:w-1/2 md:w-1/3 p-2">
-          <!-- Content here -->
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- Gradient overlay -->
+    <div class="overlay"></div>
 
-  <!-- Greeting Message -->
-  <section class="p-4 text-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
-    <h1 class="text-2xl font-semibold font-bold">
-      Assalamu Alaikum/ السلام علیکم! Start your day with Bismillah
-    </h1>
-  </section>
-
-  <!-- Main Features (Interactive Cards) -->
-<!-- Container for the Daily Dua Section -->
-<div class="bg-green-100 p-4 rounded-lg mt-4">
-  <!-- Daily Dua Section -->
-  <div class="dua-section bg-daily-dua">
-    <h2 class="title mb-2 text-center text-2xl font-bold text-heading">Daily Dua</h2>
-    <div id="daily-dua" class="text-center bg-white shadow-md rounded-lg p-6 border-light">
-      <p class="text-dua radium-effect">
-        <!-- English Dua content will be dynamically loaded here -->
-      </p>
-    </div>
-  </div>
-
-  <!-- Arabic Dua Section -->
-  <div class="arabic-dua lighting-blue-radium mt-4">
-    <p id="arabic-dua" class="radium-effect">
-      <!-- Arabic Dua content will also be dynamically loaded here -->
-    </p>
-  </div>
-</div>
-
-<!-- Link to app.js -->
-<script src="app.js"></script>
-
-
-
-    <!-- Morning Azkar/صبح کا اذکار Card -->
-    <div class="folder bg-morning-azkar" onclick="window.location.href='dua_dhikr/duafiles/morning_azkar.html'">
-      <div class="flex items-center">
-        <i class="fas fa-sun text-yellow-500 text-2xl"></i>
-        <h2 class="ml-2 folder-title">
-          Morning Azkar/صبح کی اذکار
-        </h2>
-      </div>
-      <div class="mt-4 flex space-x-2">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-          Read Azkar
-        </button>
-      </div>
+    <!-- Typing text effect with Arabic text -->
+    <div class="text">
+        <span>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
     </div>
 
-  <!-- Evening Azkar/شام کا اذکار Card -->
-  <div class="folder bg-evening-azkar" onclick="window.location.href='dua_dhikr/duafiles/evening_azkar.html'">
-    <div class="flex items-center">
-      <i class="fas fa-moon text-blue-500 text-2xl"></i>
-      <h2 class="ml-2 folder-title">
-        Evening Azkar/شام کی اذکار
-      </h2>
-    </div>
-    <div class="mt-4 flex space-x-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-        Read Azkar
-      </button>
-    </div>
-  </div>
+    <script>
+        // After 5 seconds, redirect to the main page (main.html)
+        setTimeout(function() {
+            window.location.href = 'main.html'; // Main page of your app
+        }, 5000); // 5 seconds delay
+    </script>
 
-  <!-- Dua and Dhikr Folder -->
-  <div class="folder bg-dua-dhikr" onclick="window.location.href='dua_dhikr/index.html'">
-    <div class="flex items-center">
-      <i class="fas fa-sun text-yellow-500 text-2xl"></i>
-      <h2 class="ml-2 folder-title">
-        Dua and Dhikr/دعا اور ذکر
-      </h2>
-    </div>
-    <div class="mt-4 flex space-x-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-        Open Dhikr
-      </button>
-    </div>
-  </div>
-
-  <!-- Feeling Folder -->
-  <div class="folder bg-feeling" onclick="window.location.href='iamfeeling.html'">
-    <div class="flex items-center">
-      <i class="fas fa-clock text-blue-500 text-2xl"></i>
-      <h2 class="ml-2 folder-title">
-       feeling/ محسوس 
-      </h2>
-    </div>
-    <p class="mt-2 folder-description">
-      Check out the duas for what you feel
-    </p>
-    <a href="iamfeeling.html">
-      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded font-bold">
-        View All
-      </button>
-    </a>
-  </div>
-
-  <!-- AI Dua Giver Finder -->
-  <div class="folder bg-ai-dua" onclick="window.location.href='dua-generator-chatbot/frontend/index.html'">
-    <div class="flex items-center">
-      <i class="fas fa-robot text-gray-500 text-2xl"></i>
-      <h2 class="ml-2 folder-title">
-        AI Dua Finder
-      </h2>
-    </div>
-    <p class="mt-2 folder-description">
-      Get personalized duas from our AI assistant
-    </p>
-    <a href="dua-generator-chatbot/frontend/index.html">
-      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded font-bold">
-        Try Now
-      </button>
-    </a>
-  </div>
-<!-- Quick Access Side Scroll (Horizontal Scroll) -->
-<section class="quick-access-row">
-  <div class="quick-access-container">
-    <div class="quick-access-item" onclick="window.location.href='quran.html'">
-      <div class="icon-container">
-        <i class="fas fa-book-open"></i>
-      </div>
-      <span>Quran</span>
-    </div>
-    <div class="quick-access-item" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
-      <div class="icon-container">
-        <i class="fas fa-praying-hands"></i>
-      </div>
-      <span>Tasbeeh</span>
-    </div>
-    <div class="quick-access-item" onclick="window.location.href='duadhikr.html'">
-      <div class="icon-container">
-        <i class="fas fa-praying-hands"></i>
-      </div>
-      <span>Dua Azkar</span>
-    </div>
-    <div class="quick-access-item" onclick="window.location.href='calendar.html'">
-      <div class="icon-container">
-        <i class="fas fa-calendar-alt"></i>
-      </div>
-      <span>Calendar</span>
-    </div>
-    <div class="quick-access-item" onclick="window.location.href='dua_dhikr/duafiles/ruqyah.html'">
-      <div class="icon-container">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <span>Ruqyah</span>
-    </div>
-    <div class="quick-access-item" onclick="window.location.href='reminders.html'">
-      <div class="icon-container">
-        <i class="fas fa-bell"></i>
-      </div>
-      <span>Reminders</span>
-    </div>
-  </div>
-</section>
-
-<!-- Footer Section -->
-<footer class="footer fixed bottom-0 left-0 right-0 bg-white shadow-md">
-  <div class="flex justify-between items-center p-8"> <!-- Increased padding for footer size -->
-
-    <!-- Home Icon -->
-    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='index.html'">
-      <i class="fas fa-home text-gray-500 text-6xl"></i>
-      <span class="text-gray-500 text-base font-bold mt-1">Home</span>
-    </div>
-
-    <!-- Duas/Dhikr Icon -->
-    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='dua_dhikr/index.html'">
-      <i class="fas fa-praying-hands text-gray-500 text-6xl"></i>
-      <span class="text-gray-500 text-base font-bold mt-1">Duas/Dhikr</span>
-    </div>
-
-    <!-- Books Icon -->
-    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='islamic_books/islamicbooks.html'">
-      <i class="fas fa-book text-gray-500 text-6xl"></i>
-      <span class="text-gray-500 text-base font-bold mt-1">Books/کتابیں</span>
-    </div>
-
-    <!-- More Icon -->
-    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='more.html'">
-      <i class="fas fa-ellipsis-h text-gray-500 text-6xl"></i>
-      <span class="text-gray-500 text-base font-bold mt-1">More</span>
-    </div>
-
-  </div>
-</footer>
-
-
-  <script>
-    // Function to get the Islamic date
-    function getIslamicDate() {
-      const islamicMonths = ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"];
-      const date = new Date();
-      const islamicDate = new Intl.DateTimeFormat('en-TN-u-ca-islamic', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
-      return islamicDate;
-    }
-
-    // Function to get the Gregorian date
-    function getGregorianDate() {
-      const date = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      return date.toLocaleDateString('en-US', options);
-    }
-
-    // Display the dates
-    document.getElementById('gregorian-date').innerText = getGregorianDate();
-    document.getElementById('islamic-date').innerText = getIslamicDate();
-  </script>
 </body>
 </html>

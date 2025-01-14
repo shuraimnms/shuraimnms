@@ -7,25 +7,43 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>🌙 Tasbih Counter</h1>
-      <p>Keep track of your dhikr with ease</p>
-    </header>
-
-    <div class="tasbih-counter">
-      <div class="counter-display">
-        <p id="count">0</p>
+  <div class="tasbih-container">
+    <div class="header">
+      <h1>Tasbih Counter</h1>
+      <p>Click on the beads to keep track of your recitations.</p>
+    </div>
+    <div class="motion-container" id="beads-container">
+      <div class="bead" onclick="incrementCount(this)">
+        <div class="bead-inner">
+          <span class="bead-icon">🪙</span>
+        </div>
       </div>
-      <div class="tasbih-buttons">
-        <button class="button" id="increment">Count</button>
-        <button class="button reset" id="reset">Reset</button>
+      <div class="bead" onclick="incrementCount(this)">
+        <div class="bead-inner">
+          <span class="bead-icon">🪙</span>
+        </div>
+      </div>
+      <div class="bead" onclick="incrementCount(this)">
+        <div class="bead-inner">
+          <span class="bead-icon">🪙</span>
+        </div>
+      </div>
+      <div class="bead" onclick="incrementCount(this)">
+        <div class="bead-inner">
+          <span class="bead-icon">🪙</span>
+        </div>
+      </div>
+      <div class="bead" onclick="incrementCount(this)">
+        <div class="bead-inner">
+          <span class="bead-icon">🪙</span>
+        </div>
       </div>
     </div>
-
-    <footer>
-      <p>“The best form of remembrance is La ilaha illallah.” - Prophet Muhammad (ﷺ)</p>
-    </footer>
+    <div class="counter-container">
+      <div id="counter" class="counter-text">0</div>
+      <div id="urdu-text" class="urdu-text">اللہ کا ذکر کریں</div>
+      <button class="reset-btn" onclick="resetCount()">Reset</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
