@@ -54,7 +54,6 @@ body {
   }
 }
 
-
 /* Folder Styles */
 
 .folder {
@@ -108,11 +107,11 @@ body {
 /* Daily Dua Section */
 
 .bg-daily-dua {
-  background-color: #94cac6;
+  background-color: #a0d4e5;
   padding: 2rem;
   border-radius: 0.5rem;
-  border: 1px solid #0dc735;
-  box-shadow: 0 0 10px #025ec7;
+  border: 1px solid #47f712;
+  box-shadow: 0 0 10px #1b4a97;
   margin: 1rem 0;
   max-width: 600px;
   margin-left: auto;
@@ -120,20 +119,20 @@ body {
 }
 
 .border-light {
-  border: 1px solid #60a0db;
+  border: 1px solid #020202;
 }
 
 .text-heading {
   font-family: 'Merriweather', serif;
-  color: #65c548;
+  color: #02640f;
   font-size: 1.5rem;
   text-align: center;
 }
 
 .text-dua {
   font-family: 'Amiri', serif;
-  color: #0cf333;
-  border: 1px solid #07f37d;
+  color: #f5faf6;
+  border: 1px solid #f0f5f7;
   padding: 10px;
   border-radius: 5px;
   font-size: 1.2rem;
@@ -194,11 +193,11 @@ button, .rounded-full {
 }
 
 button:hover, .rounded-full:hover {
-  background-color: #175180;
+  background-color: #44c7c7;
 }
 
 .bg-gradient-to-r {
-  background: linear-gradient(to right, #48e234, #28cfcf);
+  background: linear-gradient(to right, #48e234, #c8d8d8);
 }
 
 .shadow-md {
@@ -254,15 +253,15 @@ button:hover, .rounded-full:hover {
 }
 
 .bg-gray-100 {
-  background-color: #f5f5f5;
+  background-color: #090524;
 }
 
 .bg-gray-200 {
-  background-color: #eeeeee;
+  background-color: #1b0202;
 }
 
 .bg-gray-300 {
-  background-color: #e0e0e0;
+  background-color: #2e0505;
 }
 
 .bg-gray-500 {
@@ -282,7 +281,7 @@ button:hover, .rounded-full:hover {
 }
 
 .bg-green-100 {
-  background-color: #c8e6c9;
+  background-color: #56ee56;
 }
 
 .bg-blue-100 {
@@ -305,16 +304,12 @@ button:hover, .rounded-full:hover {
   align-items: center;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
 
 .mt-4 {
-  margin-top: 1rem;
+  margin-top: 1.0rem;
 }
 
 .mb-4 {
@@ -323,10 +318,6 @@ button:hover, .rounded-full:hover {
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.space-x-4 > * + * {
-  margin-left: 1rem;
 }
 
 .space-x-2 > * + * {
@@ -367,10 +358,6 @@ button:hover, .rounded-full:hover {
 
 .border {
   border-width: 1px;
-}
-
-.border-gray-300 {
-  border-color: #e0e0e0;
 }
 
 .border-light-gray {
@@ -421,128 +408,209 @@ button:hover, .rounded-full:hover {
   font-size: 1.5rem;
 }
 
-.date-box {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #e2dbdb;
-  border-radius: 8px;
+/* Quick Access Row Styles */
+.quick-access-row {
+  padding: 20px 10px;
+  background: linear-gradient(to bottom, #07021f, #240127);
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.quick-access-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   padding: 10px;
-  text-align: right;
-  box-shadow: 0 4px 8px rgba(252, 248, 248, 0.1);
 }
 
-.date-text {
-  color: rgb(79, 151, 79);
-  font-family: 'Arial', sans-serif;
-  font-size: 14px;
-  margin: 0;
+.quick-access-container::-webkit-scrollbar {
+  height: 8px;
 }
 
-/* Default styles for desktop and larger screens */
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  padding: 20px;
-  font-size: 18px;
+.quick-access-container::-webkit-scrollbar-thumb {
+  background: #041b29;
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.quick-access-container::-webkit-scrollbar-track {
+  background: #eaeaea;
 }
 
-/* Mobile-specific styles */
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
-  .container {
-    padding: 10px;
-  }
-  .header {
-    font-size: 18px;
-  }
-  .nav {
-    display: block;
-    width: 100%;
-  }
-  .nav a {
-    display: block;
-    padding: 10px;
-  }
-}
-
-/* Very small screens (portrait mobile) */
-
-@media (max-width: 480px) {
-  body {body {
-  font-family: Arial, sans-serif;
-  background-color: #333;
-  color: #fff;
+/* Individual Item Styles */
+.quick-access-item {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  background: #6ce9e9;
+  border: 2px solid rgba(67, 81, 214, 0.05);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
+  position: relative;
 }
 
-    font-size: 12px;
-    padding: 5px;
+.quick-access-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #4caf50;
+}
+
+.icon-container {
+  background: linear-gradient(135deg, #3eca90, #2368e9);
+  color: #200e85;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quick-access-item span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #01490b;
+}
+
+/* Optional glowing border animation */
+.quick-access-item:hover::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #144416, #81c784, #4caf50);
+  animation: glow 1.5s infinite linear;
+  z-index: -1;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.9);
   }
-  .header {
-    font-size: 16px;
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.9);
   }
 }
 
-/* Tablet-specific styles */
-
-@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* Default styles for desktop and larger screens */
+  
   body {
-    font-size: 16px;
-    padding: 15px;
-  }
-  .container {
-    padding: 15px;
-  }
-  .header {
-    font-size: 20px;
-  }
-}
-
-/* Large desktop-specific styles */
-
-@media (min-width: 1200px) {
-  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
     font-size: 18px;
-    padding: 20px;
   }
+  
   .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
   }
-  .header {
-    font-size: 24px;
+  
+  /* Mobile-specific styles */
+  
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+      padding: 10px;
+    }
+    .container {
+      padding: 10px;
+    }
+    .header {
+      font-size: 18px;
+    }
+    .nav {
+      display: block;
+      width: 100%;
+    }
+    .nav a {
+      display: block;
+      padding: 10px;
+    }
   }
-}
-
-/* Lighting Blue Radium Effect */
-
-.lighting-blue-radium {
-  font-family: 'Radium', sans-serif; /* Ensure you have the Radium font available */
-  color: #48e234; /* Lighting blue color */
-  text-shadow: 0 0 5px #48e234, 0 0 10px #48e234, 0 0 15px #48e234, 0 0 20px #48e234, 0 0 25px #48e234;
-}
-
-html, body {
-  height: 100%; /* Ensures the full height of the viewport is covered */
-  margin: 0;
-  padding: 0;
-  background-color: #000; /* Full black background */
-  color: #fff; /* White text for readability */
-  font-family: 'Amiri', 'Scheherazade', 'Tajawal', sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
+  
+  /* Very small screens (portrait mobile) */
+  
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+      padding: 5px;
+    }
+    .header {
+      font-size: 16px;
+    }
+  }
+  
+  /* Tablet-specific styles */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    body {
+      font-size: 16px;
+      padding: 15px;
+    }
+    .container {
+      padding: 15px;
+    }
+    .header {
+      font-size: 20px;
+    }
+  }
+  
+  /* Large desktop-specific styles */
+  
+  @media (min-width: 1200px) {
+    body {
+      font-size: 18px;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .header {
+      font-size: 24px;
+    }
+  }
+  
+  /* Lighting Blue Radium Effect */
+  
+  .lighting-blue-radium {
+    font-family: 'Radium', sans-serif; /* Ensure you have the Radium font available */
+    color: #48e234; /* Lighting blue color */
+    text-shadow: 0 0 5px #48e234, 0 0 10px #48e234, 0 0 15px #48e234, 0 0 20px #48e234, 0 0 25px #48e234;
+  }
+  
+  html, body {
+    height: 100%; /* Ensures the full height of the viewport is covered */
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Full black background */
+    color: #fff; /* White text for readability */
+    font-family: 'Amiri', 'Scheherazade', 'Tajawal', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  

@@ -161,75 +161,48 @@
     </a>
   </div>
 
-  <!-- Quick Access Row (Horizontal Scroll) -->
-  <section class="p-4 bg-white shadow-md">
-    <div class="flex space-x-4 overflow-x-auto">
-
-      <!-- Quran -->
-      <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='quran.html'">
-        <div class="bg-blue-500 text-white p-2 rounded-full">
-          <i class="fas fa-book-open text-lg"></i>
-        </div>
-        <span class="mt-1 text-xs font-bold">
-          Quran
-        </span>
+<!-- Quick Access Side Scroll (Horizontal Scroll) -->
+<section class="quick-access-row">
+  <div class="quick-access-container">
+    <div class="quick-access-item" onclick="window.location.href='quran.html'">
+      <div class="icon-container">
+        <i class="fas fa-book-open"></i>
       </div>
-
-      <!-- Tasbeeh -->
-      <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
-        <div class="bg-green-500 text-white p-2 rounded-full">
-          <i class="fas fa-praying-hands text-lg"></i>
-        </div>
-        <span class="mt-1 text-xs font-bold">
-          Tasbeeh
-        </span>
-      </div>
-
-      <!-- Dua Azkar -->
-      <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='duadhikr.html'">
-        <div class="bg-pink-500 text-white p-2 rounded-full">
-          <i class="fas fa-praying-hands text-lg"></i>
-        </div>
-        <span class="mt-1 text-xs font-bold">
-          Dua Azkar
-        </span>
-      </div>
-
-      <!-- Calendar -->
-      <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='calendar.html'">
-        <div class="bg-yellow-500 text-white p-2 rounded-full">
-          <i class="fas fa-calendar-alt text-lg"></i>
-        </div>
-        <span class="mt-1 text-xs font-bold">
-          Calendar
-        </span>
-      </div>
-
-      <!-- Ruqyah -->
-      <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='ruqyah_illness/ruqyah.html'">
-        <div class="bg-red-500 text-white p-2 rounded-full">
-          <i class="fas fa-shield-alt text-lg"></i>
-        </div>
-        <span class="mt-1 text-xs font-bold">
-          Ruqyah
-        </span>
-      </div>
-
-      <!-- Reminders -->
-      <div class="flex flex-col items-center cursor-pointer border border-gray-300 p-1 rounded-lg" onclick="window.location.href='reminders.html'">
-        <div class="bg-purple-500 text-white p-2 rounded-full">
-          <i class="fas fa-bell text-lg"></i>
-        </div>
-        <span class="mt-1 text-xs font-bold">
-          Reminders
-        </span>
+      <span>Quran</span>
     </div>
-  </section>
-
-  <div id="date-container" class="date-box">
-    <div id="gregorian-date" class="date-text"></div>
-    <div id="islamic-date" class="date-text"></div>
+    <div class="quick-access-item" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
+      <div class="icon-container">
+        <i class="fas fa-praying-hands"></i>
+      </div>
+      <span>Tasbeeh</span>
+    </div>
+    <div class="quick-access-item" onclick="window.location.href='duadhikr.html'">
+      <div class="icon-container">
+        <i class="fas fa-praying-hands"></i>
+      </div>
+      <span>Dua Azkar</span>
+    </div>
+    <div class="quick-access-item" onclick="window.location.href='calendar.html'">
+      <div class="icon-container">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <span>Calendar</span>
+    </div>
+    <div class="quick-access-item" onclick="window.location.href='ruqyah_illness/ruqyah.html'">
+      <div class="icon-container">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <span>Ruqyah</span>
+    </div>
+    <div class="quick-access-item" onclick="window.location.href='reminders.html'">
+      <div class="icon-container">
+        <i class="fas fa-bell"></i>
+      </div>
+      <span>Reminders</span>
+    </div>
   </div>
+</section>
+
 
   <!-- Footer Section -->
 <footer class="fixed bottom-0 left-0 right-0 bg-white shadow-md">
