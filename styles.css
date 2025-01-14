@@ -175,13 +175,66 @@ body {
   }
 }
 
-/* Header and Footer Styles */
-
-header, footer {
-  background-color: #085477;
-  box-shadow: 0 4px 6px rgba(51, 211, 163, 0.1);
+/* Header Styles */
+header {
+  background-color: #1997d1;
+  box-shadow: 0 4px 6px rgba(59, 206, 162, 0.1);
+  padding: 10px 20px;  /* Customize the padding for header */
 }
 
+header .logo {
+  font-size: 24px;
+  color: #fffcfc;
+  text-align: center;
+  font-weight: bold;
+}
+
+header .navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+header .navigation a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+header .navigation a:hover {
+  color: #24ebeb;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #058b85;
+  box-shadow: 0 4px 6px rgba(59, 206, 162, 0.1);
+  padding: 10px 20px;  /* Increased padding for bigger footer */
+  text-align: center;
+}
+
+footer p {
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 10px;  /* Spacing between text and footer edges */
+}
+
+footer .social-icons {
+  margin-top: 20px;
+}
+
+footer .social-icons a {
+  color: #ffffff;
+  margin: 0 15px;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+footer .social-icons a:hover {
+  color: #44c7c7;
+}
+
+/* Buttons */
 button, .rounded-full {
   background-color: #333;
   color: #e0e0e0;
@@ -196,10 +249,12 @@ button:hover, .rounded-full:hover {
   background-color: #44c7c7;
 }
 
+/* Background Gradient */
 .bg-gradient-to-r {
   background: linear-gradient(to right, #48e234, #c8d8d8);
 }
 
+/* Shadows */
 .shadow-md {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -208,6 +263,7 @@ button:hover, .rounded-full:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Larger shadow for better effect */
 }
 
+/* Text Alignment */
 .text-center {
   text-align: center;
 }
@@ -219,6 +275,7 @@ button:hover, .rounded-full:hover {
 .text-gray-500 {
   color: #f7faf9;
 }
+
 
 .text-gray-900 {
   color: #212121;
@@ -407,16 +464,16 @@ button:hover, .rounded-full:hover {
 .text-2xl {
   font-size: 1.5rem;
 }
-
 /* Quick Access Row Styles */
 .quick-access-row {
   padding: 20px 10px;
   background: linear-gradient(to bottom, #07021f, #240127);
   border: 2px solid rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
+  border-radius: 50px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
   position: relative;
+  margin-bottom: 50px; /* Add a gap below the quick access section */
 }
 
 .quick-access-container {
@@ -449,8 +506,8 @@ button:hover, .rounded-full:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 120px;
-  height: 120px;
+  width: 80px; /* Reduced width */
+  height: 80px; /* Reduced height */
   background: #6ce9e9;
   border: 2px solid rgba(67, 81, 214, 0.05);
   border-radius: 15px;
@@ -470,18 +527,18 @@ button:hover, .rounded-full:hover {
   background: linear-gradient(135deg, #3eca90, #2368e9);
   color: #200e85;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 40px; /* Reduced size for smaller container */
+  height: 40px; /* Reduced size for smaller container */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: 8px; /* Adjusted margin */
+  font-size: 24px; /* Smaller font size */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .quick-access-item span {
-  font-size: 16px;
+  font-size: 12px; /* Smaller text size */
   font-weight: 700;
   color: #01490b;
 }
@@ -499,7 +556,6 @@ button:hover, .rounded-full:hover {
   animation: glow 1.5s infinite linear;
   z-index: -1;
 }
-
 @keyframes glow {
   0% {
     opacity: 0.6;
