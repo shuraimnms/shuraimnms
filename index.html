@@ -48,22 +48,23 @@
         .text {
             font-size: 5rem;
             color: #fff;
-            text-align: center;
+            text-align: left;
             white-space: nowrap;
-            overflow: hidden;
+            overflow: hidden; /* Ensures text is hidden and typed gradually */
+            border-right: 3px solid #fff; /* Mimics a blinking caret */
+            width: fit-content; /* Ensures the text doesn't stretch unnecessarily */
             letter-spacing: 3px;
-            padding: 20px;
-            animation: typing 4s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+            animation: typing 5s steps(30, end) 1s forwards, blinkCaret 0.75s step-end infinite;
             z-index: 1;
         }
 
         /* Typing animation effect */
         @keyframes typing {
             from {
-                width: 0;
+                width: 0; /* Start with 0 width to reveal text gradually */
             }
             to {
-                width: 100%;
+                width: 100%; /* Reveal the full text */
             }
         }
 
@@ -72,20 +73,6 @@
             50% {
                 border-color: transparent;
             }
-        }
-
-        /* Color transition for the text */
-        .text span {
-            animation: colorChange 5s infinite;
-        }
-
-        @keyframes colorChange {
-            0% { color: #ff4500; } /* Red */
-            20% { color: #ff6347; } /* Tomato */
-            40% { color: #32cd32; } /* Lime Green */
-            60% { color: #1e90ff; } /* Dodger Blue */
-            80% { color: #9932cc; } /* Dark Orchid */
-            100% { color: #f5deb3; } /* Wheat */
         }
 
         /* Responsive design for different screen sizes */
@@ -110,7 +97,7 @@
 
     <!-- Typing text effect with Arabic text -->
     <div class="text">
-        <span>بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>
+        بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
     </div>
 
     <script>

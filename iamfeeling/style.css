@@ -1,0 +1,108 @@
+/* General Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #3a7bd5, #3a6073); /* Gradient background */
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centering the Main Container */
+.container {
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.7); /* Transparent black for contrast */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Dua Card Styling */
+.bg-blue-800 {
+  background: rgba(0, 102, 204, 0.85); /* Blue overlay */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
+}
+
+h2 {
+  font-size: 24px;
+  color: #ffd700; /* Gold color for titles */
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+p {
+  line-height: 1.6;
+  color: #f8f9fa; /* Light white */
+}
+
+/* Arabic Text */
+.text-3xl {
+  font-size: 28px;
+  color: #ffffff;
+  font-family: 'Amiri', serif; /* Arabic-focused font */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Buttons */
+a {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #4caf50; /* Green background */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+  background: #45a049; /* Darker green on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Explanation and Hadith References */
+.text-green-200, .text-green-400 {
+  color: #90ee90; /* Light green */
+}
+
+.text-green-400 {
+  color: #32cd32; /* Brighter green for emphasis */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+  a {
+    font-size: 16px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
