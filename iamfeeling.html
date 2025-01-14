@@ -3,191 +3,277 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feelings Cards</title>
+  <title>Feeling Cards with Animations</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link to Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <script>
     function showDeveloperInfo() {
       // Show the text at the top
       document.getElementById('developer-info').style.display = 'block';
     }
+
+    function toggleDescription(element) {
+      const description = element.querySelector('.description');
+      description.classList.toggle('hidden');
+    }
   </script>
+  <style>
+    /* Custom Animations */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hover-glow:hover {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+      transform: translateY(-5px);
+    }
+
+    .description {
+      display: none;
+    }
+
+    .show-description {
+      display: block;
+    }
+
+    .card-container:hover .description {
+      display: block;
+    }
+  </style>
 </head>
-<body class="bg-blue-100" onclick="showDeveloperInfo()">
-<body class="bg-gradient-to-r from-blue-100 to-blue-200 min-h-screen" onclick="showDeveloperInfo()">
+<body class="bg-gray-900 text-white" onclick="showDeveloperInfo()">
   <!-- Developer Info Header -->
   <div id="developer-info" class="fixed top-0 left-0 w-full bg-gray-800 text-white text-xs text-center py-1 hidden">
     Developed by Shuraim
   </div>
 
-  <div class="container mx-auto px-4 py-8">
+  <div class="container mx-auto px-4 py-8 fade-in">
     <!-- Header -->
-    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">How Are You Feeling Today?</h1>
+    <h1 class="text-5xl font-extrabold text-center text-gray-200 mb-8">How Are You Feeling Today?</h1>
 
+    <!-- Search Bar -->
     <div class="search-bar mb-8">
-      <input type="text" id="searchInput" placeholder="Search for feelings..." class="p-4 border-2 border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <input type="text" id="searchInput" placeholder="Search for feelings..." class="p-4 border-2 border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-black hover-glow transition-all duration-300">
     </div>
 
     <!-- Grid for Feeling Cards -->
     <div id="feelingCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
       <!-- Happy Card -->
-      <a href="iamfeeling/happy.html" class="block feeling-card" data-feeling="happy">
-        <div class="bg-yellow-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/happy.html" class="block feeling-card card-container" data-feeling="happy" onclick="toggleDescription(this)">
+        <div class="bg-yellow-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-yellow-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-Yellow-800">Happy</h3>
-            <p class="text-sm font-bold text-yellow-700 mt-2">Feeling joy and contentment. Life is good!</p>
-            <p class="text-sm font-bold text-yellow-700 mt-2">خوشی - خوشی اور اطمینان کا احساس۔ زندگی اچھی ہے!</p>
+            <i class="fas fa-smile-beam text-5xl text-yellow-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-yellow-600">Happy/خوش</h3>
+            <p class="text-sm font-bold text-yellow-800 mt-2">Feeling joy and contentment. Life is good!</p>
+            <p class="text-sm font-bold text-yellow-800 mt-2">خوشی - خوشی اور اطمینان کا احساس۔ زندگی اچھی ہے!</p>
+          </div>
+          <div class="description mt-4 text-yellow-700 hidden">
+            <p>This feeling is often associated with happiness and satisfaction. It's the joy that comes when everything feels right.</p>
           </div>
         </div>
       </a>
 
       <!-- Angry Card -->
-      <a href="iamfeeling/angry.html" class="block feeling-card" data-feeling="angry">
-        <div class="bg-red-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/angry.html" class="block feeling-card card-container" data-feeling="angry" onclick="toggleDescription(this)">
+        <div class="bg-red-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-red-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-red-800">Angry</h3>
-            <p class="text-sm font-bold text-red-700 mt-2">Frustration or annoyance. Need to let off some steam!</p>
-            <p class="text-sm font-bold text-red-700 mt-2">غصہ - مایوسی یا ناراضگی۔ غصہ کم کرنے کی ضرورت ہے!</p>
+            <i class="fas fa-fire text-5xl text-red-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-red-600">Angry/ناراض</h3>
+            <p class="text-sm font-bold text-red-800 mt-2">Frustration or annoyance. Need to let off some steam!</p>
+            <p class="text-sm font-bold text-red-800 mt-2">غصہ - مایوسی یا ناراضگی۔ غصہ کم کرنے کی ضرورت ہے!</p>
+          </div>
+          <div class="description mt-4 text-red-700 hidden">
+            <p>This feeling usually arises when something or someone causes frustration. It's a normal emotional response, but it should be managed carefully.</p>
           </div>
         </div>
       </a>
 
       <!-- Sad Card -->
-      <a href="iamfeeling/sad.html" class="block feeling-card" data-feeling="sad">
-        <div class="bg-blue-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/sad.html" class="block feeling-card card-container" data-feeling="sad" onclick="toggleDescription(this)">
+        <div class="bg-blue-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-blue-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-blue-800">Sad</h3>
-            <p class="text-sm font-bold text-blue-700 mt-2">Feeling down or sorrowful. Need some comfort.</p>
-            <p class="text-sm font-bold text-blue-700 mt-2">اداس - نیچے یا غمگین محسوس کرنا۔ کچھ تسلی کی ضرورت ہے۔</p>
+            <i class="fas fa-cloud-rain text-5xl text-blue-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-blue-600">Sad/اداس</h3>
+            <p class="text-sm font-bold text-blue-800 mt-2">Feeling down or sorrowful. Need some comfort.</p>
+            <p class="text-sm font-bold text-blue-800 mt-2">اداس - نیچے یا غمگین محسوس کرنا۔ کچھ تسلی کی ضرورت ہے۔</p>
+          </div>
+          <div class="description mt-4 text-blue-700 hidden">
+            <p>This feeling is characterized by a sense of sorrow or melancholy. It's important to take care of yourself during these times.</p>
           </div>
         </div>
       </a>
 
       <!-- Excited Card -->
-      <a href="iamfeeling/excited.html" class="block feeling-card" data-feeling="excited">
-        <div class="bg-pink-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/excited.html" class="block feeling-card card-container" data-feeling="excited" onclick="toggleDescription(this)">
+        <div class="bg-pink-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-pink-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-pink-800">Excited</h3>
-            <p class="text-sm font-bold text-pink-700 mt-2">Feeling enthusiastic and full of energy. Let’s go!</p>
-            <p class="text-sm font-bold text-pink-700 mt-2">پر جوش - جوش و جذبہ اور توانائی سے بھرپور محسوس کرنا۔ چلیں!</p>
+            <i class="fas fa-fireworks text-5xl text-pink-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-pink-600">Excited/پرجوش</h3>
+            <p class="text-sm font-bold text-pink-800 mt-2">Feeling enthusiastic and full of energy. Let’s go!</p>
+            <p class="text-sm font-bold text-pink-800 mt-2">پر جوش - جوش و جذبہ اور توانائی سے بھرپور محسوس کرنا۔ چلیں!</p>
+          </div>
+          <div class="description mt-4 text-pink-700 hidden">
+            <p>Excitement is a feeling of high energy, often due to anticipation or enthusiasm. It's an exhilarating emotional state!</p>
           </div>
         </div>
-      </a>
-
-      <!-- Calm Card -->
-      <a href="iamfeeling/calm.html" class="block feeling-card" data-feeling="calm">
-        <div class="bg-green-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+        <!-- Calm Card -->
+      <a href="iamfeeling/calm.html" class="block feeling-card card-container" data-feeling="calm" onclick="toggleDescription(this)">
+        <div class="bg-green-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-green-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-green-800">Calm</h3>
-            <p class="text-sm font-bold text-green-700 mt-2">At peace and collected. The mind is at ease.</p>
-            <p class="text-sm font-bold text-green-700 mt-2">پرامن - سکون اور اطمینان محسوس کرنا۔ دماغ پرسکون ہے۔</p>
+            <i class="fas fa-leaf text-5xl text-green-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-green-600">Calm/پرسکون</h3>
+            <p class="text-sm font-bold text-green-800 mt-2">At peace and collected. The mind is at ease.</p>
+            <p class="text-sm font-bold text-green-800 mt-2">پرامن - سکون اور اطمینان محسوس کرنا۔ دماغ پرسکون ہے۔</p>
+          </div>
+          <div class="description mt-4 text-green-700 hidden">
+            <p>This feeling is associated with tranquility and mental peace. It's a calm state of being where everything feels in balance.</p>
           </div>
         </div>
       </a>
 
       <!-- Confused Card -->
-      <a href="iamfeeling/confused.html" class="block feeling-card" data-feeling="confused">
-        <div class="bg-purple-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/confused.html" class="block feeling-card card-container" data-feeling="confused" onclick="toggleDescription(this)">
+        <div class="bg-orange-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-orange-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-purple-800">Confused</h3>
-            <p class="text-sm font-bold text-purple-700 mt-2">Uncertain and unclear. Need some clarity.</p>
-            <p class="text-sm font-bold text-purple-700 mt-2">مبہم - غیر یقینی اور غیر واضح محسوس کرنا۔ کچھ وضاحت کی ضرورت ہے۔</p>
+            <i class="fas fa-question-circle text-5xl text-orange-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-orange-600">Confused/کنفیوزڈ</h3>
+            <p class="text-sm font-bold text-orange-800 mt-2">Uncertain and unclear. Need some clarity.</p>
+            <p class="text-sm font-bold text-orange-800 mt-2">مبہم - غیر یقینی اور غیر واضح محسوس کرنا۔ کچھ وضاحت کی ضرورت ہے۔</p>
+          </div>
+          <div class="description mt-4 text-orange-700 hidden">
+            <p>This feeling comes when one is unsure or lacks clarity. It's a state of confusion that can be resolved by gaining more information.</p>
           </div>
         </div>
       </a>
 
       <!-- Surprised Card -->
-      <a href="iamfeeling/surprised.html" class="block feeling-card" data-feeling="surprised">
-        <div class="bg-teal-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/surprised.html" class="block feeling-card card-container" data-feeling="surprised" onclick="toggleDescription(this)">
+        <div class="bg-purple-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-purple-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-teal-800">Surprised</h3>
-            <p class="text-sm font-bold text-teal-700 mt-2">Caught off guard! Something unexpected happened.</p>
-            <p class="text-sm font-bold text-teal-700 mt-2">حیران - غافل ہو جانا! کچھ غیر متوقع ہوا۔</p>
+            <i class="fas fa-exclamation-circle text-5xl text-purple-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-purple-600">Surprised/حیران</h3>
+            <p class="text-sm font-bold text-purple-800 mt-2">Caught off guard! Something unexpected happened.</p>
+            <p class="text-sm font-bold text-purple-800 mt-2">حیران - غافل ہو جانا! کچھ غیر متوقع ہوا۔</p>
+          </div>
+          <div class="description mt-4 text-purple-700 hidden">
+            <p>Surprise occurs when something unexpected happens, catching you off guard and leaving you in awe or astonishment.</p>
           </div>
         </div>
       </a>
 
       <!-- Grateful Card -->
-      <a href="iamfeeling/grateful.html" class="block feeling-card" data-feeling="grateful">
-        <div class="bg-orange-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/grateful.html" class="block feeling-card card-container" data-feeling="grateful" onclick="toggleDescription(this)">
+        <div class="bg-teal-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-teal-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-orange-800">Grateful</h3>
-            <p class="text-sm font-bold text-orange-700 mt-2">Feeling thankful for the blessings in life.</p>
-            <p class="text-sm font-bold text-orange-700 mt-2">شکر گزار - زندگی کی نعمتوں کے لئے شکر گزار محسوس کرنا۔</p>
+            <i class="fas fa-hands-helping text-5xl text-teal-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-teal-600">Grateful/شکر گزار</h3>
+            <p class="text-sm font-bold text-teal-800 mt-2">Feeling thankful for the blessings in life.</p>
+            <p class="text-sm font-bold text-teal-800 mt-2">شکر گزار - زندگی کی نعمتوں کے لئے شکر گزار محسوس کرنا۔</p>
+          </div>
+          <div class="description mt-4 text-teal-700 hidden">
+            <p>Gratitude is a feeling of appreciation and thankfulness, often arising when you acknowledge the blessings in your life.</p>
           </div>
         </div>
       </a>
 
       <!-- Lonely Card -->
-      <a href="iamfeeling/lonely.html" class="block feeling-card" data-feeling="lonely">
-        <div class="bg-indigo-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/lonely.html" class="block feeling-card card-container" data-feeling="lonely" onclick="toggleDescription(this)">
+        <div class="bg-blue-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-blue-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-indigo-800">Lonely</h3>
-            <p class="text-sm font-bold text-indigo-700 mt-2">Feeling isolated and disconnected. Seeking company.</p>
-            <p class="text-sm font-bold text-indigo-700 mt-2">تنہا - الگ تھلگ اور بے جوڑ محسوس کرنا۔ ساتھی کی تلاش میں۔</p>
+            <i class="fas fa-user-alt-slash text-5xl text-blue-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-blue-600">Lonely/تنہا</h3>
+            <p class="text-sm font-bold text-blue-800 mt-2">Feeling isolated and disconnected. Seeking company.</p>
+            <p class="text-sm font-bold text-blue-800 mt-2">تنہا - الگ تھلگ اور بے جوڑ محسوس کرنا۔ ساتھی کی تلاش میں۔</p>
+          </div>
+          <div class="description mt-4 text-blue-700 hidden">
+            <p>Loneliness often arises when we feel disconnected from others. It’s a longing for social connection and companionship.</p>
           </div>
         </div>
       </a>
 
       <!-- Hopeful Card -->
-      <a href="iamfeeling/hopeful.html" class="block feeling-card" data-feeling="hopeful">
-        <div class="bg-lime-200 p-4 rounded-lg shadow-md text-center flex items-center justify-center h-48">
+      <a href="iamfeeling/hopeful.html" class="block feeling-card card-container" data-feeling="hopeful" onclick="toggleDescription(this)">
+        <div class="bg-yellow-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-yellow-400 hover-glow transition-all duration-300">
           <div>
-            <h3 class="text-lg font-bold text-lime-800">Hopeful</h3>
-            <p class="text-sm font-bold text-lime-700 mt-2">Looking forward to something better, full of hope.</p>
-            <p class="text-sm font-bold text-lime-700 mt-2">مستقبل کے لئے امید بھرا دیکھنا، بہت سی امیدوں سے بھرا۔</p>
+            <i class="fas fa-sun text-5xl text-yellow-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-yellow-600">Hopeful/امید مند</h3>
+            <p class="text-sm font-bold text-yellow-800 mt-2">Looking forward to something better, full of hope.</p>
+            <p class="text-sm font-bold text-yellow-800 mt-2">مستقبل کے لئے امید بھرا دیکھنا، بہت سی امیدوں سے بھرا۔</p>
+          </div>
+          <div class="description mt-4 text-yellow-700 hidden">
+            <p>Hope is a positive and uplifting feeling where you look forward to better outcomes, often with optimism and faith in the future.</p>
           </div>
         </div>
       </a>
 
       <!-- Tired Card -->
-      <a href="iamfeeling/tired.html" class="block feeling-card" data-feeling="tired">
-        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-          <div class="text-center">
-            <h3 class="text-xl font-bold text-gray-800">Tired</h3>
-            <p class="text-sm font-medium text-gray-700 mt-2">Feeling drained and low on energy. Need some rest.</p>
-            <p class="text-sm font-medium text-gray-700 mt-2">تھکاوٹ - توانائی ختم ہونا اور آرام کی ضرورت ہونا۔</p>
+      <a href="iamfeeling/tired.html" class="block feeling-card card-container" data-feeling="tired" onclick="toggleDescription(this)">
+        <div class="bg-gray-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-gray-400 hover-glow transition-all duration-300">
+          <div>
+            <i class="fas fa-bed text-5xl text-gray-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-gray-600">Tired/تھکا ہوا</h3>
+            <p class="text-sm font-bold text-gray-800 mt-2">Feeling drained and low on energy. Need some rest.</p>
+            <p class="text-sm font-bold text-gray-800 mt-2">تھکاوٹ - توانائی ختم ہونا اور آرام کی ضرورت ہونا۔</p>
+          </div>
+          <div class="description mt-4 text-gray-700 hidden">
+            <p>Being tired is a physical and mental state of exhaustion. It calls for rest and recovery to restore energy and vitality.</p>
           </div>
         </div>
       </a>
 
       <!-- Proud Card -->
-      <a href="iamfeeling/proud.html" class="block feeling-card" data-feeling="proud">
-        <div class="bg-yellow-100 p-6 rounded-lg shadow-lg border border-yellow-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-          <div class="text-center">
-            <h3 class="text-xl font-bold text-yellow-800">Proud</h3>
-            <p class="text-sm font-medium text-yellow-700 mt-2">Feeling accomplished and proud of achievements.</p>
-            <p class="text-sm font-medium text-yellow-700 mt-2">فخر - کامیابیوں پر فخر محسوس کرنا۔</p>
+      <a href="iamfeeling/proud.html" class="block feeling-card card-container" data-feeling="proud" onclick="toggleDescription(this)">
+        <div class="bg-indigo-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-indigo-400 hover-glow transition-all duration-300">
+          <div>
+            <i class="fas fa-trophy text-5xl text-indigo-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-indigo-600">Proud/فخر</h3>
+            <p class="text-sm font-bold text-indigo-800 mt-2">Feeling accomplished and proud of achievements.</p>
+            <p class="text-sm font-bold text-indigo-800 mt-2">فخر - کامیابیوں پر فخر محسوس کرنا۔</p>
+          </div>
+          <div class="description mt-4 text-indigo-700 hidden">
+            <p>Pride comes from a sense of achievement and accomplishment. It is often felt after reaching a significant milestone or goal.</p>
           </div>
         </div>
       </a>
 
       <!-- Anxious Card -->
-      <a href="iamfeeling/anxious.html" class="block feeling-card" data-feeling="anxious">
-        <div class="bg-blue-100 p-6 rounded-lg shadow-lg border border-blue-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105">
-          <div class="text-center">
-            <h3 class="text-xl font-bold text-blue-800">Anxious</h3>
-            <p class="text-sm font-medium text-blue-700 mt-2">Feeling uneasy or worried. Need to calm down.</p>
-            <p class="text-sm font-medium text-blue-700 mt-2">تشویش - بے چینی یا فکر کرنا۔ سکون کی ضرورت ہے۔</p>
+      <a href="iamfeeling/anxious.html" class="block feeling-card card-container" data-feeling="anxious" onclick="toggleDescription(this)">
+        <div class="bg-red-200 p-4 rounded-lg shadow-lg text-center flex items-center justify-center h-48 border-4 border-red-400 hover-glow transition-all duration-300">
+          <div>
+            <i class="fas fa-heartbeat text-5xl text-red-600 mb-4"></i>
+            <h3 class="text-lg font-bold text-red-600">Anxious/بے چین</h3>
+            <p class="text-sm font-bold text-red-800 mt-2">Feeling uneasy or worried. Need to calm down.</p>
+            <p class="text-sm font-bold text-red-800 mt-2">تشویش - بے چینی یا فکر کرنا۔ سکون کی ضرورت ہے۔</p>
+          </div>
+          <div class="description mt-4 text-red-700 hidden">
+            <p>Anxiety often arises when we feel nervous or uneasy about uncertain situations. It's important to find ways to calm and center yourself.</p>
           </div>
         </div>
       </a>
+
     </div>
-  </div>
-
-  <script>
-    document.getElementById('searchInput').addEventListener('input', function() {
-      var input = this.value.toLowerCase();
-      var cards = document.querySelectorAll('.feeling-card');
-
-      cards.forEach(function(card) {
-        var feeling = card.getAttribute('data-feeling');
-        if (feeling.toLowerCase().includes(input)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+    <script>
+      document.getElementById('searchInput').addEventListener('input', function() {
+        var input = this.value.toLowerCase();
+        var cards = document.querySelectorAll('.feeling-card');
+  
+        cards.forEach(function(card) {
+          var feeling = card.getAttribute('data-feeling');
+          if (feeling.toLowerCase().includes(input)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
-    });
-  </script>
+    </script>
+  </div>
 </body>
 </html>

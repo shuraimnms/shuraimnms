@@ -89,13 +89,16 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #333;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent; /* Light border with transition */
 }
 
 .duadhikr-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  background: #d1ebf3; /* Lighter blue on hover */
+  background: #7ecfe7; /* Lighter blue on hover */
+  border: 2px solid #00bfff; /* Light blue border on hover */
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.7); /* Glowing border effect */
 }
 
 /* Specific Card Colors (lighter shades) */
@@ -137,39 +140,39 @@ h1 {
 
 /* Card Text Color (specific to each category) */
 .bg-blue-100 h3, .bg-blue-100 p {
-  color: #1e3a46; /* Darker text for contrast */
+  color: #032736; /* Darker text for contrast */
 }
 
 .bg-yellow-100 h3, .bg-yellow-100 p {
-  color: #7a5c23; /* Dark yellow text */
+  color: #634205; /* Dark yellow text */
 }
 
 .bg-purple-100 h3, .bg-purple-100 p {
-  color: #6d4e6b; /* Dark purple text */
+  color: #700569; /* Dark purple text */
 }
 
 .bg-green-100 h3, .bg-green-100 p {
-  color: #2e5a40; /* Dark green text */
+  color: #08632e; /* Dark green text */
 }
 
 .bg-red-100 h3, .bg-red-100 p {
-  color: #b04a43; /* Dark red text */
+  color: #d81d10; /* Dark red text */
 }
 
 .bg-pink-100 h3, .bg-pink-100 p {
-  color: #9e2d3f; /* Dark pink text */
+  color: #810318; /* Dark pink text */
 }
 
 .bg-teal-100 h3, .bg-teal-100 p {
-  color: #387a6f; /* Dark teal text */
+  color: #023b32; /* Dark teal text */
 }
 
 .bg-orange-100 h3, .bg-orange-100 p {
-  color: #9c6511; /* Dark orange text */
+  color: #694003; /* Dark orange text */
 }
 
 .bg-gray-100 h3, .bg-gray-100 p {
-  color: #4a4a4a; /* Dark gray text */
+  color: #bb0808; /* Dark gray text */
 }
 
 /* Footer or Miscellaneous Styles */
@@ -180,3 +183,79 @@ footer {
   text-align: center;
   font-size: 0.9rem;
 }
+/* Footer Section */
+.footer {
+  background-color: #155e7a; /* White background */
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on top of the footer */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer Icon Container */
+.footer .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px; /* Add some padding for spacing */
+}
+
+/* Footer Icon */
+.footer .flex div {
+  text-align: center;
+  cursor: pointer;
+  width: 25%; /* Ensure icons are evenly spaced */
+}
+
+/* Icon Style */
+.footer .flex i {
+  font-size: 2.5rem; /* Size of the icon */
+  color: #333; /* Icon color */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Icon Hover Effect */
+.footer .flex div:hover i {
+  color: #00bfff; /* Light blue on hover */
+  transform: scale(1.1); /* Slight increase in size on hover */
+}
+
+/* Footer Text */
+.footer .flex span {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Text Hover Effect */
+.footer .flex div:hover span {
+  color: #00bfff; /* Light blue on hover */
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .footer .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .flex div {
+    width: 80%; /* Adjust width for smaller screens */
+    margin-bottom: 10px;
+  }
+
+  .footer .flex span {
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+}
+
