@@ -1,5 +1,19 @@
 // scripts/app.js
 
+// Search bar functionality
+document.getElementById("search-bar").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const feature = card.dataset.feature.toLowerCase();
+        if (feature.includes(query)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+});
 // Function to handle the click event on each card
 function handleCardClick(cardElement) {
     // Toggle the 'active' class to change color and indicate the card is selected
