@@ -289,26 +289,6 @@
   </div>
 </footer>
 
-
-  <script>
-    // Function to get the Islamic date
-    function getIslamicDate() {
-      const islamicMonths = ["Muharram", "Safar", "Rabi' al-awwal", "Rabi' al-thani", "Jumada al-awwal", "Jumada al-thani", "Rajab", "Sha'ban", "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"];
-      const date = new Date();
-      const islamicDate = new Intl.DateTimeFormat('en-TN-u-ca-islamic', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
-      return islamicDate;
-    }
-
-    // Function to get the Gregorian date
-    function getGregorianDate() {
-      const date = new Date();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-      return date.toLocaleDateString('en-US', options);
-    }
-
-    // Display the dates
-    document.getElementById('gregorian-date').innerText = getGregorianDate();
-    document.getElementById('islamic-date').innerText = getIslamicDate();
-  </script>
 </body>
 </html>
+  
