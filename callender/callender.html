@@ -3,32 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Islamic Calendar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <title>Interactive Hijri & Gregorian Calendar</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="calendar-container">
-    <div class="calendar-header">
-      <button class="nav-btn" id="prev-month">❮</button>
-      <h2 id="calendar-title">January 2025</h2>
-      <button class="nav-btn" id="next-month">❯</button>
+    <div class="header">
+      <h1 class="app-title">Dynamic Hijri & Gregorian Calendar</h1>
+      <div class="date-display">
+        <p id="gregorian-today"></p>
+        <p id="hijri-today"></p>
+      </div>
+      <div class="toggle-buttons">
+        <button id="hijri-toggle" class="toggle active">Hijri Calendar</button>
+        <button id="gregorian-toggle" class="toggle">Gregorian Calendar</button>
+      </div>
     </div>
-    <div class="calendar-grid">
-      <div class="day-name">Sun</div>
-      <div class="day-name">Mon</div>
-      <div class="day-name">Tue</div>
-      <div class="day-name">Wed</div>
-      <div class="day-name">Thu</div>
-      <div class="day-name">Fri</div>
-      <div class="day-name">Sat</div>
-      <!-- Days will be dynamically inserted here -->
+
+    <div class="calendar-navigation">
+      <button id="prev-month" class="nav-button"><i class="fas fa-chevron-left"></i></button>
+      <h2 id="current-month"></h2>
+      <button id="next-month" class="nav-button"><i class="fas fa-chevron-right"></i></button>
     </div>
-    <div class="calendar-footer">
-      <p class="note">Hover over a day for details of special Islamic events!</p>
+
+    <div class="calendar-days" id="calendar-days">
+      <!-- Calendar dates will be dynamically rendered -->
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-hijri/moment-hijri.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

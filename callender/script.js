@@ -1,73 +1,63 @@
-// Initialize calendar
-const calendarTitle = document.getElementById("calendar-title");
-const calendarGrid = document.querySelector(".calendar-grid");
-const prevMonthBtn = document.getElementById("prev-month");
-const nextMonthBtn = document.getElementById("next-month");
+const calendarDays = document.getElementById("calendar-days");
+const currentMonth = document.getElementById("current-month");
+const gregorianToday = document.getElementById("gregorian-today");
+const hijriToday = document.getElementById("hijri-today");
+const hijriToggle = document.getElementById("hijri-toggle");
+const gregorianToggle = document.getElementById("gregorian-toggle");
+const prevMonth = document.getElementById("prev-month");
+const nextMonth = document.getElementById("next-month");
 
-let currentDate = new Date();
+let isHijri = true;
+let currentDate = moment().startOf("day");
 
-function renderCalendar(date) {
-  const month = date.getMonth();
-  const year = date.getFullYear();
+function renderCalendar() {
+  calendarDays.innerHTML = "";
+  const today = moment();
+  const startOfMonth = isHijri ? currentDate.clone().startOf("iMonth") : currentDate.clone().startOf("month");
+  const endOfMonth = isHijri ? currentDate.clone().endOf("iMonth") : currentDate.clone().endOf("month");
+  currentMonth.textContent = isHijri ? currentDate.format("iMMMM iYYYY") : currentDate.format("MMMM YYYY");
 
-  // Update calendar title
-  const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December",
-  ];
-  calendarTitle.textContent = `${monthNames[month]} ${year}`;
+  gregorianToday.textContent = `Today (Gregorian): ${today.format("DD MMMM YYYY")}`;
+  hijriToday.textContent = `Today (Hijri): ${today.format("iD iMMMM iYYYY")}`;
 
-  // Clear previous calendar days
-  const oldDays = document.querySelectorAll(".calendar-day");
-  oldDays.forEach((day) => day.remove());
+  const startDay = isHijri ? startOfMonth.isoWeekday() : startOfMonth.weekday();
 
-  // Get the first day of the month and total days in the month
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-  // Add blank days for previous month's days
-  for (let i = 0; i < firstDay; i++) {
-    const blankDay = document.createElement("div");
-    blankDay.classList.add("calendar-day");
-    calendarGrid.appendChild(blankDay);
+  for (let i = 1; i < startDay; i++) {
+    const emptyDay = document.createElement("div");
+    emptyDay.style.visibility = "hidden";
+    calendarDays.appendChild(emptyDay);
   }
 
-  // Add days of the current month
-  for (let day = 1; day <= daysInMonth; day++) {
+  for (let day = startOfMonth.clone(); day.isBefore(endOfMonth) || day.isSame(endOfMonth); day.add(1, "day")) {
     const dayElement = document.createElement("div");
-    dayElement.classList.add("calendar-day");
-    dayElement.textContent = day;
-
-    // Add tooltips for special events (e.g., Islamic holidays)
-    if (day === 25 && month === 0) {
-      dayElement.classList.add("tooltip");
-      dayElement.setAttribute("data-tooltip", "Islamic New Year");
-    }
-
-    // Highlight today's date
-    const today = new Date();
-    if (
-      day === today.getDate() &&
-      month === today.getMonth() &&
-      year === today.getFullYear()
-    ) {
-      dayElement.classList.add("today");
-    }
-
-    calendarGrid.appendChild(dayElement);
+    dayElement.textContent = isHijri ? day.format("iD") : day.format("D");
+    if (day.isSame(today, "day")) dayElement.classList.add("today");
+    calendarDays.appendChild(dayElement);
   }
 }
 
-// Add event listeners for navigation buttons
-prevMonthBtn.addEventListener("click", () => {
-  currentDate.setMonth(currentDate.getMonth() - 1);
-  renderCalendar(currentDate);
+hijriToggle.addEventListener("click", () => {
+  isHijri = true;
+  hijriToggle.classList.add("active");
+  gregorianToggle.classList.remove("active");
+  renderCalendar();
 });
 
-nextMonthBtn.addEventListener("click", () => {
-  currentDate.setMonth(currentDate.getMonth() + 1);
-  renderCalendar(currentDate);
+gregorianToggle.addEventListener("click", () => {
+  isHijri = false;
+  gregorianToggle.classList.add("active");
+  hijriToggle.classList.remove("active");
+  renderCalendar();
 });
 
-// Initial render
-renderCalendar(currentDate);
+prevMonth.addEventListener("click", () => {
+  isHijri ? currentDate.subtract(1, "iMonth") : currentDate.subtract(1, "month");
+  renderCalendar();
+});
+
+nextMonth.addEventListener("click", () => {
+  isHijri ? currentDate.add(1, "iMonth") : currentDate.add(1, "month");
+  renderCalendar();
+});
+
+renderCalendar();
