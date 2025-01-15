@@ -463,7 +463,8 @@ button:hover, .rounded-full:hover {
 
 .text-2xl {
   font-size: 1.5rem;
-}/* General Styles */
+}
+/* General Styles */
 *,
 *::before,
 *::after {
@@ -502,11 +503,12 @@ body {
     justify-content: center;
     flex-wrap: nowrap;
     gap: 20px;
+    transition: transform 1s ease-in-out;
 }
 
 /* Content Items (Folders) */
 .content-item {
-    width: 75%; /* Longer width for the rectangular shape */
+    width: 60%; /* Longer width for the rectangular shape */
     height: 150px; /* Reduced height to make it a more horizontal shape */
     border-radius: 8px; /* Slight rounded corners */
     background-size: cover;
@@ -540,30 +542,33 @@ body {
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
+    /* When screen width is 768px or less (tablets/mobile) */
+    
     .slider-container {
-        flex-direction: column;
+        flex-direction: column; /* Stack folders vertically */
     }
 
     .content-item {
-        width: 90%; /* Make folders a bit wider on mobile */
+        width: 80%; /* Make folders a bit wider on smaller screens */
         margin-bottom: 20px; /* Add space between folders on smaller screens */
     }
-}
 
-@media (min-width: 769px) {
-    .slider-container {
-        flex-direction: row;
+    .content-item-text {
+        font-size: 16px; /* Adjust text size for smaller screens */
     }
 }
 
-/* Hide unnecessary scrollbars */
-.slider-container::-webkit-scrollbar {
-    display: none;
-}
+@media (max-width: 480px) {
+    /* For extra small screens (e.g., mobile phones) */
+    
+    .content-item {
+        width: 90%; /* Folders take more width on very small screens */
+        height: 120px; /* Adjust height for mobile phones */
+    }
 
-/* Make sure only one folder is shown at a time */
-.slider {
-    transition: transform 1s ease-in-out;
+    .content-item-text {
+        font-size: 14px; /* Further reduce text size for small screens */
+    }
 }
 
 /* Islamic Design - Border and Coloring */
@@ -587,6 +592,11 @@ body {
     font-size: 20px;
     font-weight: bold;
     color: #f0e68c; /* Goldish color for text */
+}
+
+/* Hide unnecessary scrollbars */
+.slider-container::-webkit-scrollbar {
+    display: none;
 }
 
 /* Quick Access Row Styles */
