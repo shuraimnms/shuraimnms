@@ -269,7 +269,7 @@ button:hover, .rounded-full:hover {
 }
 
 .text-white {
-  color: #ffffff;
+  color: #2b62f8;
 }
 
 .text-gray-500 {
@@ -479,124 +479,42 @@ body {
     color: #333; /* Dark text for contrast */
 }
 
-/* Sliding Section */
 .sliding-section {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of child elements */
+  width: 100%; /* Full width */
+  padding: 10px 0;
 }
 
-/* Slider Container */
 .slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px; /* Space between items */
 }
 
-/* Slider (Controls the horizontal scrolling) */
 .slider {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    transition: transform 1s ease-in-out;
+  display: inline-flex; /* Items will align horizontally */
 }
 
-/* Content Items (Folders) */
 .content-item {
-    width: 60%; /* Longer width for the rectangular shape */
-    height: 150px; /* Reduced height to make it a more horizontal shape */
-    border-radius: 8px; /* Slight rounded corners */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
-    position: relative;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 200px; /* Fixed width for each item */
+  height: 200px; /* Fixed height for each item */
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
 }
 
-/* Hover effect on content items */
-.content-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Content Text */
 .content-item-text {
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    border-radius: 8px;
-}
-
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    /* When screen width is 768px or less (tablets/mobile) */
-    
-    .slider-container {
-        flex-direction: column; /* Stack folders vertically */
-    }
-
-    .content-item {
-        width: 80%; /* Make folders a bit wider on smaller screens */
-        margin-bottom: 20px; /* Add space between folders on smaller screens */
-    }
-
-    .content-item-text {
-        font-size: 16px; /* Adjust text size for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    /* For extra small screens (e.g., mobile phones) */
-    
-    .content-item {
-        width: 90%; /* Folders take more width on very small screens */
-        height: 120px; /* Adjust height for mobile phones */
-    }
-
-    .content-item-text {
-        font-size: 14px; /* Further reduce text size for small screens */
-    }
-}
-
-/* Islamic Design - Border and Coloring */
-.content-item {
-    border: 2px solid #6c8f8c; /* Light Islamic greenish border */
-    background-color: #e5f0e5; /* Light background */
-}
-
-.content-item-text h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 20px;
-}
-
-/* Folder-specific styles */
-#dynamic-folder {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-}
-
-/* Folder Text Style */
-.content-item-text h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #f0e68c; /* Goldish color for text */
-}
-
-/* Hide unnecessary scrollbars */
-.slider-container::-webkit-scrollbar {
-    display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  font-size: 16px;
 }
 
 /* Quick Access Row Styles */
@@ -804,4 +722,143 @@ body {
     font-family: 'Amiri', 'Scheherazade', 'Tajawal', sans-serif;
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
-  
+  /* Main Content Section */
+#masjid-finder {
+  background-color: #f0f8ff; /* Light Blue for Masjid Finder */
+}
+#quran {
+  background-color: #fffaf0; /* Ivory for Quran */
+}
+
+#tasbeeh {
+  background-color: #e6ffe6; /* Light Green for Tasbeeh */
+}
+
+#dua-azkar {
+  background-color: #f9f2ff; /* Lavender for Dua Azkar */
+}
+
+#calendar {
+  background-color: #fff5e6; /* Light Orange for Calendar */
+}
+
+#ruqyah {
+  background-color: #ffe6e6; /* Light Red for Ruqyah */
+}
+
+#reminders {
+  background-color: #e6f7ff; /* Light Cyan for Reminders */
+}
+
+/* Ensure Consistency */
+.content-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #8ab8ce;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-container i {
+  font-size: 48px;
+  color: #007bff;
+}
+
+.content-item span {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+/* Main Content Section */
+.main-content {
+  padding: 20px;
+  background-color: #9adfc4;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Horizontal Scroll Container */
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap;
+  gap: 20px;
+  padding: 10px;
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 8px; /* Show horizontal scrollbar */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background: #45ecde;
+  border-radius: 5px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: #4d9eeb;
+}
+
+/* Content Items */
+.content-item {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 120px;
+  height: 150px;
+  border: 2px solid #cce752;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #3887b4;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.content-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-container i {
+  font-size: 48px;
+  color: #007bff;
+}
+
+.content-item span {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Individual Content Item Backgrounds */
+#masjid-finder { background-color: #70b0e9; } /* Light Blue */
+#quran { background-color: #dabc80; } /* Ivory */
+#tasbeeh { background-color: #81e281; } /* Light Green */
+#dua-azkar { background-color: #a173ca; } /* Lavender */
+#calendar { background-color: #c7aa7f; } /* Light Orange */
+#ruqyah { background-color: #be7474; } /* Light Red */
+#reminders { background-color: #7bbbd8; } /* Light Cyan */

@@ -1,0 +1,126 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Background */
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #162447, #1f4068, #1b1b2f);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #1f4068;
+  }
+  
+  .main-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #d1d1d1;
+    margin-top: 0.5rem;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4ecca3;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: #4ecca3;
+  }
+  
+  /* Surah Index */
+  .surah-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .surah-card {
+    background: #1b1b2f;
+    border: 2px solid #4ecca3;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .surah-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(78, 204, 163, 0.5);
+  }
+  
+  .surah-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .surah-meaning {
+    font-size: 1rem;
+    color: #d1d1d1;
+  }
+  
+  /* Extra Folders */
+  .folder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .folder-card {
+    background: #1b1b2f;
+    border: 2px solid #4ecca3;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .folder-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(78, 204, 163, 0.5);
+  }
+  
+  .folder-icon {
+    width: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .folder-name {
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1f4068;
+    color: #d1d1d1;
+    font-size: 0.9rem;
+  }
+  
