@@ -463,7 +463,132 @@ button:hover, .rounded-full:hover {
 
 .text-2xl {
   font-size: 1.5rem;
+}/* General Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light blue background for a clean look */
+    color: #333; /* Dark text for contrast */
+}
+
+/* Sliding Section */
+.sliding-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* Slider Container */
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+/* Slider (Controls the horizontal scrolling) */
+.slider {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+/* Content Items (Folders) */
+.content-item {
+    width: 75%; /* Longer width for the rectangular shape */
+    height: 150px; /* Reduced height to make it a more horizontal shape */
+    border-radius: 8px; /* Slight rounded corners */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow for a floating effect */
+    position: relative;
+}
+
+/* Hover effect on content items */
+.content-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Text */
+.content-item-text {
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 8px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .slider-container {
+        flex-direction: column;
+    }
+
+    .content-item {
+        width: 90%; /* Make folders a bit wider on mobile */
+        margin-bottom: 20px; /* Add space between folders on smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .slider-container {
+        flex-direction: row;
+    }
+}
+
+/* Hide unnecessary scrollbars */
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Make sure only one folder is shown at a time */
+.slider {
+    transition: transform 1s ease-in-out;
+}
+
+/* Islamic Design - Border and Coloring */
+.content-item {
+    border: 2px solid #6c8f8c; /* Light Islamic greenish border */
+    background-color: #e5f0e5; /* Light background */
+}
+
+.content-item-text h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+}
+
+/* Folder-specific styles */
+#dynamic-folder {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+/* Folder Text Style */
+.content-item-text h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0e68c; /* Goldish color for text */
+}
+
 /* Quick Access Row Styles */
 .quick-access-row {
   padding: 20px 10px;

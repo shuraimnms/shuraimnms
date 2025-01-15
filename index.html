@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZikrMate</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         /* Full-page styling */
         body {
@@ -16,9 +18,10 @@
             background-image: url('images/welcome.jpg'); /* Your welcome image */
             background-size: cover;
             background-position: center;
-            font-family: 'Amiri', serif;
+            font-family: 'Amiri', serif, Arial, sans-serif; /* Fallback fonts */
             position: relative;
             overflow: hidden;
+            direction: rtl; /* Ensure Arabic text flows correctly */
         }
 
         /* Islamic border style */
@@ -48,11 +51,11 @@
         .text {
             font-size: 5rem;
             color: #fff;
-            text-align: left;
+            text-align: right;
             white-space: nowrap;
             overflow: hidden; /* Ensures text is hidden and typed gradually */
             border-right: 3px solid #fff; /* Mimics a blinking caret */
-            width: fit-content; /* Ensures the text doesn't stretch unnecessarily */
+            width: 0; /* Start with 0 width to enable typing effect */
             letter-spacing: 3px;
             animation: typing 5s steps(30, end) 1s forwards, blinkCaret 0.75s step-end infinite;
             z-index: 1;
@@ -99,6 +102,13 @@
     <div class="text">
         بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
     </div>
+
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+        <p style="text-align: center; color: white; font-size: 1.5rem;">
+            Please enable JavaScript to view this page.
+        </p>
+    </noscript>
 
     <script>
         // After 5 seconds, redirect to the main page (main.html)
