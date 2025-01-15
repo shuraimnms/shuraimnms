@@ -1,0 +1,157 @@
+/* styles/style.css */
+
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.search-container {
+    width: 60%;
+    text-align: center;
+}
+
+#search-bar {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 2px solid #008cba;
+    background-color: #1a1a1a;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus {
+    border-color: #00c4cc;
+    box-shadow: 0 0 10px #00c4cc;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00c4cc;
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Card Styling */
+.card {
+    background: linear-gradient(45deg, #ff4b5c, #ff6a00);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ff6a00, #ff4b5c);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    border-color: #00c4cc;
+}
+
+.card.active {
+    background: linear-gradient(45deg, #00c4cc, #ff4b5c); /* Color change on click */
+}
+
+.card-title {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ff6a00;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #d0d0d0;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* Dynamic Lighting Border Effect */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: linear-gradient(45deg, #ff6a00, #ff4b5c);
+    z-index: -1;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}

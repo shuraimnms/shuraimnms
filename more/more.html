@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZikrMate - More Features</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar with Search Bar -->
+    <nav class="navbar">
+        <div class="logo">ZikrMate</div>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search Features / خصوصیات تلاش کریں" />
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="container">
+        <h1 class="page-title">More Features / مزید خصوصیات</h1>
+
+        <!-- Cards Container -->
+        <div class="card-container" id="card-container">
+            <!-- Zakat Calculator Card -->
+            <div class="card" data-feature="zakat calculator" onclick="openPage('zakat_calculater/zakat_calculater.html')">
+                <i class="fas fa-calculator card-icon"></i>
+                <h2 class="card-title">Zakat Calculator / زکوة کیلکولیٹر</h2>
+                <p class="card-description">Calculate your Zakat obligation in seconds. / اپنی زکوة کی ذمہ داری کو چند سیکنڈز میں حساب کریں۔</p>
+            </div>
+
+            <!-- Duas Card -->
+            <div class="card" data-feature="duas" onclick="handleCardClick(this)">
+                <i class="fas fa-prayer card-icon"></i>
+                <h2 class="card-title">Duas / دعائیں</h2>
+                <p class="card-description">Explore different duas for various occasions. / مختلف مواقع کے لئے دعاؤں کا مجموعہ دیکھیں۔</p>
+            </div>
+
+            <!-- Prayer Times Card -->
+            <div class="card" data-feature="prayer times" onclick="handleCardClick(this)">
+                <i class="fas fa-clock card-icon"></i>
+                <h2 class="card-title">Prayer Times / نماز کے اوقات</h2>
+                <p class="card-description">Find accurate prayer timings for your location. / اپنے علاقے کے لئے درست نماز کے اوقات تلاش کریں۔</p>
+            </div>
+
+            <!-- Namaz Steps Card -->
+            <div class="card" data-feature="namaz steps" onclick="handleCardClick(this)">
+                <i class="fas fa-mosque card-icon"></i>
+                <h2 class="card-title">Namaz Steps / نماز کے اقدامات</h2>
+                <p class="card-description">Learn the steps of Namaz with clear guidance. / نماز کے مراحل کو واضح رہنمائی کے ساتھ سیکھیں۔</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
