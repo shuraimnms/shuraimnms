@@ -156,6 +156,34 @@ body {
   }
 }
 
+#theme-toggle {
+  position: relative;
+  cursor: pointer;
+}
+
+#dropdown-menu {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 100%; /* Position directly below the button */
+  left: 0;
+  width: 300px !important;
+  height: 200px !important;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 10px; /* Optional space between button and dropdown */
+}
+
+#theme-toggle.open + #dropdown-menu {
+  display: block; /* Show dropdown when button is clicked */
+}
+
+.fas {
+  font-size: 24px;
+}
+
 /* Container and Item Styles */
 
 .container {

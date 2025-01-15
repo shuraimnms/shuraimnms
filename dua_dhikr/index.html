@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dua & Dhikr</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
   <script>
     function showDeveloperInfo() {
       document.getElementById('developer-info').style.display = 'block';
@@ -28,87 +30,97 @@
 
     <!-- Grid for Dua & Dhikr Cards -->
     <div id="duadhikrCards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-      <!-- Cards go here, as defined in your HTML, for example: -->
-      <a href="duafiles/morning_azkar.html" class="block duadhikr-card bg-blue-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="morning">
+      <!-- Morning Dhikr Card -->
+<a href="duafiles/morning_azkar.html" class="block duadhikr-card bg-blue-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="morning">
+  <div class="text-center">
+    <div class="flex justify-center items-center bg-blue-200 w-16 h-16 rounded-full mx-auto mb-4">
+      <i class="fas fa-sun text-blue-800 text-2xl"></i>
+    </div>
+    <h3 class="text-xl font-bold text-blue-800">Morning Dhikr / اذکار الصباح</h3>
+    <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses in the morning.</p>
+  </div>
+</a>
+
+<!-- Evening Dhikr Card -->
+<a href="duafiles/evening_azkar.html" class="block duadhikr-card bg-yellow-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="evening">
+  <div class="text-center">
+    <div class="flex justify-center items-center bg-yellow-200 w-16 h-16 rounded-full mx-auto mb-4">
+      <i class="fas fa-moon text-yellow-800 text-2xl"></i>
+    </div>
+    <h3 class="text-xl font-bold text-yellow-800">Evening Dhikr / اذکار المساء</h3>
+    <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses in the evening.</p>
+  </div>
+</a>
+
+<!-- Add similar structure for other cards -->
+
+
+      <!-- Before Sleep Dhikr Card -->
+      <a href="duafiles/before_sleep.html" class="block duadhikr-card bg-purple-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="sleep">
         <div class="text-center">
-          <h3 class="text-xl font-bold text-blue-800">Morning Dhikr / اذکار الصباح</h3>
-          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses in the morning.</p>
+          <h3 class="text-xl font-bold text-purple-800"><i class="fas fa-bed"></i> Before Sleep Dhikr / اذکار النوم</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses before sleeping.</p>
         </div>
       </a>
 
-  <!-- Evening Dhikr Card -->
-  <a href="duafiles/evening_azkar.html" class="block duadhikr-card bg-yellow-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="evening">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-yellow-800">Evening Dhikr / اذکار المساء</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses in the evening.</p>
-    </div>
-  </a>
+      <!-- Salah Dhikr Card -->
+      <a href="duafiles/salah_azkar.html" class="block duadhikr-card bg-green-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="salah">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-green-800"><i class="fas fa-pray"></i> Salah Dhikr / اذکار الصلاة</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses during Salah.</p>
+        </div>
+      </a>
 
-  <!-- Before Sleep Dhikr Card -->
-  <a href="duafiles/before_sleep.html" class="block duadhikr-card bg-purple-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="sleep">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-purple-800">Before Sleep Dhikr / اذکار النوم</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses before sleeping.</p>
-    </div>
-  </a>
+      <!-- After Salah Dhikr Card -->
+      <a href="duafiles/after_salah_azkar.html" class="block duadhikr-card bg-green-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="salah">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-green-800"><i class="fas fa-check-circle"></i> After Salah Dhikr / اذکار الصلاة</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses after Salah.</p>
+        </div>
+      </a>
 
-  <!-- Salah Dhikr Card -->
-  <a href="duafiles/salah_azkar.html" class="block duadhikr-card bg-green-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="salah">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-green-800">Salah Dhikr / اذکار الصلاة</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses during Salah.</p>
-    </div>
-  </a>
+      <!-- Ruqyah & Illness Card -->
+      <a href="duafiles/ruqyah.html" class="block duadhikr-card bg-red-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="illness">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-red-800"><i class="fas fa-medkit"></i> Ruqyah & Illness / علاج و شفاء</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for healing and protection.</p>
+        </div>
+      </a>
 
-  <!-- After Salah Dhikr Card -->
-  <a href="duafiles/after_salah_azkar.html" class="block duadhikr-card bg-green-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="salah">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-green-800">After Salah Dhikr / اذکار الصلاة</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses after Salah.</p>
-    </div>
-  </a>
+      <!-- Gratitude Dhikr Card -->
+      <a href="duafiles/gratitude_dhikr.html" class="block duadhikr-card bg-pink-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="gratitude">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-pink-800"><i class="fas fa-heart"></i> Gratitude Dhikr / اذکار الشكر</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses to express gratitude to Allah.</p>
+        </div>
+      </a>
 
-  <!-- Ruqyah & Illness Card -->
-  <a href="duafiles/ruqyah.html" class="block duadhikr-card bg-red-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="illness">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-red-800">Ruqyah & Illness / علاج و شفاء</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for healing and protection.</p>
-    </div>
-  </a>
+      <!-- Protection Dhikr Card -->
+      <a href="duafiles/protection.html" class="block duadhikr-card bg-teal-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="protection">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-teal-800"><i class="fas fa-shield-alt"></i> Protection Dhikr / اذكار الحماية</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for protection from harm.</p>
+        </div>
+      </a>
 
-  <!-- Gratitude Dhikr Card -->
-  <a href="duafiles/gratitude_dhikr.html" class="block duadhikr-card bg-pink-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="gratitude">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-pink-800">Gratitude Dhikr / اذکار الشكر</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses to express gratitude to Allah.</p>
-    </div>
-  </a>
+      <!-- Travel Dhikr Card -->
+      <a href="duafiles/travel.html" class="block duadhikr-card bg-orange-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="travel">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-orange-800"><i class="fas fa-plane"></i> Travel Dhikr / اذکار السفر</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses while traveling.</p>
+        </div>
+      </a>
 
-  <!-- Protection Dhikr Card -->
-  <a href="duafiles/protection.html" class="block duadhikr-card bg-teal-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="protection">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-teal-800">Protection Dhikr / اذكار الحماية</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for protection from harm.</p>
-    </div>
-  </a>
+      <!-- Forgiveness Dhikr Card -->
+      <a href="duafiles/forgiveness.html" class="block duadhikr-card bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="forgiveness">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-gray-800"><i class="fas fa-praying-hands"></i> Forgiveness Dhikr / اذکار الاستغفار</h3>
+          <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for forgiveness.</p>
+        </div>
+      </a>
 
-  <!-- Travel Dhikr Card -->
-  <a href="duafiles/travel.html" class="block duadhikr-card bg-orange-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="travel">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-orange-800">Travel Dhikr / اذکار السفر</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses while traveling.</p>
     </div>
-  </a>
-
-  <!-- Forgiveness Dhikr Card -->
-  <a href="duafiles/forgiveness.html" class="block duadhikr-card bg-gray-100 p-6 rounded-lg shadow-lg border border-gray-300 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-category="forgiveness">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-gray-800">Forgiveness Dhikr / اذکار الاستغفار</h3>
-      <p class="text-sm font-medium text-gray-700 mt-2">Recite these verses for forgiveness.</p>
-    </div>
-  </a>
-
-</div>
+  </div>
 
   <script>
     document.getElementById('searchInput').addEventListener('input', function() {
@@ -125,5 +137,5 @@
       });
     });
   </script>
-
- 
+</body>
+</html>

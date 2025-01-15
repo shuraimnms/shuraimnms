@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Sunday: "اللهم اجعلنا من عبادك الصالحين."
     };
 
+    
     // Get today's day name
     const today = new Date();
     const options = { weekday: "long" }; // Format to get the full weekday name
@@ -94,5 +95,23 @@ function getIslamicDate() {
   document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("gregorian-date").innerText = getGregorianDate();
     document.getElementById("islamic-date").innerText = getIslamicDate();
+  });
+  
+  const themeToggle = document.getElementById("theme-toggle");
+  const dropdownMenu = document.getElementById("dropdown-menu");
+  
+  themeToggle.addEventListener("click", function() {
+    // Toggle visibility of the dropdown menu
+    dropdownMenu.classList.toggle("hidden");
+  
+    // Change the icon based on dropdown visibility
+    const icon = document.getElementById("theme-icon");
+    if (dropdownMenu.classList.contains("hidden")) {
+      icon.classList.remove("fa-times");  // Close icon (X)
+      icon.classList.add("fa-bars");      // Hamburger icon
+    } else {
+      icon.classList.remove("fa-bars");   // Hamburger icon
+      icon.classList.add("fa-times");     // Close icon (X)
+    }
   });
   

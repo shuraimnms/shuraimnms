@@ -54,10 +54,9 @@
             text-align: right;
             white-space: nowrap;
             overflow: hidden; /* Ensures text is hidden and typed gradually */
-            border-right: 3px solid #fff; /* Mimics a blinking caret */
             width: 0; /* Start with 0 width to enable typing effect */
             letter-spacing: 3px;
-            animation: typing 5s steps(30, end) 1s forwards, blinkCaret 0.75s step-end infinite;
+            animation: typing 5s steps(30, end) 1s forwards; /* Typing effect */
             z-index: 1;
         }
 
@@ -68,13 +67,6 @@
             }
             to {
                 width: 100%; /* Reveal the full text */
-            }
-        }
-
-        /* Blinking caret effect */
-        @keyframes blinkCaret {
-            50% {
-                border-color: transparent;
             }
         }
 
@@ -90,7 +82,6 @@
                 font-size: 2.5rem;
             }
         }
-
     </style>
 </head>
 <body>
