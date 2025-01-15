@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masjid Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1>Masjid Finder</h1>
+      <button class="theme-toggle-btn" onclick="toggleTheme()">🌙</button>
+    </header>
+
+    <section class="search-section">
+      <input type="text" id="search-bar" placeholder="Enter your location..." class="search-bar">
+      <button class="search-btn" onclick="findMasjids()">
+        <i class="fa fa-search"></i> Find Masjids
+      </button>
+    </section>
+
+    <section id="masjid-list" class="masjid-list">
+      <!-- Masjid items will be dynamically inserted here -->
+    </section>
+
+    <!-- Modal for Masjid Details -->
+    <div id="masjid-modal" class="masjid-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="masjid-name"></h2>
+        <p id="masjid-address"></p>
+        <p id="masjid-distance"></p>
+        <p id="masjid-description"></p>
+        <div id="masjid-map" style="height: 300px;"></div> <!-- Map will be shown here -->
+      </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" onclick="findMasjids()">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
