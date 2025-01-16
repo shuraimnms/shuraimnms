@@ -170,26 +170,30 @@
   <script defer src="scripts/app.js"></script>
 </head>
 <body>
-  <!-- Daily Cards Section -->
-  <div class="daily-cards-container">
-    <div class="daily-card" onclick="showContent('daily-dua')">
-      <i class="fas fa-hands-praying"></i>
-      <span>Daily Dua</span>
-    </div>
-    <div class="daily-card" onclick="showContent('daily-verse')">
-      <i class="fas fa-book-quran"></i>
-      <span>Daily Verse</span>
-    </div>
-    
-    <div class="daily-card" onclick="showContent('daily-hadith')">
-      <i class="fas fa-book-open"></i>
-      <span>Daily Hadith</span>
-    </div>
-    <div class="daily-card" onclick="showContent('daily-wisdom')">
-      <i class="fas fa-star"></i>
-      <span>Daily Wisdom</span>
-    </div>
+<!-- Include Font Awesome in the Head -->
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<!-- Daily Cards Section -->
+<div class="daily-cards-container">
+  <div class="daily-card" onclick="showContent('daily-dua')">
+    <i class="fas fa-hands-praying"></i>
+    <span>Daily Dua</span>
   </div>
+  <div class="daily-card" onclick="showContent('daily-verse')">
+    <i class="fas fa-book-quran"></i>
+    <span>Daily Verse</span>
+  </div>
+  <div class="daily-card" onclick="showContent('daily-hadith')">
+    <i class="fas fa-book-open"></i>
+    <span>Daily Hadith</span>
+  </div>
+  <div class="daily-card" onclick="showContent('daily-wisdom')">
+    <i class="fas fa-star"></i>
+    <span>Daily Wisdom</span>
+  </div>
+</div>
 
   <!-- Content Display Section -->
   <div id="content-display-container">
@@ -199,16 +203,6 @@
   </div>
 </body>
 </html>
-
-<!-- Morning Azkar Card -->
-<div class="folder bg-morning-azkar" onclick="window.location.href='dua_dhikr/duafiles/morning_azkar.html'">
-  <div class="flex items-center">
-    <i class="fas fa-sun text-yellow-500 text-2xl"></i>
-    <h2 class="ml-2 folder-title">
-      Morning Azkar/صبح کی اذکار
-    </h2>
-  </div>
-</div>
 
 
     <!-- Morning Azkar/صبح کا اذکار Card -->
