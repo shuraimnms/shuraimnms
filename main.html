@@ -148,6 +148,66 @@
     </div>
   </div>
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <!-- Content Display Section -->
+  <div id="reflection-content-display-container">
+    <div id="reflection-content-display">
+      <!-- Content will be dynamically inserted here -->
+    </div>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Cards</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script defer src="scripts/app.js"></script>
+</head>
+<body>
+  <!-- Daily Cards Section -->
+  <div class="daily-cards-container">
+    <div class="daily-card" onclick="showContent('daily-dua')">
+      <i class="fas fa-hands-praying"></i>
+      <span>Daily Dua</span>
+    </div>
+    <div class="daily-card" onclick="showContent('daily-verse')">
+      <i class="fas fa-book-quran"></i>
+      <span>Daily Verse</span>
+    </div>
+    <div class="daily-card" onclick="showContent('daily-hadith')">
+      <i class="fas fa-book-open"></i>
+      <span>Daily Hadith</span>
+    </div>
+    <div class="daily-card" onclick="showContent('daily-wisdom')">
+      <i class="fas fa-star"></i>
+      <span>Daily Wisdom</span>
+    </div>
+  </div>
+
+  <!-- Content Display Section -->
+  <div id="content-display-container">
+    <div id="content-display">
+      <!-- Content will be dynamically inserted here -->
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- Morning Azkar Card -->
+<div class="folder bg-morning-azkar" onclick="window.location.href='dua_dhikr/duafiles/morning_azkar.html'">
+  <div class="flex items-center">
+    <i class="fas fa-sun text-yellow-500 text-2xl"></i>
+    <h2 class="ml-2 folder-title">
+      Morning Azkar/صبح کی اذکار
+    </h2>
+  </div>
+</div>
 
 
     <!-- Morning Azkar/صبح کا اذکار Card -->
@@ -245,7 +305,7 @@
       </div>
       <span>Dua Azkar</span>
     </div>
-    <div class="quick-access-item" onclick="window.location.href='callender/calendar.html'">
+    <div class="quick-access-item" onclick="window.location.href='callender/callender.html'">
       <div class="icon-container">
         <i class="fas fa-calendar-alt"></i>
       </div>
@@ -257,7 +317,7 @@
       </div>
       <span>Ruqyah</span>
     </div>
-    <div class="quick-access-item" onclick="window.location.href='reminders.html'">
+    <div class="quick-access-item" onclick="window.location.href='remainder/remainders.html'">
       <div class="icon-container">
         <i class="fas fa-bell"></i>
       </div>

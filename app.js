@@ -114,4 +114,52 @@ function getIslamicDate() {
       icon.classList.add("fa-times");     // Close icon (X)
     }
   });
+  document.addEventListener("DOMContentLoaded", function () {
+    const contentDisplay = document.getElementById("content-display");
+  
+    // Function to display content dynamically
+    function showContent(type) {
+      const contentMap = {
+        "daily-dua": `
+          <h3>Daily Dua</h3>
+          <p>اللهم اجعلني من التوابين واجعلني من المتطهرين</p>
+          <p>Translation: O Allah, make me among those who constantly repent and purify themselves.</p>
+          <audio controls>
+            <source src="audios/daily-dua.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        `,
+        "daily-verse": `
+          <h3>Daily Verse</h3>
+          <p>"And whoever relies upon Allah – then He is sufficient for him." - Surah At-Talaq (65:3)</p>
+          <audio controls>
+            <source src="audios/daily-verse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        `,
+        "daily-hadith": `
+          <h3>Daily Hadith</h3>
+          <p>The Prophet (ﷺ) said: "None of you truly believes until he loves for his brother what he loves for himself." - Sahih al-Bukhari</p>
+          <audio controls>
+            <source src="audios/daily-hadith.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        `,
+        "daily-wisdom": `
+          <h3>Daily Wisdom</h3>
+          <p>"Be like a flower that gives its fragrance even to the hand that crushes it."</p>
+          <audio controls>
+            <source src="audios/daily-wisdom.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        `,
+      };
+  
+      // Dynamically update content
+      contentDisplay.innerHTML = contentMap[type] || "<p>Content not found.</p>";
+    }
+  
+    // Expose the `showContent` function to the global scope
+    window.showContent = showContent;
+  });
   
