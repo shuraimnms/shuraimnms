@@ -61,10 +61,10 @@ body {
 /* Arabic Text Styling */
 .arabic-text {
     font-size: 1.8rem;
-    color: #f39c12;
+    color: rgb(9, 165, 30);
     margin-bottom: 20px;
     text-align: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 5px rgba(8, 1, 1, 0.6);
     font-weight: bold;
     line-height: 2;
 }
@@ -72,7 +72,7 @@ body {
 /* Roman-Urdu Text Styling */
 .roman-urdu-text {
     font-size: 1.6rem;
-    color: #e67e22;
+    color: rgb(205, 255, 23);
     margin-bottom: 20px;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -82,16 +82,16 @@ body {
 /* Translation Text Styling */
 .translation {
     font-size: 1.5rem;
-    color: #ecf0f1;
+    color: #ffffff;
     margin-bottom: 20px;
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(208, 231, 198, 0.5);
 }
 
 /* Reference Text Styling */
 .reference {
     font-size: 1.3rem;
-    color: #bdc3c7;
+    color:  #75f0bd;
     text-align: center;
     font-style: italic;
     margin-top: 10px;
