@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <h1>🌙 Islamic Guide 🌟</h1>
+      <p>Your Complete Guide to Namaz, Wudu, Ghusl, and More</p>
+      <input type="text" id="searchBar" placeholder="🔍 Search (e.g., Wudu, Tahajjud)...">
+    </div>
+  </header>
+  
+  <main>
+    <div class="folder" id="namaz" data-target="namaz-details">
+      <h2>Namaz Steps <span>نماز کے مراحل</span></h2>
+      <p>Learn step-by-step how to perform Salah with correct actions and recitations.</p>
+      <div id="namaz-details" class="details hidden">
+        <ul>
+          <li>Takbeer (Allahu Akbar)</li>
+          <li>Qiyam (Standing)</li>
+          <li>Ruku (Bowing)</li>
+          <li>Sujood (Prostration)</li>
+          <li>Tashahhud (Sitting)</li>
+          <li>Salam (Ending)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="folder" id="wudu" data-target="wudu-details">
+      <h2>How to Perform Wudu <span>وضو کیسے کریں</span></h2>
+      <p>A step-by-step guide to purification before prayer.</p>
+      <div id="wudu-details" class="details hidden">
+        <ul>
+          <li>Wash Hands</li>
+          <li>Rinse Mouth</li>
+          <li>Wash Face</li>
+          <li>Wipe Head</li>
+          <li>Wash Feet</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="folder" id="tahajjud" data-target="tahajjud-details">
+      <h2>How to Pray Tahajjud <span>تہجد کی نماز کیسے پڑھیں</span></h2>
+      <p>Learn the best way to offer Tahajjud prayer during the night.</p>
+      <div id="tahajjud-details" class="details hidden">
+        <ul>
+          <li>Perform Wudu</li>
+          <li>Stand in Qiyam and recite Quran</li>
+          <li>Perform 2 Rakats at a time</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="folder" id="ghusl" data-target="ghusl-details">
+      <h2>How to Perform Ghusl <span>غسل کیسے کریں</span></h2>
+      <p>A complete guide to the purification bath (Ghusl).</p>
+      <div id="ghusl-details" class="details hidden">
+        <ul>
+          <li>Make Intention</li>
+          <li>Wash Hands</li>
+          <li>Wash Private Parts</li>
+          <li>Pour Water Over Entire Body</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="folder" id="istikhara" data-target="istikhara-details">
+      <h2>How to Perform Istikhara <span>استخارہ کیسے کریں</span></h2>
+      <p>A guide to seeking guidance from Allah for decisions.</p>
+      <div id="istikhara-details" class="details hidden">
+        <ul>
+          <li>Pray 2 Rakats</li>
+          <li>Recite Istikhara Dua</li>
+          <li>Place Trust in Allah</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

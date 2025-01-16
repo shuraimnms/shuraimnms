@@ -1,0 +1,76 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background: radial-gradient(circle, #0f0f0f, #1a1a1a);
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  background: linear-gradient(90deg, #0d3b66, #0f172a);
+  color: white;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container input {
+  width: 90%;
+  max-width: 400px;
+  padding: 12px 15px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #222;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+/* Folder Styling */
+.folder {
+  background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+  padding: 20px;
+  margin: 20px auto;
+  border: 1px solid #444;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.folder:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.4);
+}
+
+.folder h2 {
+  color: #0ea5e9;
+  font-size: 1.5rem;
+}
+
+.details {
+  margin-top: 15px;
+  padding: 15px;
+  background: #222;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.details ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .folder h2 {
+    font-size: 1.2rem;
+  }
+}
