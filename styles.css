@@ -405,6 +405,7 @@ button:hover, .rounded-full:hover {
   margin-left: 0.5rem;
 }
 
+
 .space-x-2 > * + * {
   margin-left: 0.5rem;
 }
