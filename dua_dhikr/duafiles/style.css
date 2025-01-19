@@ -90,7 +90,7 @@ body {
 
 /* Reference Text Styling */
 .reference {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color:  #75f0bd;
     text-align: center;
     font-style: italic;
@@ -152,7 +152,7 @@ body {
     .arabic-text,
     .roman-urdu-text,
     .translation {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     .reference {
         font-size: 1.1rem;
@@ -179,6 +179,6 @@ body {
         font-size: 1.2rem;
     }
     .reference {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }

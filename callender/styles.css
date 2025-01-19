@@ -171,3 +171,44 @@ body {
     font-size: 18px;
   }
 }
+/* Main Styling for Namaz Timings */
+.namaz-background-container {
+  background: url('assets/images/masjid-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.namaz-content-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  color: #fff;
+}
+
+.namaz-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.namaz-subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#namaz-timing-list {
+  list-style: none;
+  padding: 0;
+}
+
+#namaz-timing-list li {
+  font-size: 18px;
+  padding: 5px 0;
+}
+

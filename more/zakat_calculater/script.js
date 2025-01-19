@@ -1,6 +1,7 @@
 const zakatForm = document.getElementById("zakat-form");
 const zakatAmount = document.getElementById("zakat-amount");
 const nisabStatus = document.getElementById("nisab-status");
+const whyZakat = document.getElementById("why-zakat");
 const resultSection = document.getElementById("zakat-result");
 const toggleHadithButton = document.querySelector(".toggle-hadith");
 const hadithContent = document.querySelector(".hadith-content");
@@ -23,16 +24,22 @@ zakatForm.addEventListener("submit", (e) => {
   const totalAssets = cash + goldValue + silverValue + business;
 
   if (totalAssets >= nisabValue) {
-    zakatAmount.textContent = `₹${(totalAssets * 0.025).toFixed(2)}`;
+    const zakat = (totalAssets * 0.025).toFixed(2);
+    zakatAmount.textContent = `₹${zakat}`;
     nisabStatus.textContent = "آپ زکوٰۃ ادا کرنے کے اہل ہیں۔";
+    whyZakat.textContent = `You are eligible because your total assets (₹${totalAssets}) exceed the Nisab threshold (₹${nisabValue.toFixed(2)}).`;
   } else {
     zakatAmount.textContent = "₹0.00";
     nisabStatus.textContent = "آپ زکوٰۃ ادا کرنے کے اہل نہیں ہیں۔";
+    whyZakat.textContent = `You are not eligible because your total assets (₹${totalAssets}) are below the Nisab threshold (₹${nisabValue.toFixed(2)}).`;
   }
 
   resultSection.style.display = "block";
 });
 
 toggleHadithButton.addEventListener("click", () => {
-  hadithContent.style.display = hadithContent.style.display === "block" ? "none" : "block";
+  hadithContent.style.display =
+    hadithContent.style.display === "none" || hadithContent.style.display === ""
+      ? "block"
+      : "none";
 });
