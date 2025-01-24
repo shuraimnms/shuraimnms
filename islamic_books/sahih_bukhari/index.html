@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZikrMate - Sahih Bukhari</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>ZikrMate - Sahih Bukhari</h1>
+
+    <!-- Search Bar -->
+    <div>
+        <input type="text" id="searchBar" placeholder="Search for volumes, books, or hadiths..." />
+    </div>
+
+    <!-- List of Volumes -->
+    <div id="volumeList"></div>
+
+    <!-- Book Details -->
+    <div id="bookDetails" style="display: none;">
+        <h2 id="bookTitle"></h2>
+        <div id="bookContent"></div>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <!-- Include JSON data and app script -->
+    <script src="assets/sahih_bukhari.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
