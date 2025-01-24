@@ -4,98 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Islamic Guide</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            background: radial-gradient(circle, #0f0f0f, #1a1a1a);
-            color: white;
-            overflow-x: hidden;
-        }
-        header {
-          text-align: center;
-          background: linear-gradient(90deg, #0d3b66, #0f172a);
-          color: white;
-          padding: 8px 0; /* Reduced padding for smaller height */
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-          font-size: 0.7rem; /* Adjusted font size for a smaller look */
-      }
-      
-      .header-container input {
-          width: 90%;
-          max-width: 250px; /* Reduced max width */
-          padding: 6px 8px; /* Smaller padding for input */
-          margin-top: 8px; /* Reduced top margin */
-          border-radius: 5px;
-          border: 1px solid #444;
-          background: #222;
-          color: white;
-          font-size: 0.7rem; /* Smaller font size */
-          outline: none;
-          box-shadow: 0 0 5px rgba(14, 165, 233, 0.3); /* Reduced shadow size */
-      }
-      
-
-        /* Folder Styling */
-        .folder {
-            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
-            padding: 20px;
-            margin: 20px auto;
-            border: 1px solid #444;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 600px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .folder:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.4);
-        }
-
-        .folder h2 {
-            color: #0ea5e9;
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        .folder .icon {
-            font-size: 2rem;
-            color: #0ea5e9;
-        }
-
-        .details {
-            margin-top: 15px;
-            padding: 15px;
-            background: #222;
-            border-radius: 5px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-            display: none;
-        }
-
-        .details ul {
-            list-style: disc;
-            padding-left: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .folder h2 {
-                font-size: 1.2rem;
-            }
-            .folder .icon {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -107,39 +17,31 @@
     </header>
 
     <!-- Folder Section -->
-    <div class="folder" onclick="window.location.href='steps-to--pray-namaz/steps_to_pray_namaz.html'">
+    <div class="folder" data-link="steps-to--pray-namaz/steps_to_pray_namaz.html">
         <i class="fas fa-praying-hands icon"></i>
         <h2>Namaz Steps نماز کے مراحل</h2>
     </div>
 
-    <div class="folder" onclick="window.location.href='steps-to--pray-namaz/wudu.html'">
+    <div class="folder" data-link="steps-to--pray-namaz/wudu.html">
         <i class="fas fa-water icon"></i>
         <h2>How to Perform Wudu وضو کیسے کریں</h2>
     </div>
 
-    <div class="folder" onclick="window.location.href='steps-to--pray-namaz/janaza.html'">
+    <div class="folder" data-link="steps-to--pray-namaz/janaza.html">
         <i class="fas fa-dove icon"></i>
         <h2>How to Perform Janaza Prayer جنازہ کی نماز کیسے پڑھیں</h2>
     </div>
 
-    <div class="folder" onclick="window.location.href='steps-to--pray-namaz/ladies-ghusl.html'">
+    <div class="folder" data-link="steps-to--pray-namaz/ladies-ghusl.html">
         <i class="fas fa-shower icon"></i>
         <h2>How to Perform Ghusl for Ladies خواتین کے لئے غسل کیسے کریں</h2>
     </div>
 
-    <div class="folder" onclick="window.location.href='steps-to--pray-namaz/istikhara.html'">
+    <div class="folder" data-link="steps-to--pray-namaz/istikhara.html">
         <i class="fas fa-star-and-crescent icon"></i>
         <h2>How to Perform Istikhara استخارہ کیسے کریں</h2>
     </div>
 
-    <script>
-        // JavaScript for interactivity (toggle details visibility on click)
-        document.querySelectorAll('.folder').forEach(folder => {
-            folder.addEventListener('click', () => {
-                const details = folder.querySelector('.details');
-                details.style.display = details.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
