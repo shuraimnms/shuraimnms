@@ -5,101 +5,257 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Islamic Books</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #f4a261, #2a9d8f);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 36px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .book-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      margin-top: 40px;
+      transition: all 0.3s ease;
+    }
+
+    .book {
+      background: #333;
+      border-radius: 15px;
+      width: 200px;
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease;
+    }
+
+    .book:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+      opacity: 1;
+    }
+
+    .book i {
+      font-size: 50px;
+      margin: 20px 0;
+      color: #FFD700;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .book:hover i {
+      transform: rotate(360deg);
+      color: #fff;
+    }
+
+    .book-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+      transition: color 0.3s ease;
+    }
+
+    .book-title-urdu {
+      font-size: 16px;
+      color: #ddd;
+      margin: 5px 0;
+      font-family: 'Noto Nastaliq Urdu', serif;
+      transition: color 0.3s ease;
+    }
+
+    .book-description {
+      font-size: 14px;
+      color: #bbb;
+      padding: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #FFD700;
+      color: #222;
+      font-size: 12px;
+      padding: 5px 8px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transform: translate(-10px, -10px);
+    }
+
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+
+    .search-bar {
+      padding: 12px;
+      font-size: 18px;
+      width: 300px;
+      border-radius: 25px;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      background: transparent;
+      color: white;
+    }
+
+    .search-bar:focus {
+      outline: none;
+      border-color: #FFD700;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
+
+  <h1>Islamic Books for Maktab</h1>
 
   <div class="search-container">
     <input type="text" class="search-bar" placeholder="Search for books..." oninput="searchBooks()">
   </div>
 
-  <h1>Islamic Books for Maktab</h1>
-
   <div class="book-container" id="book-container">
-    <!-- Book 1: Tafsir -->
-    <a class="book" href="path/to/tafsir.pdf" target="_blank">
-      <i class="fas fa-book-open"></i>
-      <div class="book-title">Tafsir</div>
+    <!-- Book 1: Sahih Bukhari -->
+    <a class="book" href="sahih_bukhari/index.html" onclick="navigateTo(event, 'sahih_bukhari/index.html')">
+      <div class="badge">Popular</div>
+      <div class="book-details">
+        <i class="fas fa-book-open"></i>
+        <div class="book-title">Sahih Bukhari</div>
+        <div class="book-title-urdu">صحیح بخاری</div>
+        <div class="book-description">The most authentic Hadith collection.</div>
+      </div>
     </a>
 
-   <!-- Book 1: Sahih Bukhari -->
-<a class="book" href="sahih_bukhari/index.html" onclick="navigateTo(event, 'sahih_bukhari/index.html')">
-  <i class="fas fa-book-open"></i>
-  <div class="book-title">Sahih Bukhari</div>
-</a>
-
-
-    <!-- Book 2: Hadith -->
-    <a class="book" href="path/to/hadith.pdf" target="_blank">
-      <i class="fas fa-scroll"></i>
-      <div class="book-title">Hadith</div>
+    <!-- Book 2: Tafsir -->
+    <a class="book" href="tafsir/index.html" onclick="navigateTo(event, 'tafsir/index.html')">
+      <div class="badge">New</div>
+      <div class="book-details">
+        <i class="fas fa-book"></i>
+        <div class="book-title">Tafsir</div>
+        <div class="book-title-urdu">تفسیر</div>
+        <div class="book-description">Explanations of the Quran's verses.</div>
+      </div>
     </a>
 
-    <!-- Book 3: Fiqh -->
-    <a class="book" href="path/to/fiqh.pdf" target="_blank">
-      <i class="fas fa-gavel"></i>
-      <div class="book-title">Fiqh</div>
+    <!-- Book 3: Hadith -->
+    <a class="book" href="hadith/index.html" onclick="navigateTo(event, 'hadith/index.html')">
+      <div class="badge">Essential</div>
+      <div class="book-details">
+        <i class="fas fa-scroll"></i>
+        <div class="book-title">Hadith</div>
+        <div class="book-title-urdu">حدیث</div>
+        <div class="book-description">Narrations about the Prophet's sayings.</div>
+      </div>
     </a>
 
-    <!-- Book 4: Aqeedah -->
-    <a class="book" href="path/to/aqeedah.pdf" target="_blank">
-      <i class="fas fa-pray"></i>
-      <div class="book-title">Aqeedah</div>
+    <!-- Book 4: Fiqh -->
+    <a class="book" href="fiqh/index.html" onclick="navigateTo(event, 'fiqh/index.html')">
+      <div class="badge">Important</div>
+      <div class="book-details">
+        <i class="fas fa-gavel"></i>
+        <div class="book-title">Fiqh</div>
+        <div class="book-title-urdu">فقہ</div>
+        <div class="book-description">Islamic jurisprudence and law.</div>
+      </div>
     </a>
 
-    <!-- Book 5: Islamic History -->
-    <a class="book" href="path/to/islamic-history.pdf" target="_blank">
-      <i class="fas fa-university"></i>
-      <div class="book-title">Islamic History</div>
+    <!-- Book 5: Aqeedah -->
+    <a class="book" href="aqeedah/index.html" onclick="navigateTo(event, 'aqeedah/index.html')">
+      <div class="badge">Core</div>
+      <div class="book-details">
+        <i class="fas fa-pray"></i>
+        <div class="book-title">Aqeedah</div>
+        <div class="book-title-urdu">عقیدہ</div>
+        <div class="book-description">The Islamic belief system and faith.</div>
+      </div>
     </a>
 
-    <!-- Book 6: Quran -->
-    <a class="book" href="path/to/quran.pdf" target="_blank">
-      <i class="fas fa-quran"></i>
-      <div class="book-title">Quran</div>
+    <!-- Book 6: Islamic History -->
+    <a class="book" href="islamic-history/index.html" onclick="navigateTo(event, 'islamic-history/index.html')">
+      <div class="badge">Educational</div>
+      <div class="book-details">
+        <i class="fas fa-university"></i>
+        <div class="book-title">Islamic History</div>
+        <div class="book-title-urdu">اسلامی تاریخ</div>
+        <div class="book-description">A journey through Islamic history.</div>
+      </div>
     </a>
 
-    <!-- Book 7: Duas -->
-    <a class="book" href="path/to/duas.pdf" target="_blank">
-      <i class="fas fa-praying-hands"></i>
-      <div class="book-title">Duas</div>
-    </a>
-
-    <!-- Book 8: Seerah -->
-    <a class="book" href="path/to/seerah.pdf" target="_blank">
-      <i class="fas fa-person-booth"></i>
-      <div class="book-title">Seerah</div>
-    </a>
-
-    <!-- Book 9: Taqrir for Maktab -->
-    <a class="book" href="https://1drv.ms/w/c/51fdd43c4b29f6a3/Edfy15iJOb5OuTyM7WIq4qsBKoUpPufNDast-1fGLVTwGg?e=wsS88cave" target="_blank">
-      <i class="fas fa-book-reader"></i>
-      <div class="book-title">Taqrir</div>
+    <!-- Book 7: Quran -->
+    <a class="book" href="quran/index.html" onclick="navigateTo(event, 'quran/index.html')">
+      <div class="badge">Sacred</div>
+      <div class="book-details">
+        <i class="fas fa-book-open"></i>
+        <div class="book-title">Quran</div>
+        <div class="book-title-urdu">قرآن</div>
+        <div class="book-description">The holy book of Islam.</div>
+      </div>
     </a>
   </div>
 
   <footer>
-    © 2025 Islamic Books for Maktab | All Rights Reserved
+    <p>Created by Shuraim. All rights reserved. </p>
   </footer>
 
   <script>
+    // Navigation function
+    function navigateTo(event, url) {
+      event.preventDefault();
+      window.location.href = url;
+    }
+
+    // Search functionality
     function searchBooks() {
-      const searchInput = document.querySelector('.search-bar');
-      const books = document.querySelectorAll('.book');
-      const searchTerm = searchInput.value.toLowerCase();
+      let input = document.querySelector('.search-bar').value.toLowerCase();
+      let books = document.querySelectorAll('.book');
 
       books.forEach(book => {
-        const bookTitle = book.querySelector('.book-title').textContent.toLowerCase();
-        if (bookTitle.includes(searchTerm)) {
-          book.style.display = '';
+        let title = book.querySelector('.book-title').innerText.toLowerCase();
+        let urduTitle = book.querySelector('.book-title-urdu').innerText.toLowerCase();
+
+        if (title.includes(input) || urduTitle.includes(input)) {
+          book.style.display = 'block';
         } else {
           book.style.display = 'none';
         }
       });
     }
   </script>
-  <footer>
-    <p>Created by <a href="https://shuraimtech.blogspot.com" target="_blank">Shuraim</a> | © 2025 ZikrMate</p>
-</footer>
+
 </body>
 </html>

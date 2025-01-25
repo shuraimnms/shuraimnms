@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surah List</title>
+  <style>
+    /* Similar styles as the main page, adjust as necessary */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background-color: #2a9d8f;
+      color: white;
+      font-size: 36px;
+    }
+
+    .surah-list-container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .surah-item {
+      background: #333;
+      color: white;
+      margin: 10px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .surah-item:hover {
+      background-color: #f4a261;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Surah List</h1>
+
+  <div class="surah-list-container">
+    <!-- Example Surah Items, replace with actual Surah data -->
+    <div class="surah-item" onclick="openSurahPage(1)">Surah Al-Fatiha</div>
+    <div class="surah-item" onclick="openSurahPage(2)">Surah Al-Baqarah</div>
+    <!-- Add more Surahs dynamically here -->
+  </div>
+
+  <footer>
+    <p>Created by Shuraim. All rights reserved. <a href="https://shuraim.com">Visit Website</a></p>
+  </footer>
+
+  <script>
+    function openSurahPage(surahId) {
+      // Redirect to Surah specific page
+      window.location.href = `quran_page.html?surah=${surahId}`;
+    }
+  </script>
+
+</body>
+</html>

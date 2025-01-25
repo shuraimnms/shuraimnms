@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quran App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Quran App</h1>
+    </header>
+
+    <main>
+      <!-- First Page (Folders) -->
+      <section id="folders">
+        <h2>Folders</h2>
+        <div class="folder" onclick="showSurahIndex()">Surah Index</div>
+        <div class="folder" onclick="showJuzzIndex()">Juzz Index</div>
+        <div class="folder" onclick="showBookmarks()">Bookmarks</div>
+        <div class="folder" onclick="showSavedVerses()">Saved Verses</div>
+      </section>
+
+     <!-- Surah List -->
+<section id="surah-list" style="display: none;">
+  <button onclick="goBack()" style="margin-bottom: 10px;">⬅ Back</button>
+  <h2>Surah Index</h2>
+  <ul id="surahs"></ul>
+</section>
+
+<!-- Juzz List -->
+<section id="juzz-list" style="display: none;">
+  <button onclick="goBack()" style="margin-bottom: 10px;">⬅ Back</button>
+  <h2>Juzz Index</h2>
+  <ul id="juzz"></ul>
+</section>
+
+<!-- Surah or Juzz Details -->
+<section id="content" style="display: none;">
+  <button onclick="goBack()" style="margin-bottom: 10px;">⬅ Back</button>
+  <h2 id="content-title"></h2>
+  <div id="ayahs"></div>
+</section>
+
+<!-- Bookmarks -->
+<section id="bookmarks" style="display: none;">
+  <button onclick="goBack()" style="margin-bottom: 10px;">⬅ Back</button>
+  <h2>Bookmarks</h2>
+  <ul id="bookmarked-list"></ul>
+</section>
+
+<!-- Saved Verses -->
+<section id="saved-verses" style="display: none;">
+  <button onclick="goBack()" style="margin-bottom: 10px;">⬅ Back</button>
+  <h2>Saved Verses</h2>
+  <ul id="saved-list"></ul>
+</section>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
