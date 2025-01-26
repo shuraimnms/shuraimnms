@@ -180,6 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadQuestion();
 });
 
+
 function openSettings() {
   // Add your settings panel code here
   console.log("Settings button clicked!");
@@ -264,47 +265,7 @@ themeToggle.addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function () {
   const contentDisplay = document.getElementById("content-display");
 
-  // Function to display content dynamically
-  function showContent(type) {
-    const contentMap = {
-      "daily-dua": `
-        <h3>Daily Dua</h3>
-        <p>اللهم اجعلني من التوابين واجعلني من المتطهرين</p>
-        <p>Translation: O Allah, make me among those who constantly repent and purify themselves.</p>
-        <audio controls>
-          <source src="audios/daily-dua.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      `,
-      "daily-verse": `
-        <h3>Daily Verse</h3>
-        <p>"And whoever relies upon Allah – then He is sufficient for him." - Surah At-Talaq (65:3)</p>
-        <audio controls>
-          <source src="audios/daily-verse.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      `,
-      "daily-hadith": `
-        <h3>Daily Hadith</h3>
-        <p>The Prophet (ﷺ) said: "None of you truly believes until he loves for his brother what he loves for himself." - Sahih al-Bukhari</p>
-        <audio controls>
-          <source src="audios/daily-hadith.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      `,
-      "daily-wisdom": `
-        <h3>Daily Wisdom</h3>
-        <p>"Be like a flower that gives its fragrance even to the hand that crushes it."</p>
-        <audio controls>
-          <source src="audios/daily-wisdom.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      `,
-    };
-
-    // Dynamically update content
-    contentDisplay.innerHTML = contentMap[type] || "<p>Content not found.</p>";
-  }
+  
 
   // Expose the `showContent` function to the global scope
   window.showContent = showContent;
@@ -450,3 +411,267 @@ document.addEventListener("DOMContentLoaded", () => {
     backButton.classList.add("hidden");
   });
 });
+
+
+function showContent(contentType) {
+  // Get current day of the week (short version)
+  const currentDay = new Date().toLocaleString('en-us', { weekday: 'short' });
+  console.log("Today is:", currentDay); // Log current day for debugging
+
+  const contentMap = {
+    "Sun": {
+      "daily-dua": `
+        <h3>Sunday Dua</h3>
+        <p>اللهم اجعلني من التوابين واجعلني من المتطهرين</p>
+        <p>Translation: O Allah, make me among those who constantly repent and purify themselves.</p>
+        <audio controls>
+          <source src="audios/dua-sunday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-verse": `
+        <h3>Sunday Verse</h3>
+        <p>"And whoever relies upon Allah – then He is sufficient for him." - Surah At-Talaq (65:3)</p>
+        <audio controls>
+          <source src="audios/verse-sunday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-hadith": `
+        <h3>Sunday Hadith</h3>
+        <p>The Prophet (ﷺ) said: "None of you truly believes until he loves for his brother what he loves for himself." - Sahih al-Bukhari</p>
+        <audio controls>
+          <source src="audios/hadith-sunday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-wisdom": `
+        <h3>Sunday Wisdom</h3>
+        <p>"Be like a flower that gives its fragrance even to the hand that crushes it."</p>
+        <audio controls>
+          <source src="audios/wisdom-sunday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`
+    },
+    "Mon": {
+      "daily-dua": `
+        <h3>Monday Dua</h3>
+        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
+        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
+        <audio controls>
+          <source src="audios/dua-monday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-verse": `
+        <h3>Monday Verse</h3>
+        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
+        <audio controls>
+          <source src="audios/verse-monday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-hadith": `
+        <h3>Monday Hadith</h3>
+        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
+        <audio controls>
+          <source src="audios/hadith-monday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-wisdom": `
+        <h3>Monday Wisdom</h3>
+        <p>"The real victory is when you control yourself in the face of adversity."</p>
+        <audio controls>
+          <source src="audios/wisdom-monday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`
+    },
+    "Tue": {
+      "daily-dua": `
+        <h3>Tuesday Dua</h3>
+        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
+        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
+        <audio controls>
+          <source src="audios/dua-tuesday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-verse": `
+        <h3>Tuesday Verse</h3>
+        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
+        <audio controls>
+          <source src="audios/verse-tuesday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-hadith": `
+        <h3>Tuesday Hadith</h3>
+        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
+        <audio controls>
+          <source src="audios/hadith-tuesday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`,
+      "daily-wisdom": `
+        <h3>Tuesday Wisdom</h3>
+        <p>"The real victory is when you control yourself in the face of adversity."</p>
+        <audio controls>
+          <source src="audios/wisdom-tuesday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`
+    },
+    "Wed": {
+      
+      "daily-dua": `
+        <h3>Wednesday Dua</h3>
+        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
+        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
+        <audio controls>
+          <source src="audios/dua-wednesday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+        ,
+      "daily-verse": `
+
+        <h3>Wednesday Verse</h3>
+        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
+        <audio controls>
+          <source src="audios/verse-wednesday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>`
+        ,
+      "daily-hadith": `
+        <h3>Wednesday Hadith</h3>
+        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
+        <audio controls>
+        <source src="audios/hadith-wednesday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>`
+        ,
+      "daily-wisdom": `
+      <h3>Wednesday Wisdom</h3>
+      <p>"The real victory is when you control yourself in the face of adversity."</p>
+      <audio controls>
+        <source src="audios/wisdom-wednesday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+              </audio>`
+        
+      },
+    "Thu": {
+      
+      "daily-dua": `
+        <h3>Thursday Dua</h3>
+        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
+        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
+        <audio controls>
+          <source src="audios/dua-thursday.
+          type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+        ,
+      "daily-verse": `
+        <h3>Thursday Verse</h3>
+        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
+        <audio controls>
+          <source src="audios/verse-thursday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+        ,
+      "daily-hadith": `
+        <h3>Thursday Hadith</h3>
+        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
+        <audio controls>
+          <source src="audios/hadith-thursday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+        ,
+      "daily-wisdom": `
+        <h3>Thursday Wisdom</h3>
+        <p>"The real victory is when you control yourself in the face of adversity."</p>
+        <audio controls>
+          <source src="audios/wisdom-thursday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+
+    },
+    "Fri": {
+      
+      "daily-dua": `
+        <h3>Friday Dua</h3>
+        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
+        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
+        <audio controls>
+          <source src="audios/dua-friday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+        ,
+      "daily-verse": `
+        <h3>Friday Verse</h3>
+        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
+        <audio controls>
+          <source src="audios/verse-friday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+        ,
+      "daily-hadith": `
+        <h3>Friday Hadith</h3>
+        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
+        <audio controls>
+        <source src="audios/hadith-friday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>`
+        ,
+      "daily-wisdom": `
+        <h3>Friday Wisdom</h3>
+        <p>"The real victory is when you control yourself in the face of adversity."</p>
+        <audio controls>
+          <source src="audios/wisdom-friday.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>`
+
+    },
+    "Sat": {
+
+      "daily-dua": `
+        <h3>Saturday Dua</h3>
+        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
+        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
+        <audio controls>
+        <source src="audios/dua-saturday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>`
+        ,
+      "daily-verse": `
+        <h3>Saturday Verse</h3>
+        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
+        <audio controls>
+        <source src="audios/verse-saturday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+                </audio>`
+              ,
+      "daily-hadith": `
+        <h3>Saturday Hadith</h3>
+        <p>The Prophet (���) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
+        <audio controls>
+        <source src="audios/hadith-saturday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+                </audio>`
+                ,
+      "daily-wisdom": `
+      <h3>Saturday Wisdom</h3>
+      <p>"The real victory is when you control yourself in the face of adversity."</p>
+      <audio controls>
+        <source src="audios/wisdom-saturday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+                </audio>`
+
+    }
+  };
+
+  console.log("Checking for content for the day:", currentDay); // For debugging
+
+  // Check if content exists for today and the selected content type
+  if (contentMap[currentDay] && contentMap[currentDay][contentType]) {
+    document.getElementById('content-display').innerHTML = contentMap[currentDay][contentType];
+  } else {
+    document.getElementById('content-display').innerHTML = "<h3>No content available for today.</h3>";
+  }
+}
+
+//toogle
+function toggleDropdown() {
+  var dropdownMenu = document.getElementById("dropdownMenu");
+  dropdownMenu.classList.toggle("show");
+}

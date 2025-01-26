@@ -33,17 +33,40 @@
           </div>
         </div>
 
-   <button id="theme-toggle" class="p-2 bg-gray-200 rounded-full">
-  <i id="theme-icon" class="fas fa-bars text-black"></i> <!-- Hamburger Icon -->
-</button>
-
-<div id="dropdown-menu" class="hidden">
-  <!-- Dropdown content -->
-  <p>Dropdown Item 1</p>
-  <p>Dropdown Item 2</p>
-  <p>Dropdown Item 3</p>
-</div>
-</div>
+        <!-- Theme Toggle Button -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Hamburger Menu with Dropdown</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+        
+            <div class="dropdown">
+                <!-- Hamburger icon as button -->
+                <button class="toggle-btn" onclick="toggleDropdown()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                
+                <!-- Dropdown menu with options -->
+                <div id="dropdownMenu" class="dropdown-content">
+                    <!-- Each link now points to a different address -->
+                    <a href="main.html">Home</a> <!-- Link to the main page -->
+                    <a href="https://www.youtube.com" target="_blank">YouTube</a> <!-- Link to YouTube -->
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a> <!-- Link to Instagram -->
+                    <a href="feed.html">Feed</a> <!-- Link to a feed page -->
+                    <a href="main.html">Back</a> <!-- Link to the back page -->
+                </div>
+            </div>
+        
+            <script src="app.js"></script>
+        </body>
+        </html>
+        
     </header>
 
     <!-- Other Page Content -->

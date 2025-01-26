@@ -865,7 +865,7 @@ audio::-webkit-media-controls-panel {
 }
 
 #islamic-activities {
-  background-color: #a3dfdf; /* Lavender for Dua Azkar */
+  background-color: #c3dadd; /* Lavender for Dua Azkar */
 }
 
 #calendar {
@@ -948,6 +948,8 @@ audio::-webkit-media-controls-panel {
 .horizontal-scroll-container::-webkit-scrollbar-track {
   background: #4d9eeb;
 }
+
+
 /*quize*/
 body {
   margin: 0;
@@ -969,7 +971,7 @@ body {
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #ffcc00; /* Gold for emphasis */
+  color: #0e011d; /* Gold for emphasis */
   font-weight: bold;
 }
 
@@ -999,7 +1001,7 @@ h2 {
 }
 
 #quiz-options button.correct {
-  background: #28a745; /* Green for correct answer */
+  background: #7aaa52; /* Green for correct answer */
   color: #fff;
   border: none;
 }
@@ -1149,4 +1151,72 @@ button {
 
 .view-all-btn:hover {
   background-color: #10B981; /* Darker green on hover */
+}
+
+
+/*toogle*/
+/* Basic styling for the toggle button */
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+
+/* Hamburger bars */
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+/* Styling the dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Initially hide the dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #042219;
+  width: 50vw; /* Set the width of the dropdown to 50% of the viewport width */
+  max-height: 60vh; /* Limit the height to 60% of the viewport height */
+  overflow-y: auto;  /* Add scroll if the content exceeds max height */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 50px; /* Position the dropdown below the hamburger icon */
+  right: 0; /* Align the dropdown to the right edge */
+  transform-origin: top center; /* Ensure dropdown opens from top */
+  transition: all 0.3s ease;
+}
+
+/* Prevent dropdown from going off the screen */
+@media (max-height: 500px) {
+  .dropdown-content {
+      max-height: 50vh; /* Reduce max height for smaller screens */
+  }
+}
+
+/* Style for the links inside the dropdown */
+.dropdown-content a {
+  color: rgb(250, 234, 15);
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #020303;
+}
+
+/* Show the dropdown menu when it's active */
+.show {
+  display: block;
 }
