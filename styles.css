@@ -948,7 +948,7 @@ audio::-webkit-media-controls-panel {
 .horizontal-scroll-container::-webkit-scrollbar-track {
   background: #4d9eeb;
 }
-
+/*quize*/
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
@@ -1041,7 +1041,7 @@ h2 {
   cursor: pointer;
   transition: background 0.3s ease-in-out;
 }
-
+/*next*/
 #next-question:hover, #restart-quiz:hover {
   background: #0056b3;
 }
