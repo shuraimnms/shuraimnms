@@ -864,8 +864,8 @@ audio::-webkit-media-controls-panel {
   background-color: #e6ffe6; /* Light Green for Tasbeeh */
 }
 
-#dua-azkar {
-  background-color: #f9f2ff; /* Lavender for Dua Azkar */
+#islamic-activities {
+  background-color: #a3dfdf; /* Lavender for Dua Azkar */
 }
 
 #calendar {
@@ -949,48 +949,204 @@ audio::-webkit-media-controls-panel {
   background: #4d9eeb;
 }
 
-/* Content Items */
-.content-item {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to right, #1c1c1c, #333333); /* Dark dynamic background */
+  color: #f9f9f9; /* Light text for better visibility */
+}
+
+#quiz-container {
+  max-width: 600px;
+  margin: 20px auto;
   padding: 20px;
-  width: 120px;
-  height: 150px;
-  border: 2px solid #cce752;
   border-radius: 12px;
+  background: rgba(134, 210, 233, 0.8); /* Semi-transparent container background */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
   text-align: center;
-  cursor: pointer;
-  background-color: #3887b4;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.content-item:hover {
-  transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.icon-container i {
-  font-size: 48px;
-  color: #007bff;
-}
-
-.content-item span {
-  margin-top: 10px;
-  font-size: 14px;
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffcc00; /* Gold for emphasis */
   font-weight: bold;
-  color: #333;
 }
 
-/* Individual Content Item Backgrounds */
-#masjid-finder { background-color: #70b0e9; } /* Light Blue */
-#quran { background-color: #dabc80; } /* Ivory */
-#tasbeeh { background-color: #81e281; } /* Light Green */
-#dua-azkar { background-color: #a173ca; } /* Lavender */
-#calendar { background-color: #c7aa7f; } /* Light Orange */
-#ruqyah { background-color: #be7474; } /* Light Red */
-#reminders { background-color: #7bbbd8; } /* Light Cyan */
+#quiz-question {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
 
+#quiz-options button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #000000;
+  border: 1px solid #ccf806;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 
+#quiz-options button:hover {
+  background: #87fc02;
+  transform: translateY(-2px);
+}
+
+#quiz-options button.correct {
+  background: #28a745; /* Green for correct answer */
+  color: #fff;
+  border: none;
+}
+
+#quiz-options button.wrong {
+  background: #dc3545; /* Red for wrong answer */
+  color: #fff;
+  border: none;
+}
+
+#quiz-feedback {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+#progress-bar-container {
+  height: 10px;
+  background: #0377fc;
+  border-radius: 5px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 100%;
+  background: #ffcc00; /* Gold progress bar */
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+#next-question, #restart-quiz {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#next-question:hover, #restart-quiz:hover {
+  background: #0056b3;
+}
+
+#quiz-score {
+  font-size: 20px;
+  color: #ffcc00;
+  display: none;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+#dua-folder-section {
+  padding: 20px;
+  background: linear-gradient(to right, #4c669f, #192f6a); /* Gradient background */
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#folder-name-input {
+  width: calc(100% - 16px);
+  margin: 0 auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+#selected-folder textarea {
+  resize: none;
+}
+
+#selected-folder button {
+  margin: 5px 0;
+}
+/* Main container for the Islamic Gallery section */
+#islamic-gallery-section {
+  padding: 16px;
+  background: linear-gradient(to right, #1F2937, #4B5563); /* Dark gradient */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 16px;
+}
+
+/* Gallery heading style */
+#gallery-heading {
+  font-size: 1.75rem;
+  color: rgb(8, 10, 3);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* General styling for all folders */
+.gallery-folder {
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.gallery-folder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Header for each folder with icon and title */
+.folder-header {
+  display: flex;
+  align-items: center;
+}
+
+.folder-icon {
+  font-size: 2.5rem;
+  color: rgb(0, 141, 235);
+}
+
+.folder-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: rgb(12, 0, 0);
+  margin-left: 8px;
+}
+
+/* Folder description */
+.folder-description {
+  margin-top: 8px;
+  color: rgb(7, 0, 0);
+}
+
+/* View All button inside the folder */
+.view-all-btn {
+  background-color: #34D399; /* Green button */
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: rgb(5, 1, 1);
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.view-all-btn:hover {
+  background-color: #10B981; /* Darker green on hover */
+}

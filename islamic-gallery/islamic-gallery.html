@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For icons -->
+</head>
+<body class="bg-gradient-to-r from-indigo-500 to-purple-700 text-white">
+
+  <!-- Gallery Section -->
+  <section id="gallery-page" class="gallery-container p-8">
+    <h1 class="gallery-title text-4xl font-extrabold text-center text-yellow-400 mb-10">✨ Islamic Gallery ✨</h1>
+
+    <!-- Gallery Items -->
+    <div class="gallery-grid">
+
+     <!-- Gallery Item 1 -->
+<div class="gallery-item">
+    <div class="image-container">
+      <img src="images/image1.jpg" alt="Gallery Image 1" class="gallery-image">
+    </div>
+    <!-- Action buttons below the image -->
+    <div class="actions">
+      <button class="favorite-btn text-yellow-500 hover:text-yellow-400" onclick="toggleFavorite(this)">
+        <i class="fas fa-heart"></i> Favorite
+      </button>
+      <button class="share-btn text-white hover:text-gray-300" onclick="shareContent('image1.jpg')">
+        <i class="fas fa-share-alt"></i> Share
+      </button>
+      <button class="download-btn text-white hover:text-gray-300" onclick="downloadImage('image1.jpg')">
+        <i class="fas fa-download"></i> Download
+      </button>
+    </div>
+  </div>
+  
+
+    <!-- Gallery Item 2 -->
+<div class="gallery-item">
+    <div class="image-container">
+      <img src="images/image2.jpg" alt="Gallery Image 2" class="gallery-image">
+    </div>
+    <!-- Action buttons below the image -->
+    <div class="actions">
+      <button class="favorite-btn text-yellow-500 hover:text-yellow-400" onclick="toggleFavorite(this)">
+        <i class="fas fa-heart"></i> Favorite
+        </button>
+        <button class="share-btn text-white hover:text-gray-300" onclick="shareContent('image2.jpg')">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
+        <button class="download-btn text-white hover:text-gray-300" onclick="downloadImage('image2.jpg')">
+          <i class="fas fa-download"></i> Download
+        </button>
+      </div>
+    </div>
+
+
+    <!-- Gallery Item 3 -->
+
+<div class="gallery-item">
+    <div class="image-container">
+      <img src="images/image3.jpg" alt="Gallery Image 3" class="gallery-image">
+    </div>
+    <!-- Action buttons below the image -->
+    <div class="actions">
+      <button class="favorite-btn text-yellow-500 hover:text-yellow-400" onclick="toggleFavorite(this)">
+        <i class="fas fa-heart"></i> Favorite
+      </button>
+      <button class="share-btn text-white hover:text-gray-300" onclick="shareContent('image3.jpg')"> 
+        <i class="fas fa-share-alt"></i> Share
+        </button>
+        <button class="download-btn text-white hover:text-gray-300" onclick="downloadImage('image3.jpg')">
+        <i class="fas fa-download"></i> Download
+        </button>
+        </div>
+        </div>
+        
+        <!-- Add more gallery items here as needed -->
+<div class="gallery-item">
+    <div class="image-container">
+      <img src="images/image3.jpg" alt="Gallery Image 3" class="gallery-image">
+    </div>
+    <!-- Action buttons below the image -->
+    <div class="actions">
+
+      <!-- Add more gallery items here as needed -->
+
+    </div>
+
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
