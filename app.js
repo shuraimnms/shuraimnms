@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 question: "During which month do Muslims fast from dawn to sunset?",
                 options: ["Muharram", "Ramadan", "Dhul-Hijjah", "Shawwal"],
                 answer: "Ramadan",
-              }
+              },
               
 
               {
