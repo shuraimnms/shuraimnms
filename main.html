@@ -81,8 +81,8 @@
 
   <!-- Greeting Message -->
 <section class="p-4 text-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
-  <h1 class="text-2xl font-semibold font-bold">
-    Assalamu Alaikum/ السلام علیکم! Start your day with Bismillah
+  <div class="text-2xl font-semibold font-bold">
+    <h6>Assalamu Alaikum/ السلام علیکم! Start your day with Bismillah<h6>
   </h1>
 </section>
 </p>
@@ -92,48 +92,17 @@
 
 
 <!-- Islamic Quiz Section -->
-<section id="quiz-section" class="p-8 bg-gradient-to-r from-cyan-500 to-blue-700 text-white rounded-xl shadow-xl mt-10">
-  <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-4xl font-extrabold mb-6 drop-shadow-md animate-fade-in">
-      🌙 Islamic Knowledge Quiz
-    </h2>
-    <p class="text-lg font-medium mb-8">
-      Challenge yourself with this fun and informative quiz! 🎉
-    
-    <!-- Quiz Progress Bar -->
-    <div id="progress-container" class="w-full bg-gray-200 rounded-full h-4 overflow-hidden mb-6">
-      <div
-        id="progress-bar"
-        class="bg-gradient-to-r from-green-400 to-green-600 h-full w-0 transition-all duration-500"
-      ></div>
-    </div>
-    <div id="quiz-container" class="bg-white p-6 rounded-xl shadow-md text-gray-900">
-      <p id="quiz-question" class="text-2xl font-semibold mb-6">
-        Loading question...
-      </p>
-      <ul id="quiz-options" class="space-y-4">
-        <!-- Options will be dynamically added -->
-      </ul>
-      <button
-        id="next-question"
-        class="hidden mt-6 px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition"
-      >
-        Next Question →
-      </button>
-      <p id="quiz-feedback" class="mt-6 text-lg font-bold hidden"></p>
-    </div>
-    <div id="quiz-score" class="hidden mt-8">
-      <p class="text-2xl font-bold">✨ Your Final Score:</p>
-      <p id="score" class="text-5xl font-extrabold text-green-600 mt-4 animate-bounce"></p>
-      <button
-        id="restart-quiz"
-        class="mt-6 px-8 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition"
-      >
-        Restart Quiz 🔄
-      </button>
-    </div>
-  </div>
-</section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Islamic Quiz</title>
+  <div id="quiz-container">
+    <h2 id="quiz-question"></h2>
+    <div id="quiz-options"></div>
+    <p id="quiz-feedback" style="display: none;"></p>
+    <button id="next-question" style="display: none;">Next Question</button>
+    <button id="restart-quiz" style="display: none;">Restart Quiz</button>
+</div>
 
 <!-- Link to app.js -->
 <script src="app.js"></script>
@@ -307,22 +276,7 @@
     </a>
   </div>
 
-  <section id="dua-folder-section" class="p-4 text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg shadow-lg mt-4">
-    <h2 class="text-2xl font-bold mb-2">📂 Your Dua Folders</h2>
-    <div id="folder-list" class="mb-4">
-      <p class="text-sm text-gray-200 italic">No folders yet. Create your first folder below!</p>
-    </div>
-    <div>
-      <input type="text" id="folder-name-input" placeholder="Enter folder name" class="p-2 rounded-md border border-gray-300 mb-2" />
-      <button id="create-folder-btn" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Create Folder</button>
-    </div>
-    <div id="selected-folder" class="hidden mt-4">
-      <h3 class="font-semibold text-xl mb-2" id="selected-folder-name"></h3>
-      <textarea id="dua-text" rows="4" placeholder="Add your favorite duas here..." class="w-full p-2 border rounded"></textarea>
-      <button id="export-pdf-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-2">Export as PDF</button>
-      <button id="share-folder-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2">Share Folder</button>
-    </div>
-  </section>
+  
   
   <section id="islamic-gallery-section" class="gallery-container p-4 bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-lg shadow-lg mt-4">
     <h2 id="gallery-heading" class="gallery-title text-2xl font-bold mb-4 text-center">🖼️ Islamic Gallery</h2>

@@ -1,185 +1,316 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Quiz questions for each day of the week
-  const dailyQuizzes = {
-    Monday: [
-      {
-        question: "What is the first surah of the Quran?",
-        options: ["Surah Al-Baqarah", "Surah Al-Fatihah", "Surah Al-Ikhlas", "Surah An-Nas"],
-        answer: 1,
-      },
-      {
-        question: "What does 'Zakat' mean?",
-        options: ["Charity", "Fasting", "Prayer", "Pilgrimage"],
-        answer: 0,
-      },
-    ],
-    Tuesday: [
-      {
-        question: "How many times do Muslims pray daily?",
-        options: ["3", "5", "7", "6"],
-        answer: 1,
-      },
-      {
-        question: "What is the name of the holy book in Islam?",
-        options: ["Torah", "Bible", "Quran", "Vedas"],
-        answer: 2,
-      },
-    ],
-    Wednesday: [
-      {
-        question: "What is the direction Muslims face during prayer?",
-        options: ["East", "West", "Kaaba", "Jerusalem"],
-        answer: 2,
-      },
-      {
-        question: "What is the meaning of 'Islam'?",
-        options: ["Peace", "Charity", "Submission", "Unity"],
-        answer: 2,
-      },
-    ],
-    Thursday: [
-      {
-        question: "What is the night journey of Prophet Muhammad (PBUH) called?",
-        options: ["Hijrah", "Isra and Miraj", "Hajj", "Umrah"],
-        answer: 1,
-      },
-      {
-        question: "What month do Muslims fast in?",
-        options: ["Shawwal", "Ramadan", "Muharram", "Rabi al-Awwal"],
-        answer: 1,
-      },
-    ],
-    Friday: [
-      {
-        question: "What is the special prayer on Friday called?",
-        options: ["Fajr", "Jumu'ah", "Taraweeh", "Eid Salah"],
-        answer: 1,
-      },
-      {
-        question: "How many chapters are there in the Quran?",
-        options: ["100", "114", "120", "124"],
-        answer: 1,
-      },
-    ],
-    Saturday: [
-      {
-        question: "What is the fifth pillar of Islam?",
-        options: ["Zakat", "Hajj", "Shahada", "Salah"],
-        answer: 1,
-      },
-      {
-        question: "What is the Arabic word for fasting?",
-        options: ["Sawm", "Salat", "Shirk", "Sadaqah"],
-        answer: 0,
-      },
-    ],
-    Sunday: [
-      {
-        question: "What is the reward for fasting during Ramadan?",
-        options: ["Forgiveness", "Wealth", "Health", "Knowledge"],
-        answer: 0,
-      },
-      {
-        question: "What does 'Iman' mean?",
-        options: ["Faith", "Peace", "Charity", "Unity"],
-        answer: 0,
-      },
-    ],
-  };
+  // Daily Questions
+  const dailyQuestions = {
+      Sunday: [
+          {
+              question: "What is the first pillar of Islam?",
+              options: ["Salah (Prayer)", "Shahadah (Faith)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
+              answer: "Shahadah (Faith)",
+          },
+          {
+              question: "How many chapters (Surahs) are in the Quran?",
+              options: ["113", "114", "115", "112"],
+              answer: "114",
+          },
+          {
+              question: "What is the fourth pillar of Islam?",
+              options: ["Salah (Prayer)", "Shahadah (Faith)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
+              answer: "Sawm (Fasting)",
+          },
+          {
+              question: "Which prophet built the Kaaba in Mecca?",
+              options: ["Prophet Ibrahim (Abraham)", "Prophet Isma'il (Ishmael)", "Prophet Muhammad (PBUH)", "Prophet Musa (Moses)"],
+              answer: "Prophet Ibrahim (Abraham)",
+          },
+          {
+              question: "What is the name of the angel who will blow the trumpet on the Day of Judgment?",
+              options: ["Israfil", "Jibril", "Mika'il", "Azrael"],
+              answer: "Israfil",
+          },
+          {
+              question: "What is the name of the angel who will question the deceased in the grave?",
+              options: ["Israfil", "Jibril", "Munkar and Nakir", "Azrael"],
+              answer: "Munkar and Nakir",
 
-  // Get the current day of the week
-  const currentDay = new Date().toLocaleString("en-US", { weekday: "long" });
-  const quizQuestions = dailyQuizzes[currentDay] || [];
+              },
+              {
+                  question: "What is the name of the angel who will bring the people to the Kingdom of Heaven?",
+                  options: ["Israfil", "Jibril", "Mika'il", "Azrael"],
+                  answer: "Israfil",
+              },
+        
+      ],
+      Monday: [
+          {
+              question: "What is the second pillar of Islam?",
+              options: ["Salah (Prayer)", "Shahadah (Faith)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
+              answer: "Salah (Prayer)",
+          },
+          {
+              question: "Which month is Ramadan in?",
+              options: ["Shawwal", "Rajab", "Ramadan", "Dhul-Hijjah"],
+              answer: "Ramadan",
+          },
+          {
+              question: "What is the third pillar of Islam?",
+              options: ["Salah (Prayer)", "Shahadah (Faith)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
+              answer: "Zakat (Charity)",
+          },
+          {
+              question: "What is the name of the Prophet who was born in Mecca?",
+              options: ["Prophet Muhammad (PBUH)", "Prophet Ibrahim (Abraham)", "Prophet Isma'il (Ishmael)", "Prophet Musa (Moses)"],
+              answer: "Prophet Muhammad (PBUH)",
+          },
+          {
+              question: "What is the name of the Prophet who was born in Medina?",
+              options: ["Prophet Muhammad (PBUH)", "Prophet Ibrahim (Abraham)", "Prophet Isma'il (Ishmael)", "Prophet Musa (Moses)"],
+              answer: "Prophet Ibrahim (Abraham)",
+          }
+          ],
+            Tuesday: [
+              {
+                question: "What is the first pillar of Islam?",
+                options: ["Salah (Prayer)", "Shahadah (Faith)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
+                answer: "Shahadah (Faith)",
+              },
+              {
+                question: "Which angel brought revelation to the Prophet Muhammad (PBUH)?",
+                options: ["Jibril (Gabriel)", "Mika'il (Michael)", "Israfil (Raphael)", "Azrael (Angel of Death)"],
+                answer: "Jibril (Gabriel)",
+              },
+              {
+                question: "Which direction do Muslims face during Salah?",
+                options: ["North", "South", "East", "West"],
+                answer: "East",
+              },
+              {
+                question: "What is the holy book of Islam?",
+                options: ["Quran", "Bible", "Torah", "Psalms"],
+                answer: "Quran",
+              },
+              {
+                question: "Who was the first Caliph after Prophet Muhammad (PBUH)?",
+                options: ["Abu Bakr", "Umar ibn al-Khattab", "Ali ibn Abi Talib", "Uthman ibn Affan"],
+                answer: "Abu Bakr",
+              },
+            ],
+            Wednesday: [
+              {
+                question: "Which mosque is considered the second holiest in Islam?",
+                options: ["Al-Aqsa Mosque", "Al-Masjid al-Haram", "Al-Nabawi Mosque", "Quba Mosque"],
+                answer: "Al-Aqsa Mosque",
+              },
+              {
+                question: "What is the meaning of the word 'Islam'?",
+                options: ["Submission", "Peace", "Strength", "Justice"],
+                answer: "Submission",
+              },
+              {
+                question: "Which day of the week is considered the holiest day for Muslims?",
+                options: ["Friday", "Saturday", "Sunday", "Monday"],
+                answer: "Friday",
+              },
+              {
+                question: "What is the name of the pilgrimage to Mecca that Muslims perform?",
+                options: ["Hajj", "Umrah", "Zakat", "Salah"],
+                answer: "Hajj",
+              },
+              {
+                question: "Which is the longest surah in the Quran?",
+                options: ["Al-Fatiha", "Al-Baqarah", "Al-Ikhlas", "An-Nisa"],
+                answer: "Al-Baqarah",
+              },
+            ],
+            Thursday: [
+              {
+                question: "How many rak'ahs are there in a typical obligatory prayer (Salah)?",
+                options: ["3", "5", "4", "2"],
+                answer: "4",
+              },
+              {
+                question: "Which prophet was swallowed by a whale?",
+                options: ["Prophet Yunus (Jonah)", "Prophet Musa (Moses)", "Prophet Ibrahim (Abraham)", "Prophet Muhammad (PBUH)"],
+                answer: "Prophet Yunus (Jonah)",
+              },
+              {
+                question: "What is the name of the night when the Quran was first revealed?",
+                options: ["Lailat al-Miraj", "Lailat al-Qadr", "Lailat al-Badr", "Lailat al-Isra"],
+                answer: "Lailat al-Qadr",
+              },
+              {
+                question: "What is the name of the prayer performed before dawn?",
+                options: ["Isha", "Maghrib", "Fajr", "Dhuhr"],
+                answer: "Fajr",
+              },
+              {
+                question: "What is the name of the month in which fasting (Sawm) occurs?",
+                options: ["Shawwal", "Dhul-Hijjah", "Ramadan", "Rajab"],
+                answer: "Ramadan",
+              },
+            ],
+            Friday: [
+              {
+                question: "Which surah of the Quran is called the heart of the Quran?",
+                options: ["Al-Fatiha", "Al-Baqarah", "Ya-Sin", "Al-Ikhlas"],
+                answer: "Ya-Sin",
+              },
+              {
+                question: "How many times is the name of Prophet Muhammad (PBUH) mentioned in the Quran?",
+                options: ["4", "2", "7", "1"],
+                answer: "4",
+              },
+              {
+                question: "What is the name of the prayer performed on Friday afternoons?",
+                options: ["Dhuhr", "Asr", "Maghrib", "Jumu'ah"],
+                answer: "Jumu'ah",
+              },
+              {
+                question: "Which is the first month of the Islamic calendar?",
+                options: ["Ramadan", "Dhul-Hijjah", "Rajab", "Muharram"],
+                answer: "Muharram",
+              },
+              {
+                question: "Which companion of the Prophet Muhammad (PBUH) is known as the Sword of Allah?",
+                options: ["Abu Bakr", "Ali ibn Abi Talib", "Khalid ibn al-Walid", "Umar ibn al-Khattab"],
+                answer: "Khalid ibn al-Walid",
+              },
+            ],
+            Saturday: [
+              {
+                question: "What is the name of the river in Paradise mentioned in the Quran?",
+                options: ["River of Milk", "River of Honey", "River of Water", "River of Wine"],
+                answer: "River of Water",
+              },
+              {
+                question: "What is the word for charity in Islam?",
+                options: ["Zakat", "Sadaqah", "Hajj", "Sawm"],
+                answer: "Zakat",
+              },
+              {
+                question: "Which angel is responsible for blowing the trumpet on the Day of Judgment?",
+                options: ["Israfil", "Jibril", "Mika'il", "Azrael"],
+                answer: "Israfil",
+              },
+              {
+                question: "Which city is considered the birthplace of Prophet Muhammad (PBUH)?",
+                options: ["Medina", "Mecca", "Jerusalem", "Kufa"],
+                answer: "Mecca",
+              },
+              {
+                question: "Which is the smallest surah of the Quran?",
+                options: ["Al-Fatiha", "Al-Ikhlas", "Al-Nas", "Al-Asr"],
+                answer: "Al-Ikhlas",
+              },
+            ],
+          };
+          
+          
+    
+      // Add questions for other days...
+  
+  // Determine the current day
+  const today = new Date().toLocaleString("en-US", { weekday: "long" });
+  const questions = dailyQuestions[today] || [];
 
-  let currentQuestionIndex = 0;
-  let score = 0;
-
+  // Get HTML elements
+  const questionContainer = document.getElementById("quiz-container");
   const questionElement = document.getElementById("quiz-question");
   const optionsElement = document.getElementById("quiz-options");
   const feedbackElement = document.getElementById("quiz-feedback");
   const nextButton = document.getElementById("next-question");
-  const progressBar = document.getElementById("progress-bar");
-  const scoreElement = document.getElementById("quiz-score");
   const restartButton = document.getElementById("restart-quiz");
 
-  const loadQuestion = () => {
-    if (!quizQuestions.length) {
-      questionElement.textContent = "No quiz available for today. Come back tomorrow!";
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  // Load a question
+  function loadQuestion() {
+      if (currentQuestionIndex < questions.length) {
+          const currentQuestion = questions[currentQuestionIndex];
+          questionElement.textContent = currentQuestion.question;
+          optionsElement.innerHTML = "";
+          feedbackElement.style.display = "none"; // Hide feedback initially
+
+          // Display options
+          currentQuestion.options.forEach((option) => {
+              const button = document.createElement("button");
+              button.textContent = option;
+              button.classList.add("quiz-option");
+              button.addEventListener("click", () => checkAnswer(option, currentQuestion.answer));
+              optionsElement.appendChild(button);
+          });
+
+          // Show Next Question button
+          nextButton.style.display = "none"; // Hide Next Question button initially
+      } else {
+          showResults();
+      }
+  }
+
+  // Check the selected answer
+  function checkAnswer(selectedOption, correctAnswer) {
+      const buttons = document.querySelectorAll(".quiz-option");
+
+      buttons.forEach(button => {
+          button.disabled = true; // Disable all options after one is selected
+          if (button.textContent === correctAnswer) {
+              button.classList.add("correct");
+          }
+          if (button.textContent === selectedOption && selectedOption !== correctAnswer) {
+              button.classList.add("incorrect");
+          }
+      });
+
+      if (selectedOption === correctAnswer) {
+          feedbackElement.textContent = "Correct!";
+          feedbackElement.classList.remove("incorrect");
+          feedbackElement.classList.add("correct");
+          score++;
+      } else {
+          feedbackElement.textContent = `Wrong! The correct answer is: ${correctAnswer}`;
+          feedbackElement.classList.remove("correct");
+          feedbackElement.classList.add("incorrect");
+      }
+
+      feedbackElement.style.display = "block";
+      nextButton.style.display = "inline-block"; // Show Next Question button
+  }
+
+  // Handle Next Question click
+  nextButton.addEventListener("click", () => {
+      currentQuestionIndex++;
+      loadQuestion(); // Load the next question
+  });
+
+  // Show the final results
+  function showResults() {
+      questionElement.textContent = "Quiz Completed!";
       optionsElement.innerHTML = "";
-      progressBar.style.width = "0%";
-      return;
-    }
+      feedbackElement.textContent = `Your final score: ${score}/${questions.length}`;
+      nextButton.style.display = "none"; // Don't show Next Question button on final results
+      restartButton.style.display = "block";
+  }
 
-    const currentQuestion = quizQuestions[currentQuestionIndex];
-    questionElement.textContent = `Q${currentQuestionIndex + 1}: ${currentQuestion.question}`;
-    optionsElement.innerHTML = "";
-
-    currentQuestion.options.forEach((option, index) => {
-      const button = document.createElement("button");
-      button.textContent = option;
-      button.className = "option-button";
-      button.onclick = () => checkAnswer(index, button);
-      optionsElement.appendChild(button);
-    });
-
-    feedbackElement.textContent = "";
-    feedbackElement.classList.add("hidden");
-    nextButton.classList.add("hidden");
-
-    // Update progress bar
-    progressBar.style.width = `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%`;
-  };
-
-  const checkAnswer = (selectedOption, button) => {
-    const currentQuestion = quizQuestions[currentQuestionIndex];
-    if (selectedOption === currentQuestion.answer) {
-      score++;
-      feedbackElement.textContent = "✅ Correct! Great Job!";
-      feedbackElement.style.color = "green";
-      button.classList.add("correct");
-    } else {
-      feedbackElement.textContent = "❌ Incorrect. Try again!";
-      feedbackElement.style.color = "red";
-      button.classList.add("wrong");
-    }
-    feedbackElement.classList.remove("hidden");
-    nextButton.classList.remove("hidden");
-
-    // Disable all buttons after selection
-    Array.from(optionsElement.children).forEach((btn) => (btn.disabled = true));
-  };
-
-  const nextQuestion = () => {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizQuestions.length) {
+  // Restart the quiz
+  restartButton.addEventListener("click", () => {
+      currentQuestionIndex = 0;
+      score = 0;
+      restartButton.style.display = "none";
       loadQuestion();
-    } else {
-      showScore();
-    }
-  };
+  });
 
-  const showScore = () => {
-    questionElement.textContent = "";
-    optionsElement.innerHTML = "";
-    feedbackElement.textContent = "";
-    nextButton.classList.add("hidden");
-    scoreElement.classList.remove("hidden");
-    document.getElementById("score").textContent = `${score} / ${quizQuestions.length}`;
-  };
-
-  const restartQuiz = () => {
-    currentQuestionIndex = 0;
-    score = 0;
-    scoreElement.classList.add("hidden");
-    loadQuestion();
-  };
-
-  nextButton.addEventListener("click", nextQuestion);
-  restartButton.addEventListener("click", restartQuiz);
-
-  loadQuestion();
+  // Initialize the quiz
+  if (questions.length > 0) {
+      loadQuestion();
+  } else {
+      questionContainer.innerHTML = "<p>No quiz available for today. Please come back tomorrow!</p>";
+  }
 });
 
+
+
+// Function to open the settings panel
 
 function openSettings() {
   // Add your settings panel code here
