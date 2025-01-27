@@ -79,11 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 options: ["Jibril (Gabriel)", "Mika'il (Michael)", "Israfil (Raphael)", "Azrael (Angel of Death)"],
                 answer: "Jibril (Gabriel)",
               },
-              {
-                question: "Which direction do Muslims face during Salah?",
-                options: ["North", "South", "East", "West"],
-                answer: "East",
-              },
+              
+                {
+                  question: "What is the direction Muslims face during prayer?",
+                  options: ["Jerusalem", "Kaaba", "Mount Sinai", "Madina"],
+                  answer: "Kaaba",
+                },
+            
               {
                 question: "What is the holy book of Islam?",
                 options: ["Quran", "Bible", "Torah", "Psalms"],
@@ -107,10 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 answer: "Submission",
               },
               {
-                question: "Which day of the week is considered the holiest day for Muslims?",
-                options: ["Friday", "Saturday", "Sunday", "Monday"],
-                answer: "Friday",
-              },
+                question: "During which month do Muslims fast from dawn to sunset?",
+                options: ["Muharram", "Ramadan", "Dhul-Hijjah", "Shawwal"],
+                answer: "Ramadan",
+              }
+              
+
               {
                 question: "What is the name of the pilgrimage to Mecca that Muslims perform?",
                 options: ["Hajj", "Umrah", "Zakat", "Salah"],
