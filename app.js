@@ -810,3 +810,21 @@ function toggleDropdown() {
   var dropdownMenu = document.getElementById("dropdownMenu");
   dropdownMenu.classList.toggle("show");
 }
+
+// load data 
+// Save a bookmark to local storage
+document.getElementById("saveBookmark").addEventListener("click", () => {
+  const bookmark = "Morning Duas";
+  localStorage.setItem("bookmark", bookmark);
+  alert("Bookmark Saved!");
+});
+
+// Load the bookmark from local storage
+document.getElementById("loadBookmark").addEventListener("click", () => {
+  const savedBookmark = localStorage.getItem("bookmark");
+  if (savedBookmark) {
+      alert(`Your Bookmark: ${savedBookmark}`);
+  } else {
+      alert("No Bookmark Found!");
+  }
+});
