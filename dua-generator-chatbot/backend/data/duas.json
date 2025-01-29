@@ -89,7 +89,44 @@
     "transliteration": "Allahumma ruzuqni at-tawbah",
     "translation": "O Allah, grant me repentance.",
     "reference": "Quran 3:193"
+  {
+  "repentance": {
+    "topic": "repentance",
+    "arabic": "اللهم ارزقني التوبة",
+    "transliteration": "Allahumma ruzuqni at-tawbah",
+    "translation": "O Allah, grant me repentance.",
+    "reference": "Quran 3:193"
+  },
+  "guidance": {
+    "topic": "guidance",
+    "arabic": "اللهم اهدني واهدِ بي",
+    "transliteration": "Allahumma ihdini wa ahdi bi",
+    "translation": "O Allah, guide me and guide others through me.",
+    "reference": "Quran 28:22"
+  },
+  "forgiveness": {
+    "topic": "forgiveness",
+    "arabic": "اللهم اغفر لي",
+    "transliteration": "Allahumma ighfir li",
+    "translation": "O Allah, forgive me.",
+    "reference": "Quran 40:7"
+  },
+  "mercy": {
+    "topic": "mercy",
+    "arabic": "اللهم ارحمني",
+    "transliteration": "Allahumma irhamni",
+    "translation": "O Allah, have mercy on me.",
+    "reference": "Quran 6:54"
+  },
+  "protection": {
+    "topic": "protection",
+    "arabic": "اللهم احفظني",
+    "transliteration": "Allahumma ihfazni",
+    "translation": "O Allah, protect me.",
+    "reference": "Quran 5:55"
   }
+}
+
 
 
 }

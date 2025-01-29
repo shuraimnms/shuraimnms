@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quran App</title>
+    <title>Surah & Juzz List</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the Quran App</h1>
+        <h1 id="list-title">Surahs / Juzz</h1>
+        <input type="text" id="search-bar" placeholder="Search..." onkeyup="searchList()">
     </header>
     <main>
-        <div id="surah-folder" class="folder">
-            <h2>Surahs</h2>
-        </div>
-        <div id="juzz-folder" class="folder">
-            <h2>Juzz</h2>
+        <div id="list-container" class="list-container">
+            <!-- Surah/Juzz items will be loaded here -->
         </div>
     </main>
 
-    
+  
+
     <script src="scripts/app.js"></script>
 </body>
 </html>
