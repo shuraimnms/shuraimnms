@@ -869,7 +869,7 @@ audio::-webkit-media-controls-panel {
 #calendar {
   background-color: #fff5e6; /* Light Orange for Calendar */
 }
-#ruqyah {
+#kids {
   background-color: #ffe6e6; /* Light Red for Ruqyah */
 }
 #reminders {
@@ -1162,3 +1162,141 @@ audio::-webkit-media-controls-panel {
 .show {
   display: block;
 }
+/*style fore kids  for kids mode*/
+/* Kids Mode Container */
+
+/* Kids Folder Section Styling */
+.kids-folder-container {
+  background: linear-gradient(135deg, #FF6EB1, #FF1493); /* Gradient background for depth */
+  padding: 30px 35px;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.4s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-bottom: 30px; /* Bottom gap */
+  animation: fadeInUp 0.6s ease-out; /* Animation for fade-in effect */
+}
+
+.kids-folder-container:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  background: linear-gradient(135deg, #FF1493, #FF6EB1); /* Reversed gradient on hover */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+  filter: brightness(1.1); /* Brighter effect on hover */
+}
+
+.kids-folder-container .flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kids-folder-container .items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kids-folder-container .icon-style {
+  font-size: 3rem; /* Increased icon size */
+  animation: bounce 1.5s infinite; /* Bounce effect for the icon */
+}
+
+.kids-folder-container .title-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Soft text shadow */
+}
+
+.kids-folder-container button {
+  padding: 14px 28px;
+  background-color: #FFD700; /* Bright Yellow Button */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kids-folder-container button:hover {
+  background-color: #FF4500; /* Dark Orange when hovered */
+  transform: scale(1.1); /* Slight scale-up effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Adding subtle shadow to the button */
+}
+
+.kids-folder-container .flex-container.space-x-2 {
+  margin-top: 20px;
+}
+
+.kids-folder-container .flex-container.space-x-2 button {
+  padding: 14px 30px;
+  font-size: 1.2rem;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media only screen and (max-width: 768px) {
+  .kids-folder-container {
+      padding: 25px 30px;
+  }
+
+  .kids-folder-container .title-text {
+      font-size: 1.8rem;
+  }
+
+  .kids-folder-container button {
+      padding: 12px 24px;
+  }
+
+  .kids-folder-container .icon-style {
+      font-size: 2.5rem; /* Adjusted icon size for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .kids-folder-container {
+      padding: 20px 25px;
+  }
+
+  .kids-folder-container .title-text {
+      font-size: 1.6rem;
+  }
+
+  .kids-folder-container button {
+      padding: 10px 22px;
+      font-size: 1.1rem;
+  }
+
+  .kids-folder-container .icon-style {
+      font-size: 2rem; /* Adjusted icon size for very small screens */
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-15px);
+  }
+}
+
