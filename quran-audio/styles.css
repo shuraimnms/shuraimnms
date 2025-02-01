@@ -1,0 +1,96 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .qari-selector {
+    margin-bottom: 20px;
+  }
+  
+  .qari-selector label {
+    font-weight: bold;
+  }
+  
+  .qari-selector select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .surah-list {
+    margin-bottom: 20px;
+  }
+  
+  .surah-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .surah-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .surah-list li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .surah-list button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .surah-list button:hover {
+    background-color: #218838;
+  }
+  
+  .audio-player {
+    margin-top: 20px;
+  }
+  
+  .audio-player audio {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .audio-player a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .audio-player a:hover {
+    background-color: #0056b3;
+  }
