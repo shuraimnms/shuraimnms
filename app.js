@@ -127,11 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
               },
             ],
             Thursday: [
-              {
-                question: "How many rak'ahs are there in a typical obligatory prayer (Salah)?",
-                options: ["3", "5", "4", "2"],
-                answer: "4",
-              },
+              
               {
                 question: "Which prophet was swallowed by a whale?",
                 options: ["Prophet Yunus (Jonah)", "Prophet Musa (Moses)", "Prophet Ibrahim (Abraham)", "Prophet Muhammad (PBUH)"],
@@ -182,15 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             Saturday: [
               {
-                question: "What is the name of the river in Paradise mentioned in the Quran?",
-                options: ["River of Milk", "River of Honey", "River of Water", "River of Wine"],
-                answer: "River of Water",
-              },
-              {
                 question: "What is the word for charity in Islam?",
                 options: ["Zakat", "Sadaqah", "Hajj", "Sawm"],
                 answer: "Zakat",
               },
+            
+              
               {
                 question: "Which angel is responsible for blowing the trumpet on the Day of Judgment?",
                 options: ["Israfil", "Jibril", "Mika'il", "Azrael"],

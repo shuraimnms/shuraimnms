@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quran Audio Player</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quran Audio Player</h1>
+    <div class="qari-selector">
+      <label for="qari">Select Qari:</label>
+      <select id="qari">
+        <option value="afs">Mishary Rashid Alafasy</option>
+        <option value="basit">Abdul Basit</option>
+        <option value="shuraim">Saud Al-Shuraim</option>
+        <option value="maher">Maher Al-Muaiqly</option>
+      </select>
+    </div>
+    <div class="surah-list">
+      <h2>Surah List</h2>
+      <ul id="surah-list"></ul>
+    </div>
+    <div class="audio-player">
+      <audio id="audio" controls></audio>
+      <a id="download-link" download>Download Audio</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
