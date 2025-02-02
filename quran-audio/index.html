@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quran Audio Player</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Audio - ZikrMate</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Quran Audio Player</h1>
-    <div class="qari-selector">
-      <label for="qari">Select Qari:</label>
-      <select id="qari">
-        <option value="afs">Mishary Rashid Alafasy</option>
-        <option value="basit">Abdul Basit</option>
-        <option value="shuraim">Saud Al-Shuraim</option>
-        <option value="maher">Maher Al-Muaiqly</option>
-      </select>
+    <div class="container">
+        <h1>📖 Listen to the Quran</h1>
+
+        <!-- Search Surah -->
+        <input type="text" id="searchInput" placeholder="🔍 Search Surah (English or Arabic)" onkeyup="filterSurahs()">
+
+        <!-- Reciter Selection -->
+        <select id="qariSelector" onchange="updateQari()"></select>
+
+        <!-- Surah List (Compact) -->
+        <div class="list-container">
+            <ul id="surahList"></ul>
+        </div>
+
+        <!-- Current Playing Surah -->
+        <div id="playingSurah">🎵 Now Playing: None</div>
+
+        <!-- Audio Controls -->
+        <div class="audio-controls">
+            <button onclick="previousSurah()">⏮ Prev</button>
+            <audio id="audioPlayer" controls></audio>
+            <button onclick="nextSurah()">⏭ Next</button>
+        </div>
+
+        <!-- Loop & Repeat -->
+        <div class="options">
+            <label><input type="checkbox" id="loopToggle"> 🔁 Loop</label>
+            <label><input type="checkbox" id="autoPlayToggle"> ▶ Auto Play Next</label>
+        </div>
     </div>
-    <div class="surah-list">
-      <h2>Surah List</h2>
-      <ul id="surah-list"></ul>
-    </div>
-    <div class="audio-player">
-      <audio id="audio" controls></audio>
-      <a id="download-link" download>Download Audio</a>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

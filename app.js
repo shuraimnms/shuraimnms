@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           {
               question: "What is the fourth pillar of Islam?",
-              options: ["Salah (Prayer)", "Shahadah (Faith)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
+              options: ["Salah (Prayer)", "Sawm (Fasting)", "Hajj (Pilgrimage)", "Zakat (Charity)"],
               answer: "Sawm (Fasting)",
           },
           {

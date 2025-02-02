@@ -1,64 +1,104 @@
-// DOM Elements
-const surahListElement = document.getElementById("surah-list");
-const qariSelector = document.getElementById("qari");
-const audioElement = document.getElementById("audio");
-const downloadLink = document.getElementById("download-link");
+let availableQaris = [];
+let selectedQari = "";
+let currentPlaying = null;
+let surahData = [];
+let currentIndex = -1;
 
-// Qari Paths
-const qariPaths = {
-  afs: "afs", // Mishary Rashid Alafasy
-  basit: "basit", // Abdul Basit
-  shuraim: "shuraim", // Saud Al-Shuraim
-  maher: "maher", // Maher Al-Muaiqly
-};
+// 🔄 Load Available Qaris (Reciters)
+async function loadQaris() {
+    try {
+        const response = await fetch("https://api.quran.com/api/v4/resources/recitations");
+        const data = await response.json();
+        const qariSelector = document.getElementById("qariSelector");
 
-// Fetch Surahs from API
-async function fetchSurahs() {
-  try {
-    const response = await fetch("https://api.alquran.cloud/v1/chapters");
-    const data = await response.json();
-    const surahs = data.data;
-    displaySurahs(surahs);
-  } catch (error) {
-    console.error("Error fetching Surahs:", error);
-    surahListElement.innerHTML = "<li>Failed to load Surahs. Please try again later.</li>";
-  }
+        qariSelector.innerHTML = "";
+        availableQaris = data.recitations;
+
+        availableQaris.forEach(qari => {
+            let option = document.createElement("option");
+            option.value = qari.id;
+            option.textContent = `🎙️ ${qari.reciter_name}`;
+            qariSelector.appendChild(option);
+        });
+
+        selectedQari = availableQaris[0].id;
+        loadSurahs();
+    } catch (error) {
+        console.error("Error loading Qaris:", error);
+        alert("⚠ Error fetching Reciters.");
+    }
 }
 
-// Display Surahs in the List
-function displaySurahs(surahs) {
-  surahListElement.innerHTML = surahs
-    .map(
-      (surah) => `
-      <li>
-        <span>${surah.name} (${surah.englishName})</span>
-        <button onclick="playSurah(${surah.id})">Play</button>
-      </li>
-    `
-    )
-    .join("");
+// 📖 Load Surahs
+async function loadSurahs() {
+    try {
+        const response = await fetch("https://api.quran.com/api/v4/chapters");
+        const data = await response.json();
+        const surahList = document.getElementById("surahList");
+
+        surahList.innerHTML = "";
+        surahData = data.chapters;
+
+        data.chapters.forEach((surah, index) => {
+            let listItem = document.createElement("li");
+            listItem.innerHTML = `<span>${surah.id}. ${surah.name_simple} (${surah.name_arabic})</span>`;
+            listItem.onclick = () => playSurah(index);
+            surahList.appendChild(listItem);
+        });
+    } catch (error) {
+        console.error("Error loading Surahs:", error);
+        alert("⚠ Error fetching Surahs.");
+    }
 }
 
-// Play Surah Audio
-function playSurah(surahId) {
-  const qari = qariSelector.value;
-  const audioUrl = `https://server7.mp3quran.net/${qariPaths[qari]}/${surahId}.mp3`;
+// 🔍 Search Surah
+function filterSurahs() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let listItems = document.getElementById("surahList").getElementsByTagName("li");
 
-  // Set audio source and play
-  audioElement.src = audioUrl;
-  audioElement.play();
-
-  // Update download link
-  downloadLink.href = audioUrl;
-  downloadLink.style.display = "inline-block";
+    for (let i = 0; i < listItems.length; i++) {
+        let text = listItems[i].textContent.toLowerCase();
+        listItems[i].style.display = text.includes(input) ? "" : "none";
+    }
 }
 
-// Handle Qari Change
-qariSelector.addEventListener("change", () => {
-  audioElement.pause();
-  audioElement.src = "";
-  downloadLink.style.display = "none";
-});
+// 🎙️ Update Qari
+function updateQari() {
+    selectedQari = document.getElementById("qariSelector").value;
+}
 
-// Initialize
-fetchSurahs();
+// 🎵 Play Surah Audio
+async function playSurah(index) {
+    if (index < 0 || index >= surahData.length) return;
+
+    currentIndex = index;
+    let surahID = surahData[index].id;
+    const apiUrl = `https://api.quran.com/api/v4/chapter_recitations/${selectedQari}/${surahID}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        if (data.audio_file && data.audio_file.audio_url) {
+            document.getElementById("playingSurah").textContent = `🎵 Now Playing: ${surahData[index].name_simple}`;
+            audioPlayer.src = data.audio_file.audio_url;
+            audioPlayer.play();
+        }
+    } catch (error) {
+        console.error("Error playing Surah audio:", error);
+    }
+}
+
+// ⏮ Previous Surah
+function previousSurah() {
+    playSurah(currentIndex - 1);
+}
+
+// ⏭ Next Surah
+function nextSurah() {
+    playSurah(currentIndex + 1);
+}
+
+// 🔄 Load Qaris on Page Load
+window.onload = loadQaris;
