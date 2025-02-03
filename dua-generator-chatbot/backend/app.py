@@ -18,6 +18,7 @@ def load_duas():
 # Load the duas data once when the app starts
 duas = load_duas()
 
+
 @app.route('/generate_dua', methods=['POST'])
 def generate_dua():
     data = request.get_json()  # Get the JSON data from the frontend
