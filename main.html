@@ -58,7 +58,7 @@
                     <a href="main.html">Home</a> <!-- Link to the main page -->
                     <a href="https://www.youtube.com" target="_blank">YouTube</a> <!-- Link to YouTube -->
                     <a href="https://www.instagram.com" target="_blank">Instagram</a> <!-- Link to Instagram -->
-                    <a href="feed.html">Feed</a> <!-- Link to a feed page -->
+                    <a href="feed.html">Feed Back</a> <!-- Link to a feed page -->
                     <a href="main.html">Back</a> <!-- Link to the back page -->
                 </div>
             </div>
@@ -118,6 +118,7 @@
       <span>Masjid Finder</span>
     </div>
 
+     
 
     <!-- Tasbeeh -->
     <div class="content-item" id="tasbeeh" onclick="window.location.href='tasbeeh_dhikr/tasbeeh.html'">
@@ -126,6 +127,23 @@
       </div>
       <span>Tasbeeh</span>
     </div>
+
+    <!-- Quran -->
+<div class="content-item" id="quran" onclick="window.location.href='islamic_books/quran/index.html'">
+  <div class="icon-container">
+    <i class="fas fa-book-reader"></i> <!-- Use appropriate icon for Quran -->
+  </div>
+  <span>Quran</span>
+</div>
+
+<!-- Quran Audio -->
+<div class="content-item" id="quran-audio" onclick="window.location.href='quran-audio/index.html'">
+  <div class="icon-container">
+    <i class="fas fa-headphones-alt"></i>
+  </div>
+  <span>Qur'an Audio</span>
+</div>
+
 <!-- Islamic Activities -->
 <div class="content-item" id="islamic-activities" onclick="window.location.href='more/namaz_steps/index.html'">
   <div class="icon-container">
@@ -145,13 +163,8 @@
       <span>Calendar</span>
     </div>
 
-    <!-- Ruqyah -->
-    <div class="content-item" id="ruqyah" onclick="window.location.href='dua_dhikr/duafiles/ruqyah.html'">
-      <div class="icon-container">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <span>Ruqyah</span>
-    </div>
+    
+
 
     <!-- Reminders -->
     <div class="content-item" id="reminders" onclick="window.location.href='remainder/remainders.html'">
@@ -264,6 +277,22 @@
     </div>
   </div>
 
+ <!-- Kids Mode Section -->
+<div class="kids-folder-container" id="kids-zone" onclick="window.location.href='kids_section/index.html'">
+  <div class="flex-container items-center">
+    <i class="fas fa-child icon-style text-yellow-500 text-2xl"></i>
+    <h2 class="title-text ml-2">
+      Kids Mode/بچوں کا موڈ
+    </h2>
+  </div>
+  <div class="mt-4 flex-container space-x-2">
+    <button class="enter-button bg-blue-500 text-white px-4 py-2 rounded font-bold">
+      Enter Kids Mode
+    </button>
+  </div>
+</div>
+
+
   <!-- Feeling Folder -->
   <div class="folder bg-feeling" onclick="window.location.href='iamfeeling/iamfeeling.html'">
     <div class="flex items-center">
@@ -315,7 +344,7 @@
 <!-- Quick Access Side Scroll (Horizontal Scroll) -->
 <section class="quick-access-row">
   <div class="quick-access-container">
-    <div class="quick-access-item" onclick="window.location.href='quran/quran.html'">
+    <div class="quick-access-item" onclick="window.location.href='islamic_books/quran/index.html'">
       <div class="icon-container">
         <i class="fas fa-book-open"></i>
       </div>
