@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZikrMate</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ZikrMate - بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</title>
+
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         /* Full-page styling */
         body {
@@ -15,17 +22,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('images/welcome.jpg'); /* Your welcome image */
-            background-size: cover;
-            background-position: center;
+            background-color: #116530; /* Islamic green background */
             font-family: 'Amiri', serif, Arial, sans-serif; /* Fallback fonts */
             position: relative;
             overflow: hidden;
             direction: rtl; /* Ensure Arabic text flows correctly */
         }
 
-        /* Islamic border style */
-        ::before, ::after {
+        /* Islamic border style with shadow */
+        body::before {
             content: "";
             position: absolute;
             top: 0;
@@ -33,62 +38,80 @@
             right: 0;
             bottom: 0;
             border: 15px solid #d4af37; /* Gold color border */
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
             z-index: -1;
         }
 
-        /* Adding an elegant gradient overlay */
-        .overlay {
+        /* Additional Islamic border details */
+        body::after {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
-            z-index: 0;
+            top: 30px;
+            left: 30px;
+            right: 30px;
+            bottom: 30px;
+            border: 5px solid #fff; /* White inner border */
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+            z-index: -1;
         }
 
         /* Typing text style */
         .text {
-            font-size: 5rem;
+            font-size: 2.5rem; /* Smaller font size */
+            font-weight: bold;
             color: #fff;
-            text-align: right;
+            text-align: center;
             white-space: nowrap;
-            overflow: hidden; /* Ensures text is hidden and typed gradually */
+            overflow: hidden;
             width: 0; /* Start with 0 width to enable typing effect */
-            letter-spacing: 3px;
-            animation: typing 5s steps(30, end) 1s forwards; /* Typing effect */
+            letter-spacing: 2px;
+            border-right: 2px solid #fff; /* Cursor effect */
+            animation: typing 4s steps(50, end), blink 0.7s step-end infinite; /* Typing effect for 4 seconds */
             z-index: 1;
         }
 
         /* Typing animation effect */
         @keyframes typing {
             from {
-                width: 0; /* Start with 0 width to reveal text gradually */
+                width: 0;
             }
             to {
-                width: 100%; /* Reveal the full text */
+                width: 100%;
+            }
+        }
+
+        /* Cursor blinking animation */
+        @keyframes blink {
+            from {
+                border-color: transparent;
+            }
+            to {
+                border-color: #fff;
             }
         }
 
         /* Responsive design for different screen sizes */
         @media (max-width: 768px) {
             .text {
-                font-size: 3.5rem;
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
             .text {
-                font-size: 2.3rem;
+                font-size: 1.5rem;
             }
+        }
+
+        /* Fallback for no JavaScript */
+        noscript {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
-
-    <!-- Gradient overlay -->
-    <div class="overlay"></div>
-
     <!-- Typing text effect with Arabic text -->
     <div class="text">
         بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
@@ -96,17 +119,14 @@
 
     <!-- Fallback for users with JavaScript disabled -->
     <noscript>
-        <p style="text-align: center; color: white; font-size: 1.5rem;">
-            Please enable JavaScript to view this page.
-        </p>
+        <p>يرجى تمكين JavaScript لعرض هذه الصفحة.</p>
     </noscript>
 
     <script>
-        // After 5 seconds, redirect to the main page (main.html)
+        // Redirect to the main page after 5 seconds
         setTimeout(function() {
-            window.location.href = 'main.html'; // Main page of your app
-        }, 7000); // 5 seconds delay
+            window.location.href = 'main.html';
+        }, 5000); // 5 seconds delay
     </script>
-
 </body>
 </html>
