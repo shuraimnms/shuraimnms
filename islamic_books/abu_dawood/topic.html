@@ -3,15 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hadith Viewer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chapter Details - Abu Dawood</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div id="bookTitle"></div>
-    <div id="chaptersContainer"></div>
-    <div id="hadithContainer"></div>
+    <div id="container">
+        <h1>Chapter Details - Abu Dawood</h1>
+        <div id="chapter-details"></div>
 
-    <script src="js/adu_dawood.js"></script>
+        <div id="hadiths-container">
+            <h2>Hadiths</h2>
+            <div id="hadiths"></div>
+        </div>
+    </div>
+
+    <script src="js/abu_dawood.js"></script> <!-- Ensure this contains abuDawoodData -->
     <script src="js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const chapterId = parseInt(params.get("chapterId"));
+
+            if (!chapterId || isNaN(chapterId)) {
+                document.getElementById("container").innerHTML = "<p>Invalid Chapter ID</p>";
+                return;
+            }
+
+            loadChapterDetails(chapterId);
+            loadHadiths(chapterId);
+        });
+
+        function loadChapterDetails(chapterId) {
+            const chapter = abuDawoodData.chapters.find(chap => chap.id === chapterId);
+            if (chapter) {
+                document.getElementById("chapter-details").innerHTML = `
+                    <h2>${chapter.english}</h2>
+                    <p>${chapter.arabic}</p>
+                `;
+            } else {
+                document.getElementById("chapter-details").innerHTML = "<p>Chapter not found.</p>";
+            }
+        }
+
+        function loadHadiths(chapterId) {
+            const hadithContainer = document.getElementById("hadiths");
+            hadithContainer.innerHTML = '';
+
+            const filteredHadiths = abuDawoodData.hadiths.filter(hadith => hadith.chapterId === chapterId);
+            if (filteredHadiths.length === 0) {
+                hadithContainer.innerHTML = "<p>No hadiths found for this chapter.</p>";
+                return;
+            }
+
+            filteredHadiths.forEach(hadith => {
+                const hadithElement = document.createElement("div");
+                hadithElement.classList.add("hadith");
+
+                hadithElement.innerHTML = `
+                    <p class="arabic">${hadith.arabic}</p>
+                    <p class="english"><strong>${hadith.english.narrator}:</strong> ${hadith.english.text}</p>
+                `;
+
+                hadithContainer.appendChild(hadithElement);
+            });
+        }
+    </script>
 </body>
 </html>

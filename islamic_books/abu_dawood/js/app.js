@@ -1,68 +1,52 @@
-// Load chapters into the main page (index.html)
+// Function to load chapters dynamically
 function loadChapters() {
-    const chaptersList = document.getElementById("chapters");
-    abuDawoodChapters.forEach(chapter => {
-        const listItem = document.createElement("li");
-        listItem.textContent = chapter.arabic_title + " - " + chapter.title;
-        listItem.className = "chapter";
-        listItem.onclick = function () {
-            loadTopic(chapter.id);
+    const chaptersContainer = document.getElementById("chapters");
+    abuDawoodData.chapters.forEach(chapter => {
+        const chapterElement = document.createElement("li");
+        chapterElement.classList.add("chapter");
+
+        // Display both Arabic and English names
+        chapterElement.innerHTML = `
+            <span class="chapter-arabic">${chapter.arabic}</span> - 
+            <span class="chapter-english">${chapter.english}</span>
+        `;
+
+        chapterElement.onclick = () => {
+            window.location.href = `topic.html?chapterId=${chapter.id}`;
         };
-        chaptersList.appendChild(listItem);
+
+        chaptersContainer.appendChild(chapterElement);
     });
 }
 
-// Load a specific topic (chapter) on the topic.html page
-function loadTopic(chapterId) {
-    const topicTitle = document.getElementById("topic-title");
-    const hadithsContainer = document.getElementById("hadiths");
-
-    // Set the topic title (chapter name)
-    const chapter = abuDawoodChapters.find(ch => ch.id === chapterId);
-    topicTitle.textContent = chapter.arabic_title + " - " + chapter.title;
-
-    // Display the hadiths for the selected chapter
-    const hadiths = abuDawoodHadiths[chapterId];
-    hadithsContainer.innerHTML = ""; // Clear previous hadiths
-    hadiths.forEach(hadith => {
-        const hadithDiv = document.createElement("div");
-        hadithDiv.className = "hadith";
-        hadithDiv.innerHTML = `<strong>Arabic:</strong> ${hadith.arabic}<br><strong>English:</strong> ${hadith.english}`;
-        hadithsContainer.appendChild(hadithDiv);
-    });
-}
-
-// Search functionality
+// Function to search through hadiths
 function searchHadith() {
-    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
-    const searchResultsContainer = document.getElementById("search-results");
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    const searchResultsContainer = document.getElementById('search-results');
+    searchResultsContainer.innerHTML = '';  // Clear previous results
 
-    // Filter hadiths based on the search term
-    const results = [];
-    abuDawoodChapters.forEach(chapter => {
-        const hadiths = abuDawoodHadiths[chapter.id];
-        hadiths.forEach(hadith => {
-            if (hadith.arabic.toLowerCase().includes(searchTerm) || hadith.english.toLowerCase().includes(searchTerm)) {
-                results.push({ chapter: chapter.title, hadith: hadith });
-            }
-        });
+    const filteredHadiths = abuDawoodData.hadiths.filter(hadith => {
+        return hadith.arabic.toLowerCase().includes(query) || 
+               (hadith.english && hadith.english.text.toLowerCase().includes(query));
     });
 
-    // Display search results
-    searchResultsContainer.innerHTML = "";
-    if (results.length > 0) {
-        results.forEach(result => {
-            const resultDiv = document.createElement("div");
-            resultDiv.className = "search-result";
-            resultDiv.innerHTML = `<strong>Chapter:</strong> ${result.chapter}<br><strong>Hadith:</strong> ${result.hadith.english}`;
-            searchResultsContainer.appendChild(resultDiv);
-        });
+    if (filteredHadiths.length === 0) {
+        searchResultsContainer.innerHTML = '<p>No results found</p>';
     } else {
-        searchResultsContainer.innerHTML = "No results found.";
+        filteredHadiths.forEach(hadith => {
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('search-result-item');
+            resultItem.innerHTML = `
+                <p><strong>Hadith Number:</strong> ${hadith.id}</p>
+                <p><strong>Arabic:</strong> ${hadith.arabic}</p>
+                ${hadith.english ? `<p><strong>English:</strong> ${hadith.english.narrator}: ${hadith.english.text}</p>` : ''}
+            `;
+            searchResultsContainer.appendChild(resultItem);
+        });
     }
 }
 
-// Initialize the page
-if (document.getElementById("chapters")) {
+// Initialize the app
+document.addEventListener("DOMContentLoaded", function () {
     loadChapters();
-}
+});
