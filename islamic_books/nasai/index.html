@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunan an-Nasa'i</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Sunan an-Nasa'i</h1>
+        <h3>By Imam Ahmad ibn Shu'ayb an-Nasa'i</h3>
+        
+        <!-- Search Bar -->
+        <div id="search-container">
+            <input type="text" id="search-bar" placeholder="Search Hadith..." onkeyup="searchHadith()">
+        </div>
+
+        <div id="chapters-container">
+            <h2>Chapters</h2>
+            <ul id="chapters"></ul>
+        </div>
+
+        <div id="search-results-container">
+            <h2>Search Results</h2>
+            <div id="search-results"></div>
+        </div>
+    </div>
+
+    <script src="js/nasai.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
