@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter Details - Sunan Ibn Majah</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Chapter Details</h1>
+        <div id="chapter-details"></div>
+
+        <div id="hadiths-container">
+            <h2>Hadiths</h2>
+            <div id="hadiths"></div>
+        </div>
+    </div>
+
+    <script src="js/ibn_majah.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const chapterId = parseInt(params.get('chapterId'));
+
+        window.onload = function() {
+            loadChapterDetails(chapterId);
+            loadHadiths(chapterId);
+        };
+
+        function loadChapterDetails(chapterId) {
+            const chapter = ibnMajahData.chapters.find(chap => chap.id === chapterId);
+            if (chapter) {
+                const chapterDetailsContainer = document.getElementById("chapter-details");
+                chapterDetailsContainer.innerHTML = `<h2>${chapter.english}</h2><p>${chapter.arabic}</p>`;
+            }
+        }
+
+        function loadHadiths(chapterId) {
+            const hadithContainer = document.getElementById("hadiths");
+            hadithContainer.innerHTML = '';
+
+            const filteredHadiths = ibnMajahData.hadiths.filter(hadith => hadith.chapterId === chapterId);
+            filteredHadiths.forEach(hadith => {
+                const hadithElement = document.createElement("div");
+                hadithElement.classList.add("hadith");
+
+                const arabicText = document.createElement("p");
+                arabicText.classList.add("arabic");
+                arabicText.textContent = hadith.arabic;
+                hadithElement.appendChild(arabicText);
+
+                const englishText = document.createElement("p");
+                englishText.classList.add("english");
+                englishText.textContent = `${hadith.english.narrator}: ${hadith.english.text}`;
+                hadithElement.appendChild(englishText);
+
+                hadithContainer.appendChild(hadithElement);
+            });
+        }
+    </script>
+</body>
+</html>
