@@ -1,19 +1,13 @@
-# deen_gpt.py
+import openai
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
+openai.api_key = "YOUR_HUGGINGFACE_API_KEY"  # Add your Hugging Face API key here
 
-# Load the model and tokenizer from Hugging Face
-model_name = "gpt2"  # Replace with your Hugging Face model name
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-
-# Load model with weights_only=True for better security
-model = AutoModelForCausalLM.from_pretrained(model_name, weights_only=True)
-
-# Function to generate a response
-def generate_response(input_text):
-    # Tokenize the input text
-    inputs = tokenizer(input_text, return_tensors="pt")
-    # Generate the response
-    outputs = model.generate(inputs["input_ids"], max_length=200)
-    # Decode and return the generated text
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+def get_deen_response(user_query):
+    prompt = f"Answer the following query strictly from an Islamic perspective: {user_query}"
+    response = openai.Completion.create(
+        engine="gpt-3.5-turbo",  # Replace with the model you're using
+        prompt=prompt,
+        max_tokens=150,
+        temperature=0.7,
+    )
+    return response.choices[0].text.strip()  # Extract and return the answer

@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZikrMate - DeenGPT</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>ZikrMate with DeenGPT</title>
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <h1>Ask DeenGPT</h1>
-    <div>
-        <input type="text" id="question" placeholder="Ask DeenGPT">
-        <button onclick="askDeenGPT()">Ask</button>
+    <div class="deen-gpt-section">
+        <h2>Ask DeenGPT</h2>
+        <input type="text" id="deenGPTInput" placeholder="Ask about a dua...">
+        <button onclick="askDeenGPT()">Get Answer</button>
+        <p id="deenGPTResponse"></p>
     </div>
-    <div id="answer"></div>
 
-    <script src="scripts/app.js"></script>
+    <script src="static/app.js"></script>
 </body>
 </html>
