@@ -3,30 +3,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* Body and Background Styling */
+/* Body & Background Styling */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background: #050527; /* Light background */
-  color: #333;
+  background: linear-gradient(to right, #020024, #090979, #7eb931); /* Premium gradient */
+  color: #fff;
   min-height: 100vh;
   padding-top: 20px;
-  transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Header */
 h1 {
-  font-size: 2.5rem;
-  color: #fbfbfc;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 1.5rem;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow for lighting effect */
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: fadeInDown 1.2s ease-out;
 }
 
 /* Developer Info Section */
@@ -35,11 +38,11 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
-  padding: 8px 0;
+  padding: 10px 0;
   display: none;
   z-index: 100;
 }
@@ -48,138 +51,148 @@ h1 {
 .search-bar {
   margin-bottom: 2rem;
   max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90%;
   text-align: center;
   position: relative;
 }
 
 .search-bar input {
-  padding: 14px;
+  padding: 15px;
   width: 100%;
-  border: 2px solid #3adf08;
-  border-radius: 25px;
-  background-color: #fff;
-  color: #333;
-  font-size: 1rem;
+  border: 2px solid #00ffcc;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.1rem;
   outline: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Lighting effect */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  text-align: center;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-bar input:focus {
-  border: 2px solid #00bfff; /* Light blue border on focus */
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glowing effect */
-  background-color: #f1f1f1;
+  border-color: #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Cards Grid */
 #duadhikrCards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 5%;
+  width: 100%;
+  justify-content: center;
 }
 
 /* Card Styling */
 .duadhikr-card {
-  background: #e4f0f3; /* Light blue */
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #333;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 2px solid transparent; /* Light border with transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
 }
 
 .duadhikr-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  background: #7ecfe7; /* Lighter blue on hover */
-  border: 2px solid #00bfff; /* Light blue border on hover */
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.7); /* Glowing border effect */
+  transform: scale(1.07);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #ffcc00;
 }
 
-/* Specific Card Colors (lighter shades) */
-.duadhikr-card.bg-blue-100 {
-  background: #b3d9e6; /* Light blue */
+/* Specific Card Colors */
+.duadhikr-card.bg-blue-100 { background: rgba(173, 216, 230, 0.2); }
+.duadhikr-card.bg-yellow-100 { background: rgba(255, 223, 77, 0.2); }
+.duadhikr-card.bg-purple-100 { background: rgba(186, 85, 211, 0.2); }
+.duadhikr-card.bg-green-100 { background: rgba(144, 238, 144, 0.2); }
+.duadhikr-card.bg-red-100 { background: rgba(255, 99, 71, 0.2); }
+.duadhikr-card.bg-pink-100 { background: rgba(255, 182, 193, 0.2); }
+.duadhikr-card.bg-teal-100 { background: rgba(0, 128, 128, 0.2); }
+.duadhikr-card.bg-orange-100 { background: rgba(255, 165, 0, 0.2); }
+.duadhikr-card.bg-gray-100 { background: rgba(169, 169, 169, 0.2); }
+
+/* Card Text Color */
+.duadhikr-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
-.duadhikr-card.bg-yellow-100 {
-  background: #f2e4a1; /* Soft yellow */
+.duadhikr-card p {
+  font-size: 1rem;
+  color: #f0f0f0;
 }
 
-.duadhikr-card.bg-purple-100 {
-  background: #d0a7d8; /* Light purple */
-}
-
-.duadhikr-card.bg-green-100 {
-  background: #a6d1a6; /* Soft green */
-}
-
-.duadhikr-card.bg-red-100 {
-  background: #f1a6a6; /* Light red */
-}
-
-.duadhikr-card.bg-pink-100 {
-  background: #f8c7d7; /* Soft pink */
-}
-
-.duadhikr-card.bg-teal-100 {
-  background: #b8e0d6; /* Light teal */
-}
-
-.duadhikr-card.bg-orange-100 {
-  background: #ffcc99; /* Light orange */
-}
-
-.duadhikr-card.bg-gray-100 {
-  background: #8ae9ec; /* Light gray */
-}
-
-/* Card Text Color (specific to each category) */
-.bg-blue-100 h3, .bg-blue-100 p {
-  color: #032736; /* Darker text for contrast */
-}
-
-.bg-yellow-100 h3, .bg-yellow-100 p {
-  color: #634205; /* Dark yellow text */
-}
-
-.bg-purple-100 h3, .bg-purple-100 p {
-  color: #700569; /* Dark purple text */
-}
-
-.bg-green-100 h3, .bg-green-100 p {
-  color: #08632e; /* Dark green text */
-}
-
-.bg-red-100 h3, .bg-red-100 p {
-  color: #d81d10; /* Dark red text */
-}
-
-.bg-pink-100 h3, .bg-pink-100 p {
-  color: #810318; /* Dark pink text */
-}
-
-.bg-teal-100 h3, .bg-teal-100 p {
-  color: #023b32; /* Dark teal text */
-}
-
-.bg-orange-100 h3, .bg-orange-100 p {
-  color: #694003; /* Dark orange text */
-}
-
-.bg-gray-100 h3, .bg-gray-100 p {
-  color: #bb0808; /* Dark gray text */
-}
-
-/* Footer or Miscellaneous Styles */
+/* Footer */
 footer {
-  background-color: #333;
+  background: rgba(0, 0, 0, 0.9);
   color: #fff;
-  padding: 10px 0;
+  padding: 15px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .search-bar input {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  
+  .duadhikr-card {
+    padding: 15px;
+  }
+  
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .search-bar {
+    width: 95%;
+  }
+  
+  .search-bar input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  
+  .duadhikr-card {
+    padding: 12px;
+  }
 }
