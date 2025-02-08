@@ -231,35 +231,72 @@
 </body>
 </html>
 
+<div id="azkar-card" class="folder" onclick="navigateToAzkar()">
+  <div class="flex items-center">
+    <i id="azkar-icon" class="fas text-2xl"></i>
+    <h2 id="azkar-title" class="ml-2 folder-title"></h2>
+  </div>
+  <div class="mt-4 flex space-x-2">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
+      Read Azkar
+    </button>
+  </div>
+</div>
 
-    <!-- Morning Azkar/صبح کا اذکار Card -->
-    <div class="folder bg-morning-azkar" onclick="window.location.href='dua_dhikr/duafiles/morning_azkar.html'">
-      <div class="flex items-center">
-        <i class="fas fa-sun text-yellow-500 text-2xl"></i>
-        <h2 class="ml-2 folder-title">
-          Morning Azkar/صبح کے اذکار
-        </h2>
-      </div>
-      <div class="mt-4 flex space-x-2">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-          Read Azkar
-        </button>
-      </div>
-    </div>
+<script>
+  function updateAzkarCard() {
+    const now = new Date();
+    const hour = now.getHours();
+    const azkarCard = document.getElementById("azkar-card");
+    const azkarTitle = document.getElementById("azkar-title");
+    const azkarIcon = document.getElementById("azkar-icon");
 
-  <!-- Evening Azkar/شام کا اذکار Card -->
-  <div class="folder bg-evening-azkar" onclick="window.location.href='dua_dhikr/duafiles/evening_azkar.html'">
+    if (hour >= 1 && hour < 12) {
+      // Morning Azkar
+      azkarCard.className = "folder bg-morning-azkar";
+      azkarTitle.innerHTML = "Morning Azkar / صبح کے اذکار";
+      azkarIcon.className = "fas fa-sun text-yellow-500 text-2xl";
+      azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/morning_azkar.html'");
+    } else {
+      // Evening Azkar
+      azkarCard.className = "folder bg-evening-azkar";
+      azkarTitle.innerHTML = "Evening Azkar / شام کے اذکار";
+      azkarIcon.className = "fas fa-moon text-blue-500 text-2xl";
+      azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/evening_azkar.html'");
+    }
+  }
+
+  function navigateToAzkar() {
+    const now = new Date();
+    const hour = now.getHours();
+    if (hour >= 1 && hour < 12) {
+      window.location.href = 'dua_dhikr/duafiles/morning_azkar.html';
+    } else {
+      window.location.href = 'dua_dhikr/duafiles/evening_azkar.html';
+    }
+  }
+
+  // Call the function on page load
+  updateAzkarCard();
+</script>
+
+  <!-- quran audio -->
+  <div class="folder bg-quran-audio" onclick="window.location.href='quran-audio/index.html'">
     <div class="flex items-center">
-      <i class="fas fa-moon text-blue-500 text-2xl"></i>
+      <i class="fas fa-headphones-alt text-green-500 text-2xl"></i>
       <h2 class="ml-2 folder-title">
-        Evening Azkar/شام کے اذکار
+        Quran Audio/قرآن آڈیو
       </h2>
     </div>
-    <div class="mt-4 flex space-x-2">
-      <button class="bg-blue-500 text-white px-4 py-2 rounded font-bold">
-        Read Azkar
+    <p class="mt-2 folder-description">
+      Listen to the recitation of the Quran
+    </p>
+    <a href="quran-audio/index.html">
+      <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded font-bold">
+        Listen Now
       </button>
-    </div>
+    </a>
+
   </div>
 
   <!-- Dua and Dhikr Folder -->

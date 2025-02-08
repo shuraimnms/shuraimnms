@@ -1331,3 +1331,48 @@ span {
   font-size: 16px;
   font-weight: bold;
 }
+
+
+
+
+/* Style for the content items */
+
+.content-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 120px;
+  height: 120px;
+  background-color: #48638f; /* Dark blue-gray */
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.3s;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+}
+
+.content-item:hover {
+  background-color: #51709b; /* Slightly lighter on hover */
+  transform: scale(1.05);
+}
+
+.icon-container {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.folder {
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
