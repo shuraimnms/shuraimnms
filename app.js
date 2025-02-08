@@ -185,10 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
               
               {
-                question: "Which angel is responsible for blowing the trumpet on the Day of Judgment?",
-                options: ["Israfil", "Jibril", "Mika'il", "Azrael"],
-                answer: "Israfil",
-              },
+                "question": "Which angel is responsible for blowing the trumpet on the Day of Judgment? (قیامت کے دن صور پھونکنے کی ذمہ داری کس فرشتے کی ہے؟)",
+                "options": ["Israfil (اسرافیل)", "Jibril (جبریل)", "Mika'il (میکائیل)", "Azrael (عزرائیل)"],
+                "answer": "Israfil (اسرافیل)"
+              },              
               {
                 question: "Which city is considered the birthplace of Prophet Muhammad (PBUH)?",
                 options: ["Medina", "Mecca", "Jerusalem", "Kufa"],
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
               {
                 question: "Which is the smallest surah of the Quran?",
                 options: ["Al-Fatiha", "Al-Ikhlas", "Al-Nas", "Al-Asr"],
-                answer: "Al-Ikhlas",
+                answer: "Al-Fatiha",
               },
             ],
           };

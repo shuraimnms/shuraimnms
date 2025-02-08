@@ -1,22 +1,31 @@
-from flask import Flask, request, jsonify, render_template
-from deen_gpt import get_deen_response  # Import DeenGPT model
+from flask import Flask, request, jsonify
+import openai
 
-app = Flask(__name__, template_folder="../templates", static_folder="../static")
+app = Flask(__name__)
 
-# Route for serving the main page
-@app.route("/")
-def home():
-    return render_template("index.html")  # Make sure index.html exists
+# Set DeepSeek AI API Key (Free Model)
+DEEPSEEK_API_KEY = "sk-1b4bc58c37ea47669aa7d16321da6ee9"
 
-# API route for DeenGPT
-@app.route("/deen-gpt", methods=["POST"])
-def deen_gpt_query():
-    user_query = request.json.get("query")
-    if not user_query:
-        return jsonify({"error": "Query is missing"}), 400
+@app.route('/chat', methods=['POST'])
+def chat():
+    data = request.json
+    user_message = data.get("message", "")
 
-    response = get_deen_response(user_query)
-    return jsonify({"response": response})
+    try:
+        response = openai.ChatCompletion.create(
+            model="deepseek-ai/deepseek-chat",
+            messages=[
+                {"role": "system", "content": "You are DeenGPT, an AI assistant providing responses based on Islamic teachings."},
+                {"role": "user", "content": user_message}
+            ],
+            api_key=DEEPSEEK_API_KEY
+        )
 
-if __name__ == "__main__":
+        reply = response['choices'][0]['message']['content']
+        return jsonify({"response": reply})
+
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+if __name__ == '__main__':
     app.run(debug=True)

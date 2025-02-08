@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔊 Ruqyah Audio | رقیہ آڈیو</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #121212, #1e1e1e);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .player-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .player-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .player-title span {
+            display: block;
+            font-size: 18px;
+            color: #bbb;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #28a745, #1e7d34);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #1e7d34, #145422);
+        }
+
+        .waveform {
+            width: 100%;
+            height: 50px;
+            margin-top: 15px;
+            background: url('https://media.giphy.com/media/XcVA6vyL40GPHtU5h8/giphy.gif') no-repeat center;
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        .volume-container {
+            margin-top: 15px;
+        }
+
+        input[type="range"] {
+            width: 80%;
+            max-width: 300px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+            outline: none;
+        }
+
+        .offline-warning {
+            display: none;
+            color: #ff4d4d;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="player-container">
+        <div class="player-title">📿 Ruqyah by Sheikh Sudais <span>شیخ سدیس کی رقیہ</span></div>
+
+        <div class="controls">
+            <button onclick="togglePlay()">▶ Play / ⏸ Pause</button>
+            <button onclick="toggleLoop()">🔁 Loop: Off</button>
+        </div>
+
+        <div class="volume-container">
+            🔊 Volume: <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" onchange="changeVolume(this.value)">
+        </div>
+
+        <audio id="ruqyahAudio" controls>
+            <source src="https://www.dropbox.com/scl/fi/y82road9rtk1b837bgj3j/Ruqyah-By-Sheikh-Abdur-Rahman-As-Sudais.mp3?rlkey=xwjrvavt28lsxcipjw6vm9ycy&st=irdj3ge8&raw=1" type="audio/mp3">
+        </audio>
+
+        <div class="waveform"></div>
+
+        <div id="offlineWarning" class="offline-warning">⚠ No Internet! Audio will play if loaded.</div>
+    </div>
+
+    <script>
+        let audio = document.getElementById("ruqyahAudio");
+        let loopButton = document.querySelector(".controls button:nth-child(2)");
+        let offlineWarning = document.getElementById("offlineWarning");
+        let isLooping = false;
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+
+        function toggleLoop() {
+            isLooping = !isLooping;
+            audio.loop = isLooping;
+            loopButton.innerHTML = isLooping ? "🔁 Loop: On" : "🔁 Loop: Off";
+        }
+
+        function changeVolume(value) {
+            audio.volume = value;
+        }
+
+        function checkInternet() {
+            if (!navigator.onLine) {
+                offlineWarning.style.display = "block";
+            } else {
+                offlineWarning.style.display = "none";
+            }
+        }
+
+        window.addEventListener("load", checkInternet);
+        window.addEventListener("online", checkInternet);
+        window.addEventListener("offline", checkInternet);
+    </script>
+
+</body>
+</html>
