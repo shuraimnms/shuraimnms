@@ -1,65 +1,54 @@
-let count = 0;
+document.addEventListener("DOMContentLoaded", function() {
+  let count = 0;
+  let target = 33;
 
-function incrementCount(bead) {
-  count++;
-  document.getElementById("counter").textContent = count;
+  const counterDisplay = document.getElementById("counter");
+  const increaseBtn = document.getElementById("increase-btn");
+  const resetBtn = document.getElementById("reset-btn");
+  const targetRange = document.getElementById("targetRange");
+  const targetText = document.getElementById("target");
+  const dhikrDisplay = document.getElementById("dhikr-display");
 
-  // Create new bead and append to the container
-  const newBead = document.createElement("div");
-  newBead.classList.add("bead");
-  newBead.setAttribute("onclick", "incrementCount(this)");
+  // List of Dhikrs
+  const dhikrList = [
+      "سُبْحَانَ اللّهِ", // SubhanAllah
+      "اَلْحَمْدُ لِلّهِ", // Alhamdulillah
+      "اللّهُ أَكْبَرُ", // Allahu Akbar
+      "لَا إِلٰهَ إِلَّا اللّهُ", // La ilaha illaAllah
+      "اَسْتَغْفِرُ اللّهَ", // Astaghfirullah
+  ];
 
-  const beadInner = document.createElement("div");
-  beadInner.classList.add("bead-inner");
+  // Function to update counter & change Dhikr
+  function increaseCount() {
+      count++;
+      counterDisplay.innerText = count;
+      dhikrDisplay.innerText = dhikrList[count % dhikrList.length];
 
-  const beadIcon = document.createElement("span");
-  beadIcon.classList.add("bead-icon");
-  beadIcon.textContent = "🪙";  // You can change this to any symbol
+      // Add Heartbeat Effect
+      counterDisplay.classList.add("heartbeat");
+      setTimeout(() => counterDisplay.classList.remove("heartbeat"), 500);
 
-  beadInner.appendChild(beadIcon);
-  newBead.appendChild(beadInner);
+      // Vibrate on target completion
+      if (count % target === 0) {
+          navigator.vibrate(100);
+      }
+  }
 
-  // Append the new bead to the container
-  document.getElementById("beads-container").appendChild(newBead);
+  // Reset Function
+  function resetCount() {
+      count = 0;
+      counterDisplay.innerText = count;
+      dhikrDisplay.innerText = dhikrList[0];
+  }
 
-  // Remove the clicked bead
-  bead.remove();
+  // Update Target
+  function updateTarget() {
+      target = targetRange.value;
+      targetText.innerText = target;
+  }
 
-  // Scroll the beads container horizontally (side-scrolling effect)
-  document.getElementById("beads-container").scrollBy(100, 0); // Scroll by 100px horizontally
-}
-
-function resetCount() {
-  count = 0;
-  document.getElementById("counter").textContent = count;
-
-  // Reset beads to the initial state
-  const beadsContainer = document.getElementById("beads-container");
-  beadsContainer.innerHTML = `
-    <div class="bead" onclick="incrementCount(this)">
-      <div class="bead-inner">
-        <span class="bead-icon">🪙</span>
-      </div>
-    </div>
-    <div class="bead" onclick="incrementCount(this)">
-      <div class="bead-inner">
-        <span class="bead-icon">🪙</span>
-      </div>
-    </div>
-    <div class="bead" onclick="incrementCount(this)">
-      <div class="bead-inner">
-        <span class="bead-icon">🪙</span>
-      </div>
-    </div>
-    <div class="bead" onclick="incrementCount(this)">
-      <div class="bead-inner">
-        <span class="bead-icon">🪙</span>
-      </div>
-    </div>
-    <div class="bead" onclick="incrementCount(this)">
-      <div class="bead-inner">
-        <span class="bead-icon">🪙</span>
-      </div>
-    </div>
-  `;
-}
+  // Event Listeners
+  increaseBtn.addEventListener("click", increaseCount);
+  resetBtn.addEventListener("click", resetCount);
+  targetRange.addEventListener("input", updateTarget);
+});

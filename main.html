@@ -165,7 +165,7 @@
 
     
 
-
+     
     <!-- ruqya -->
     <div class="content-item" id="ruqya" onclick="window.location.href='dua_dhikr/duafiles/ruqyah-app/index.html'">
       <div class="icon-container">
@@ -251,33 +251,49 @@
     const azkarTitle = document.getElementById("azkar-title");
     const azkarIcon = document.getElementById("azkar-icon");
 
-    if (hour >= 1 && hour < 12) {
-      // Morning Azkar
-      azkarCard.className = "folder bg-morning-azkar";
-      azkarTitle.innerHTML = "Morning Azkar / صبح کے اذکار";
-      azkarIcon.className = "fas fa-sun text-yellow-500 text-2xl";
-      azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/morning_azkar.html'");
+    if (hour >= 1 && hour < 8) {
+        // Morning Dhikr
+        azkarCard.className = "folder bg-morning-dhikr";
+        azkarTitle.innerHTML = "Morning Dhikr / صبح کی اذکار";
+        azkarIcon.className = "fas fa-sun text-yellow-500 text-2xl";
+        azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/morning_azkar.html'");
+    } else if (hour >= 8 && hour < 12) {
+        // Protection Dhikr
+        azkarCard.className = "folder bg-protection-dhikr";
+        azkarTitle.innerHTML = "Protection Dhikr / حفاظت کی اذکار";
+        azkarIcon.className = "fas fa-shield-alt text-blue-500 text-2xl";
+        azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/protection.html'");
+    } else if (hour >= 12 && hour < 15) {
+        // Gratitude Dhikr
+        azkarCard.className = "folder bg-gratitude-dhikr";
+        azkarTitle.innerHTML = "Gratitude Dhikr / شکر کی اذکار";
+        azkarIcon.className = "fas fa-heart text-red-500 text-2xl";
+        azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/gratitude_dhikr.html'");
+    } else if (hour >= 15 && hour < 20) {
+        // Evening Dhikr
+        azkarCard.className = "folder bg-evening-dhikr";
+        azkarTitle.innerHTML = "Evening Dhikr / شام کی اذکار";
+        azkarIcon.className = "fas fa-cloud-moon text-purple-500 text-2xl";
+        azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/evening_azkar.html'");
     } else {
-      // Evening Azkar
-      azkarCard.className = "folder bg-evening-azkar";
-      azkarTitle.innerHTML = "Evening Azkar / شام کے اذکار";
-      azkarIcon.className = "fas fa-moon text-blue-500 text-2xl";
-      azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/evening_azkar.html'");
+        // Before Sleep Dhikr
+        azkarCard.className = "folder bg-before-sleep-dhikr";
+        azkarTitle.innerHTML = "Before Sleep Dhikr / سونے سے پہلے کی اذکار";
+        azkarIcon.className = "fas fa-bed text-gray-500 text-2xl";
+        azkarCard.setAttribute("onclick", "window.location.href='dua_dhikr/duafiles/before_sleep.html'");
     }
-  }
+}
 
-  function navigateToAzkar() {
-    const now = new Date();
-    const hour = now.getHours();
-    if (hour >= 1 && hour < 12) {
-      window.location.href = 'dua_dhikr/duafiles/morning_azkar.html';
-    } else {
-      window.location.href = 'dua_dhikr/duafiles/evening_azkar.html';
-    }
-  }
+// Function to navigate directly based on time
+function navigateToAzkar() {
+    updateAzkarCard(); // Ensure the latest time check
+    const azkarCard = document.getElementById("azkar-card");
+    azkarCard.click(); // Simulate a click to navigate
+}
 
-  // Call the function on page load
-  updateAzkarCard();
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", updateAzkarCard);
+
 </script>
 
   <!-- quran audio -->

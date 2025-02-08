@@ -899,7 +899,7 @@ audio::-webkit-media-controls-panel {
 
 .icon-container i {
   font-size: 48px;
-  color: #007bff;
+  color: #2b5b8f;
 }
 
 .content-item span {
@@ -1300,37 +1300,6 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-.content-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 120px;
-  height: 120px;
-  background-color: #48638f; /* Dark blue-gray */
-  color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, background-color 0.3s;
-  cursor: pointer;
-  text-align: center;
-  padding: 10px;
-}
-
-.content-item:hover {
-  background-color: #51709b; /* Slightly lighter on hover */
-  transform: scale(1.05);
-}
-
-.icon-container {
-  font-size: 32px;
-  margin-bottom: 8px;
-}
-
-span {
-  font-size: 16px;
-  font-weight: bold;
-}
 
 .bg-quran-audio {
   background-color: #9899cf; /* Light greenish background */
@@ -1342,5 +1311,80 @@ span {
 
 .bg-quran-audio:hover {
   transform: scale(1.05);
-  background-color: #e6f7e6; /* Slightly darker on hover */
+  background-color: #5f5ea5; /* Slightly darker on hover */
+}
+/**dynamic change cards**/
+.bg-morning-dhikr {
+  background-color: #fdf6e3; /* Soft sunrise yellow */
+  border: 2px solid #facc15; /* Yellow border */
+}
+
+.bg-protection-dhikr {
+  background-color: #353b53; /* Light blue */
+  border: 2px solid #0288d1; /* Blue border */
+}
+
+.bg-gratitude-dhikr {
+  background-color: #fef9c3; /* Light golden */
+  border: 2px solid #d97706; /* Orange border */
+}
+
+.bg-evening-dhikr {
+  background-color: #fde2e4; /* Light pink */
+  border: 2px solid #dc2626; /* Red border */
+}
+
+.bg-before-sleep-dhikr {
+  background-color: #7286a3; /* Soft gray */
+  border: 2px solid #6b7280; /* Dark gray border */
+}
+/* General Content Item Styling */
+.content-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 150px; /* Adjust size as needed */
+  height: 150px;
+  background-color: #f3f4f6; /* Light gray background */
+  border: 2px solid #34d399; /* Green border */
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+  padding: 16px;
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.content-item:hover {
+  transform: scale(1.05);
+  background-color: #e6f7e6; /* Lighter greenish on hover */
+}
+
+/* Icon Styling */
+.icon-container {
+  font-size: 2rem;
+  color: #22c55e; /* Green icon color */
+  margin-bottom: 8px;
+}
+
+/* Quran Specific Styling */
+#quran {
+  background-color: #fef9c3; /* Light golden */
+  border-color: #d97706; /* Orange border */
+}
+
+#quran .icon-container {
+  color: #d97706; /* Orange icon */
+}
+
+/* Ruqyah Specific Styling */
+#ruqya {
+  background-color: #e0f7fa; /* Light blue */
+  border-color: #0288d1; /* Blue border */
+}
+
+#ruqya .icon-container {
+  color: #0288d1; /* Blue icon */
 }
