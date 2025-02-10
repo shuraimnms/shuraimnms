@@ -1,97 +1,122 @@
-/* General Body Styling */
+/* General Styling */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #3a7bd5, #3a6073); /* Gradient background */
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364); /* Dark blue gradient */
   color: #fff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Centering the Main Container */
+/* Main Card with Glassmorphism */
 .container {
-  max-width: 600px;
-  background: rgba(0, 0, 0, 0.7); /* Transparent black for contrast */
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  padding: 20px;
+  max-width: 650px;
+  background: rgba(23, 1, 26, 0.15); /* Transparent glass effect */
+  backdrop-filter: blur(12px); /* Blur effect */
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  padding: 30px;
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.03); /* Slight zoom on hover */
 }
 
 /* Dua Card Styling */
 .bg-blue-800 {
-  background: rgba(0, 102, 204, 0.85); /* Blue overlay */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.5);
+  background: rgba(0, 102, 204, 0.9); /* Deep blue overlay */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.6);
+  animation: slideIn 0.8s ease-in-out;
 }
 
+/* Headings */
 h2 {
-  font-size: 24px;
-  color: #ffd700; /* Gold color for titles */
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-p {
-  line-height: 1.6;
-  color: #f8f9fa; /* Light white */
+  font-size: 32px;
+  color: #ffcc00; /* Bright golden color */
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* Arabic Text */
 .text-3xl {
-  font-size: 28px;
+  font-size: 40px;
   color: #ffffff;
-  font-family: 'Amiri', serif; /* Arabic-focused font */
-  margin-bottom: 10px;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Amiri', serif; /* Elegant Arabic font */
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Explanation and Hadith References */
+.text-green-200 {
+  color: #a3ffb2; /* Light green for explanation */
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.text-green-400 {
+  color: #00ff6a; /* Bright neon green */
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/* Dua Text */
+p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f8f9fa; /* Light white */
+  line-height: 1.8;
+  margin-top: 15px;
 }
 
 /* Buttons */
 a {
   display: inline-block;
-  padding: 12px 25px;
-  background: #4caf50; /* Green background */
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Fiery gradient */
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
-  font-size: 18px;
+  border-radius: 10px;
+  font-size: 20px;
   font-weight: bold;
+  text-transform: uppercase;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 a:hover {
-  background: #45a049; /* Darker green on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-  transform: translateY(-3px);
-}
-
-/* Explanation and Hadith References */
-.text-green-200, .text-green-400 {
-  color: #90ee90; /* Light green */
-}
-
-.text-green-400 {
-  color: #32cd32; /* Brighter green for emphasis */
+  background: linear-gradient(45deg, #ff5733, #ff784e);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 15px;
+    padding: 20px;
   }
   h2 {
-    font-size: 20px;
+    font-size: 26px;
+  }
+  .text-3xl {
+    font-size: 32px;
   }
   p {
-    font-size: 14px;
+    font-size: 18px;
   }
   a {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -104,5 +129,16 @@ a:hover {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

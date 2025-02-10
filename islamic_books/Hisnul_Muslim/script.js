@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("dua-container");
 
     if (!container) {
@@ -29,12 +29,33 @@ document.addEventListener("DOMContentLoaded", function() {
             <p class="arabic">${dua.ARABIC_TEXT}</p>
             <p class="english">${dua.TRANSLATED_TEXT}</p>
             <p class="repeat">Repeat: ${dua.REPEAT} times</p>
-            <audio controls>
-                <source src="${dua.AUDIO}" type="audio/mpeg">
-                Your browser does not support the audio tag.
-            </audio>
         `;
 
+        // Create an audio element
+        const audioElement = document.createElement("audio");
+        audioElement.setAttribute("controls", ""); // Show play controls
+        audioElement.setAttribute("preload", "none"); // Avoid autoplay issues
+
+        // Ensure correct audio source
+        let audioURL = dua.AUDIO;
+        if (!audioURL.startsWith("http")) {
+            audioURL = window.location.origin + "/" + audioURL; // Convert to absolute path
+        }
+
+        console.log("Loading Audio:", audioURL); // Debugging
+
+        const sourceElement = document.createElement("source");
+        sourceElement.setAttribute("src", audioURL);
+        sourceElement.setAttribute("type", "audio/mpeg");
+
+        // Handle errors
+        audioElement.onerror = function () {
+            console.error("Audio failed to load:", audioURL);
+            alert("Audio file could not be loaded.");
+        };
+
+        audioElement.appendChild(sourceElement);
+        duaCard.appendChild(audioElement);
         container.appendChild(duaCard);
     });
 

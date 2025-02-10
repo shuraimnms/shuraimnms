@@ -28,13 +28,13 @@ body {
     margin: 40px auto;
     padding: 20px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.05); /* Subtle overlay */
+    background: rgba(13, 5, 51, 0.05); /* Subtle overlay */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Individual Dua Section */
 .dua-section {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(3, 3, 36, 0.7);
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 30px;
@@ -61,7 +61,7 @@ body {
 /* Arabic Text Styling */
 .arabic-text {
     font-size: 1.8rem;
-    color: rgb(9, 165, 30);
+    color: rgb(0, 255, 34);
     margin-bottom: 20px;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(8, 1, 1, 0.6);
@@ -72,7 +72,7 @@ body {
 /* Roman-Urdu Text Styling */
 .roman-urdu-text {
     font-size: 1.6rem;
-    color: rgb(205, 255, 23);
+    color: rgb(200, 255, 0);
     margin-bottom: 20px;
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -91,7 +91,7 @@ body {
 /* Reference Text Styling */
 .reference {
     font-size: 1.2rem;
-    color:  #75f0bd;
+    color:rgb(0, 255, 149);
     text-align: center;
     font-style: italic;
     margin-top: 10px;

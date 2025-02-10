@@ -288,7 +288,7 @@ if (surahId) {
             };
 
             // Paginate the verses into 13 lines per page
-            const paginatedVerses = paginateVerses(verses, 13);
+            const paginatedVerses = paginateVerses(verses, 12);
             let currentPage = 0;
 
             const renderPage = (pageIndex) => {
@@ -421,7 +421,74 @@ items.forEach(item => {
 }
 
 // Event listener for search input
-const searchInput = document.getElementById("search-bar");
+const searchInput = document.getElementById("search-input");
+const suggestionsContainer = document.getElementById("suggestions");
+
 if (searchInput) {
-searchInput.addEventListener("input", searchList);
+    searchInput.addEventListener("input", function() {
+        const query = searchInput.value.toLowerCase();
+        showSuggestions(query);
+    });
+}
+
+document.getElementById('search-button').addEventListener('click', function() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    searchAyat(query);
+});
+
+function searchAyat(query) {
+    fetch(`https://api.alquran.cloud/v1/search/${query}/all/en`)
+        .then(response => response.json())
+        .then(data => {
+            displayResults(data.data.matches);
+        })
+        .catch(error => {
+            console.error('Error fetching search results:', error);
+        });
+}
+
+function displayResults(results) {
+    const resultsContainer = document.getElementById('search-results');
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+        return;
+    }
+
+    results.forEach(result => {
+        const resultItem = document.createElement('div');
+        resultItem.className = 'result-item';
+        resultItem.innerHTML = `
+            <p><strong>Surah ${result.surah.name} (Ayah ${result.numberInSurah}):</strong> ${result.text}</p>
+        `;
+        resultsContainer.appendChild(resultItem);
+    });
+}
+
+function showSuggestions(query) {
+    suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+    if (query.length === 0) {
+        return;
+    }
+
+    const matchedAyat = surahs.flatMap(surah => {
+        return Array.from({ length: surah.ayahs }, (_, i) => ({
+            surah: surah.name,
+            ayah: i + 1,
+            text: `Surah ${surah.name}, Ayah ${i + 1}`
+        }));
+    }).filter(ayat => ayat.text.toLowerCase().includes(query));
+
+    matchedAyat.slice(0, 10).forEach(ayat => { // Limit to 10 suggestions
+        const suggestionItem = document.createElement("div");
+        suggestionItem.className = "suggestion-item";
+        suggestionItem.textContent = ayat.text;
+        suggestionItem.addEventListener("click", () => {
+            searchInput.value = ayat.text;
+            suggestionsContainer.innerHTML = ''; // Clear suggestions
+        });
+        suggestionsContainer.appendChild(suggestionItem);
+    });
 }
