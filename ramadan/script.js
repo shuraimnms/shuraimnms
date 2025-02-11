@@ -5,7 +5,7 @@ function setAlarm(type) {
         alert("Please select a time!");
         return;
     }
-    
+
     localStorage.setItem(type + "-alarm", alarmTime);
     alert(type.charAt(0).toUpperCase() + type.slice(1) + " alarm set for " + alarmTime);
 }
@@ -26,6 +26,12 @@ function checkAlarm() {
 // 🔊 Function to Play Alarm Sound
 function playAlarm() {
     let alarmSound = document.getElementById('alarm-sound').value;
+
+    if (!alarmSound) {
+        alert("No alarm sound selected!");
+        return;
+    }
+
     let audio = new Audio(alarmSound);
     audio.play();
 }
@@ -52,7 +58,7 @@ const rozaDays = document.getElementById("roza-days");
 // Function to Update Progress
 function updateRozaProgress() {
     let completedFasts = 0;
-    
+
     for (let i = 1; i <= 30; i++) {
         if (localStorage.getItem("roza-" + i) === "completed") {
             completedFasts++;
@@ -78,13 +84,13 @@ for (let i = 1; i <= 30; i++) {
     // Toggle Completed State on Click
     day.addEventListener("click", () => {
         day.classList.toggle("completed");
-        
+
         if (day.classList.contains("completed")) {
             localStorage.setItem("roza-" + i, "completed");
         } else {
             localStorage.removeItem("roza-" + i);
         }
-        
+
         updateRozaProgress();
     });
 
