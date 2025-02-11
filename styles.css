@@ -261,6 +261,55 @@ footer .social-icons a {
 footer .social-icons a:hover {
   color: #44c7c7;
 }
+/* 🌙 Ramadan Folder Styling */
+.ramadan-container {
+  background: linear-gradient(145deg, #1e293b, #334155); /* Dark blue gradient */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 30px; /* Increased margin bottom */
+}
+
+.ramadan-container:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* 🏆 3D Title Effect */
+#ramadan-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700; /* Gold color */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  transform: perspective(500px) rotateX(10deg);
+}
+
+/* 🎨 Folder Description */
+#ramadan-description {
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* 🔘 3D Button Styling */
+#ramadan-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(145deg, #ffd700, #ffcc00);
+  color: #3d3d3d;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+#ramadan-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
+}
+
 
 /* Buttons */
 button, .rounded-full {
@@ -844,15 +893,7 @@ audio::-webkit-media-controls-panel {
     text-shadow: 0 0 5px #48e234, 0 0 10px #48e234, 0 0 15px #48e234, 0 0 20px #48e234, 0 0 25px #48e234;
   }
   
-  html, body {
-    height: 100%; /* Ensures the full height of the viewport is covered */
-    margin: 0;
-    padding: 0;
-    background-color: #000; /* Full black background */
-    color: #fff; /* White text for readability */
-    font-family: 'Amiri', 'Scheherazade', 'Tajawal', sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
+  
  /* Main Content Section */
 #masjid-finder {
   background-color: #f0f8ff; /* Light Blue for Masjid Finder */
@@ -1320,8 +1361,8 @@ audio::-webkit-media-controls-panel {
 }
 
 .bg-protection-dhikr {
-  background-color: #353b53; /* Light blue */
-  border: 2px solid #0288d1; /* Blue border */
+  background-color: #4767e4; /* Light blue */
+  border: 2px solid #0228d1; /* Blue border */
 }
 
 .bg-gratitude-dhikr {

@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // Store the currently playing audio element
+    let currentlyPlayingAudio = null;
+
     // Access the nested English array
     const duas = hisnulMuslimDuas[0].English[0].TEXT;
 
@@ -53,6 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Audio failed to load:", audioURL);
             alert("Audio file could not be loaded.");
         };
+
+        // Add event listener to stop other audio when new one plays
+        audioElement.addEventListener("play", function () {
+            if (currentlyPlayingAudio && currentlyPlayingAudio !== audioElement) {
+                currentlyPlayingAudio.pause();
+                currentlyPlayingAudio.currentTime = 0;
+            }
+            currentlyPlayingAudio = audioElement;
+        });
 
         audioElement.appendChild(sourceElement);
         duaCard.appendChild(audioElement);

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan - ZikrMate</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- 🌙 Ramadan Header -->
+    <div class="banner">
+        <h1 class="glow-text">Ramadan Kareem / رمضان کریم</h1>
+    </div>
+
+    <!-- 📜 Best Hadith Section -->
+    <div class="container hadith-section">
+        <h2 class="glow-text">📜 Hadith of Ramadan</h2>
+        <p>
+            The Prophet (ﷺ) said:  
+            **“When Ramadan begins, the gates of Paradise are opened, the gates of Hell are closed, and the devils are chained.”**  
+            (Bukhari & Muslim)
+        </p>
+    </div>
+
+    <!-- 🔔 Suhur & Iftar Alarm Section -->
+    <div class="container alarm-section">
+        <h2 class="glow-text">🔔 Suhur & Iftar Alarms</h2>
+
+        <label for="suhur-time">Set Suhur Alarm:</label>
+        <input type="time" id="suhur-time">
+        <button onclick="setAlarm('suhur')">Set Suhur</button>
+
+        <label for="iftar-time">Set Iftar Alarm:</label>
+        <input type="time" id="iftar-time">
+        <button onclick="setAlarm('iftar')">Set Iftar</button>
+
+        <h3 class="glow-text">Select Alarm Sound</h3>
+        <select id="alarm-sound">
+            <option value="https://drive.google.com/uc?export=download&id=YOUR_SUHUR_SOUND_ID">Suhur Alarm</option>
+            <option value="https://drive.google.com/uc?export=download&id=YOUR_IFTAR_SOUND_ID">Iftar Alarm</option>
+        </select>
+        <button onclick="stopAlarm()">Stop Alarm</button>
+    </div>
+
+    <!-- 📅 30-Day Roza Tracker Section -->
+    <div class="container roza-section">
+        <h2 class="glow-text">📅 Ramadan Roza Tracker</h2>
+        <div id="roza-days"></div>
+        <p><b>Progress:</b> <span id="roza-progress">0%</span> (<span id="total-fasts">0</span> days)</p>
+    </div>
+
+    <!-- 📖 Quran Folder Section -->
+    <div class="container quran-section">
+        <h2 class="glow-text">📖 Read Quran</h2>
+        <a href="../islamic_books/quran_kareem/index.html" class="explore-btn">Open Quran</a>
+    </div>
+
+</body>
+</html>

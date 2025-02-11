@@ -44,26 +44,46 @@
         </head>
         <body>
         
-            <div class="dropdown">
-                <!-- Hamburger icon as button -->
-                <button class="toggle-btn" onclick="toggleDropdown()">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                
-                <!-- Dropdown menu with options -->
-                <div id="dropdownMenu" class="dropdown-content">
-                    <!-- Each link now points to a different address -->
-                    <a href="main.html">Home</a> <!-- Link to the main page -->
-                    <a href="https://www.youtube.com" target="_blank">YouTube</a> <!-- Link to YouTube -->
-                    <a href="https://www.instagram.com" target="_blank">Instagram</a> <!-- Link to Instagram -->
-                    <a href="feed.html">Feed Back</a> <!-- Link to a feed page -->
-                    <a href="main.html">Back</a> <!-- Link to the back page -->
-                </div>
-            </div>
+          <div class="dropdown">
+            <!-- Hamburger icon as button -->
+            <button class="toggle-btn" onclick="toggleDropdown()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         
-            <script src="app.js"></script>
+            <!-- Dropdown menu with options -->
+            <div id="dropdownMenu" class="dropdown-content">
+                <a href="main.html">Home</a> <!-- Link to the main page -->
+                <a href="https://youtube.com/@shuraim_ai?si=HzRzDYTa58oIfw6J" target="_blank">YouTube</a> <!-- Link to YouTube -->
+                <a href="#" onclick="openInstagram(event)">Instagram</a> <!-- Updated Instagram link -->
+                <a href="feed.html">Feedback</a> <!-- Link to a feedback page -->
+                <a href="main.html">Back</a> <!-- Link to the back page -->
+            </div>
+        </div>
+        
+        <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdownMenu");
+            dropdown.classList.toggle("show");
+        }
+        
+        function openInstagram(event) {
+            event.preventDefault(); // Prevent default behavior
+            var appUrl = "instagram://user?username=zikr_mate";
+            var webUrl = "https://www.instagram.com/zikr_mate?igsh=MmczYnAyMWFqdjlx";
+            
+            window.location.href = appUrl;
+            
+            // If the app is not installed, redirect to the web version after a short delay
+            setTimeout(function() {
+                window.location.href = webUrl;
+            }, 1500);
+        }
+        </script>
+        
+        
+           
         </body>
         </html>
         
@@ -295,6 +315,24 @@ function navigateToAzkar() {
 document.addEventListener("DOMContentLoaded", updateAzkarCard);
 
 </script>
+
+<!-- 🌙 Ramadan Folder -->
+<div id="ramadan-folder" class="ramadan-container" onclick="window.location.href='ramadan/index.html'">
+  <div class="flex items-center">
+    <i class="fas fa-moon text-yellow-500 text-3xl"></i>
+    <h2 id="ramadan-title">
+      Ramadan / رمضان
+    </h2>
+  </div>
+  <p id="ramadan-description">
+    Special duas and guidance for Ramadan
+  </p>
+  <a href="ramadan/index.html">
+    <button id="ramadan-btn">
+      Explore Now
+    </button>
+  </a>
+</div>
 
   <!-- quran audio -->
   <div class="folder bg-quran-audio" onclick="window.location.href='quran-audio/index.html'">

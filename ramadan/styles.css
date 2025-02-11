@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(145deg, #121212, #1f1f1f);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 🌙 Glowing Header */
+.glow-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 3px 3px 15px rgba(255, 204, 0, 0.7);
+}
+
+/* 📦 General Container Styling */
+.container {
+    background: #222;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 3px 3px 15px rgba(255, 204, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* 📜 Hadith Section */
+.hadith-section {
+    background: linear-gradient(145deg, #2e2e2e, #292929);
+    color: #ffdd57;
+}
+
+/* 🔔 Suhur & Iftar Alarm Section */
+.alarm-section {
+    background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
+}
+
+/* 📅 Roza Tracker */
+.roza-section {
+    background: linear-gradient(145deg, #242424, #2d2d2d);
+}
+
+/* 📖 Quran Section */
+.quran-section {
+    background: linear-gradient(145deg, #1b1b1b, #222);
+}
+
+/* 🔘 Buttons */
+button, .explore-btn {
+    background: linear-gradient(145deg, #ffcc00, #ffaa00);
+    color: #222;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover, .explore-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 15px rgba(255, 204, 0, 0.7);
+}
+
+/* 📅 Roza Tracker */
+.roza-section #roza-days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.day {
+    width: 40px;
+    height: 40px;
+    background: #222;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.day.completed {
+    background: #28a745;
+}
