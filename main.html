@@ -63,35 +63,54 @@
 </div>
 
 <script>
-function openInstagram(event) {
-  event.preventDefault();
-  
-  var appUrl = "instagram://user?username=zikr_mate"; // Opens Instagram app
-  var webUrl = "https://www.instagram.com/zikr_mate?igsh=MmczYnAyMWFqdjlx"; // Opens Instagram website
-  
-  // Try opening the Instagram app
-  window.location.href = appUrl;
+document.addEventListener("DOMContentLoaded", function () {
+  // Open Instagram function
+  function openInstagram(event) {
+      event.preventDefault();
+      
+      var appUrl = "instagram://user?username=zikr_mate"; // Opens Instagram app
+      var webUrl = "https://www.instagram.com/zikr_mate?igsh=MmczYnAyMWFqdjlx"; // Opens Instagram website
 
-  // If app is not installed, open the web version after a short delay
-  setTimeout(function() {
-      window.location.href = webUrl;
-  }, 1500);
-}
+      // Try opening the Instagram app
+      window.location.href = appUrl;
 
-function openYouTube(event) {
-  event.preventDefault();
-  
-  var appUrl = "vnd.youtube://channel/UCU9A2KS9jONx77mKwU9rUCQ"; // Opens YouTube app
-  var webUrl = "https://www.youtube.com/@shuraim_ai?si=HzRzDYTa58oIfw6J"; // Opens YouTube website
-  
-  // Try opening the YouTube app
-  window.location.href = appUrl;
+      // If app is not installed, open the web version after a short delay
+      setTimeout(function () {
+          window.location.href = webUrl;
+      }, 1500);
+  }
 
-  // If app is not installed, open the web version after a short delay
-  setTimeout(function() {
-      window.location.href = webUrl;
-  }, 1500);
-}
+  // Open YouTube function
+  function openYouTube(event) {
+      event.preventDefault();
+      
+      var appUrl = "vnd.youtube://channel/UCU9A2KS9jONx77mKwU9rUCQ"; // Opens YouTube app
+      var webUrl = "https://www.youtube.com/@shuraim_ai?si=HzRzDYTa58oIfw6J"; // Opens YouTube website
+
+      // Try opening the YouTube app
+      window.location.href = appUrl;
+
+      // If app is not installed, open the web version after a short delay
+      setTimeout(function () {
+          window.location.href = webUrl;
+      }, 1500);
+  }
+
+  // Toggle close on outside click
+  document.addEventListener("click", function (event) {
+      var toggles = document.querySelectorAll(".toggle-menu"); // Replace with your toggle class or ID
+      
+      toggles.forEach(function (toggle) {
+          if (!toggle.contains(event.target) && toggle.classList.contains("active")) {
+              toggle.classList.remove("active"); // Hide the toggle
+          }
+      });
+  });
+
+  // Assign functions to respective buttons
+  document.getElementById("instagramBtn").addEventListener("click", openInstagram);
+  document.getElementById("youtubeBtn").addEventListener("click", openYouTube);
+});
 </script>
 
         
@@ -115,7 +134,8 @@ function openYouTube(event) {
   <!-- Greeting Message -->
 <section class="p-4 text-center bg-gradient-to-r from-green-400 to-blue-500 text-white">
   <div class="text-2xl font-semibold font-bold">
-    <h6>Assalamu Alaikum/ السلام علیکم! Start your day with Bismillah<h6>
+    <h4>Assalamu Alaikum </h4> 
+    <h4>السلام علیکم! Start your day with Bismillah<h4>
   </h1>
 </section>
 </p>
@@ -149,6 +169,7 @@ function openYouTube(event) {
         <i class="fas fa-mosque"></i>
       </div>
       <span>Masjid Finder</span>
+        <span>مسجدات</span>
     </div>
 
      
@@ -159,6 +180,7 @@ function openYouTube(event) {
         <i class="fas fa-praying-hands"></i>
       </div>
       <span>Tasbeeh</span>
+      <span>تسبیح</span>
     </div>
 
     <!-- Quran -->
@@ -167,6 +189,7 @@ function openYouTube(event) {
     <i class="fas fa-book-reader"></i> <!-- Use appropriate icon for Quran -->
   </div>
   <span>Quran</span>
+  <span>قرآن</span>
 </div>
 
 <!-- Quran Audio -->
@@ -175,6 +198,7 @@ function openYouTube(event) {
     <i class="fas fa-headphones-alt"></i>
   </div>
   <span>Qur'an Audio</span>
+  <span>قرآن آڈیو</span>
 </div>
 
 <!-- Islamic Activities -->
@@ -182,7 +206,9 @@ function openYouTube(event) {
   <div class="icon-container">
     <i class="fas fa-praying-hands card-icon"></i>
   </div>
-  <span>Islamic Activities Steps</span>
+  <span>Islamic Activities</span>
+  <span> Steps</span>
+  <span>
 </div>
 
  
@@ -194,6 +220,7 @@ function openYouTube(event) {
         <i class="fas fa-calendar-alt"></i>
       </div>
       <span>Calendar</span>
+      <span> کیلنڈر</span>
     </div>
 
     
@@ -205,7 +232,8 @@ function openYouTube(event) {
         <i class="fas fa-shield-alt"></i>
       </div>
       
-      <span>Ruqyah/ رقیہ</span>
+      <span>Ruqyah</span>
+      <span> رقیہ</span>
     </div>
     
     </div>
