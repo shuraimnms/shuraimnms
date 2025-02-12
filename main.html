@@ -52,35 +52,48 @@
                 <span class="bar"></span>
             </button>
         
-            <!-- Dropdown menu with options -->
-            <div id="dropdownMenu" class="dropdown-content">
-                <a href="main.html">Home</a> <!-- Link to the main page -->
-                <a href="https://youtube.com/@shuraim_ai?si=HzRzDYTa58oIfw6J" target="_blank">YouTube</a> <!-- Link to YouTube -->
-                <a href="#" onclick="openInstagram(event)">Instagram</a> <!-- Updated Instagram link -->
-                <a href="feed.html">Feedback</a> <!-- Link to a feedback page -->
-                <a href="main.html">Back</a> <!-- Link to the back page -->
-            </div>
-        </div>
-        
-        <script>
-        function toggleDropdown() {
-            var dropdown = document.getElementById("dropdownMenu");
-            dropdown.classList.toggle("show");
-        }
-        
-        function openInstagram(event) {
-            event.preventDefault(); // Prevent default behavior
-            var appUrl = "instagram://user?username=zikr_mate";
-            var webUrl = "https://www.instagram.com/zikr_mate?igsh=MmczYnAyMWFqdjlx";
-            
-            window.location.href = appUrl;
-            
-            // If the app is not installed, redirect to the web version after a short delay
-            setTimeout(function() {
-                window.location.href = webUrl;
-            }, 1500);
-        }
-        </script>
+           <!-- Dropdown menu with options -->
+<div id="dropdownMenu" class="dropdown-content">
+  <a href="main.html">Home</a> <!-- Link to the main page -->
+  <a href="#" onclick="openYouTube(event)">YouTube</a> <!-- Opens YouTube in the app -->
+  <a href="#" onclick="openInstagram(event)">Instagram</a> <!-- Opens Instagram in the app -->
+  <a href="feedback/index.html">Feedback</a> <!-- Link to a feedback page -->
+  <a href="about/index.html">About & Developer Info</a> <!-- Link to an about page -->
+  <a href="main.html">Back</a> <!-- Link to the back page -->
+</div>
+
+<script>
+function openInstagram(event) {
+  event.preventDefault();
+  
+  var appUrl = "instagram://user?username=zikr_mate"; // Opens Instagram app
+  var webUrl = "https://www.instagram.com/zikr_mate?igsh=MmczYnAyMWFqdjlx"; // Opens Instagram website
+  
+  // Try opening the Instagram app
+  window.location.href = appUrl;
+
+  // If app is not installed, open the web version after a short delay
+  setTimeout(function() {
+      window.location.href = webUrl;
+  }, 1500);
+}
+
+function openYouTube(event) {
+  event.preventDefault();
+  
+  var appUrl = "vnd.youtube://channel/UCU9A2KS9jONx77mKwU9rUCQ"; // Opens YouTube app
+  var webUrl = "https://www.youtube.com/@shuraim_ai?si=HzRzDYTa58oIfw6J"; // Opens YouTube website
+  
+  // Try opening the YouTube app
+  window.location.href = appUrl;
+
+  // If app is not installed, open the web version after a short delay
+  setTimeout(function() {
+      window.location.href = webUrl;
+  }, 1500);
+}
+</script>
+
         
         
            
@@ -465,14 +478,7 @@ document.addEventListener("DOMContentLoaded", updateAzkarCard);
       </div>
       <span>Ruqyah/ رقیہ</span>
     </div>
-    <div class="quick-access-item" onclick="window.location.href='remainder/remainders.html'">
-      <div class="icon-container">
-        <i class="fas fa-bell"></i>
-      </div>
-      <span>Reminders</span>
-    </div>
-  </div>
-</section>
+    
 
 <!-- Footer Section -->
 <footer class="footer fixed bottom-0 left-0 right-0 bg-white shadow-md">
@@ -485,10 +491,11 @@ document.addEventListener("DOMContentLoaded", updateAzkarCard);
     </div>
 
     <!-- Duas/Dhikr Icon -->
-    <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='dua_dhikr/index.html'">
-      <i class="fas fa-praying-hands text-gray-500 text-6xl"></i>
-      <span class="text-gray-500 text-base font-bold mt-1">Duas/Dhikr</span>
-    </div>
+<div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='dua_dhikr/index.html'">
+  <i class="fas fa-quran text-gray-500 text-6xl"></i> <!-- Changed to Quran Icon -->
+  <span class="text-gray-500 text-base font-bold mt-1">Duas/Dhikr</span>
+</div>
+
 
     <!-- Books Icon -->
     <div class="flex flex-col items-center cursor-pointer w-1/4" onclick="window.location.href='islamic_books/index.html'">

@@ -548,244 +548,181 @@ function showContent(contentType) {
 
   const contentMap = {
     "Sun": {
-      "daily-dua": `
-        <h3>Sunday Dua</h3>
-        <p>اللهم اجعلني من التوابين واجعلني من المتطهرين</p>
-        <p>Translation: O Allah, make me among those who constantly repent and purify themselves.</p>
-        <audio controls>
-          <source src="audios/dua-sunday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-verse": `
-        <h3>Sunday Verse</h3>
-        <p>"And whoever relies upon Allah – then He is sufficient for him." - Surah At-Talaq (65:3)</p>
-        <audio controls>
-          <source src="audios/verse-sunday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-hadith": `
-        <h3>Sunday Hadith</h3>
-        <p>The Prophet (ﷺ) said: "None of you truly believes until he loves for his brother what he loves for himself." - Sahih al-Bukhari</p>
-        <audio controls>
-          <source src="audios/hadith-sunday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-wisdom": `
-        <h3>Sunday Wisdom</h3>
-        <p>"Be like a flower that gives its fragrance even to the hand that crushes it."</p>
-        <audio controls>
-          <source src="audios/wisdom-sunday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`
-    },
+  "daily-dua": `
+    <h3>اتوار کی دعا</h3>
+    <p>اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ المُتَطَهِّرِينَ</p>
+    <p>اے اللہ! مجھے توبہ کرنے والوں میں شامل کر دے اور مجھے پاکیزہ بننے والوں میں شامل کر دے۔</p>
+    <p>O Allah, make me among those who repent and those who purify themselves.</p>`,
+
+  "daily-verse": `
+    <h3>اتوار کی آیت</h3>
+    <p>إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</p>
+    <p>بے شک اللہ صبر کرنے والوں کے ساتھ ہے۔</p>
+    <p>Indeed, Allah is with those who are patient. (Surah Al-Baqarah 2:153)</p>`,
+
+  "daily-hadith": `
+    <h3>اتوار کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "مَنْ لَا يَرْحَمُ النَّاسَ لَا يَرْحَمُهُ اللَّهُ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "جو لوگوں پر رحم نہیں کرتا، اللہ اس پر رحم نہیں کرتا۔"</p>
+    <p>The Prophet ﷺ said: "Whoever does not show mercy to people, Allah will not show mercy to him." (Sahih al-Bukhari)</p>`,
+
+  "daily-wisdom": `
+    <h3>اتوار کا حکمت کا قول</h3>
+    <p>الرِّضَا بِالقَدَرِ يُحَقِّقُ السَّعَادَةَ</p>
+    <p>تقدیر پر راضی رہنا حقیقی خوشی کی بنیاد ہے۔</p>
+    <p>Contentment with destiny leads to true happiness.</p>`
+},
     "Mon": {
-      "daily-dua": `
-        <h3>Monday Dua</h3>
-        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
-        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
-        <audio controls>
-          <source src="audios/dua-monday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-verse": `
-        <h3>Monday Verse</h3>
-        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
-        <audio controls>
-          <source src="audios/verse-monday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-hadith": `
-        <h3>Monday Hadith</h3>
-        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
-        <audio controls>
-          <source src="audios/hadith-monday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-wisdom": `
-        <h3>Monday Wisdom</h3>
-        <p>"The real victory is when you control yourself in the face of adversity."</p>
-        <audio controls>
-          <source src="audios/wisdom-monday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`
-    },
+  "daily-dua": `
+    <h3>پیر کی دعا</h3>
+    <p>اللَّهُمَّ بَدِّلْ سَيِّئَاتِي حَسَنَاتٍ وَاغْفِرْ لِي ذُنُوبِي</p>
+    <p>اے اللہ! میری برائیوں کو نیکیوں میں بدل دے اور میرے گناہوں کو معاف فرما۔</p>
+    <p>O Allah, replace my sins with good deeds and forgive my shortcomings.</p>`,
+
+  "daily-verse": `
+    <h3>پیر کی آیت</h3>
+    <p>إِنَّ اللّهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ</p>
+    <p>بے شک اللہ توبہ کرنے والوں اور پاک صاف رہنے والوں کو پسند کرتا ہے۔</p>
+    <p>Indeed, Allah loves those who repent and those who purify themselves. (Surah Al-Baqarah 2:222)</p>`,
+
+  "daily-hadith": `
+    <h3>پیر کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "مَن كانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "جو شخص اللہ اور آخرت کے دن پر ایمان رکھتا ہو، وہ بھلائی کی بات کرے یا خاموش رہے۔"</p>
+    <p>The Prophet ﷺ said: "Whoever believes in Allah and the Last Day should speak good or remain silent." (Sahih al-Bukhari)</p>`,
+
+  "daily-wisdom": `
+    <h3>پیر کا حکمت کا قول</h3>
+    <p>الصبرُ مفتاحُ الفرجِ</p>
+    <p>صبر راحت کی چابی ہے۔</p>
+    <p>Patience is the key to relief.</p>`
+},
     "Tue": {
-      "daily-dua": `
-        <h3>Tuesday Dua</h3>
-        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
-        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
-        <audio controls>
-          <source src="audios/dua-tuesday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-verse": `
-        <h3>Tuesday Verse</h3>
-        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
-        <audio controls>
-          <source src="audios/verse-tuesday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-hadith": `
-        <h3>Tuesday Hadith</h3>
-        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
-        <audio controls>
-          <source src="audios/hadith-tuesday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`,
-      "daily-wisdom": `
-        <h3>Tuesday Wisdom</h3>
-        <p>"The real victory is when you control yourself in the face of adversity."</p>
-        <audio controls>
-          <source src="audios/wisdom-tuesday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`
-    },
+  "daily-dua": `
+    <h3>منگل کی دعا</h3>
+    <p>اللَّهُمَّ اجْعَلْنِي مِنَ الصَّابِرِينَ وَثَبِّتْ قَلْبِي عَلَى دِينِكَ</p>
+    <p>اے اللہ! مجھے صبر کرنے والوں میں شامل فرما اور میرے دل کو اپنے دین پر ثابت قدم رکھ۔</p>
+    <p>O Allah, make me among the patient and keep my heart firm upon Your religion.</p>`,
+
+  "daily-verse": `
+    <h3>منگل کی آیت</h3>
+    <p>وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا</p>
+    <p>جو اللہ سے ڈرتا ہے، اللہ اس کے لیے نکلنے کا راستہ بنا دیتا ہے۔</p>
+    <p>And whoever fears Allah – He will make for him a way out. (Surah At-Talaq 65:2)</p>`,
+
+  "daily-hadith": `
+    <h3>منگل کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "الدُّنْيَا سِجْنُ الْمُؤْمِنِ وَجَنَّةُ الْكَافِرِ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "دنیا مومن کے لیے قید خانہ اور کافر کے لیے جنت ہے۔"</p>
+    <p>The Prophet ﷺ said: "The world is a prison for the believer and a paradise for the disbeliever." (Sahih Muslim)</p>`,
+
+  "daily-wisdom": `
+    <h3>منگل کا حکمت کا قول</h3>
+    <p>التوكلُ على اللهِ يُريحُ القلبَ</p>
+    <p>اللہ پر بھروسہ دل کو سکون دیتا ہے۔</p>
+    <p>Trust in Allah brings peace to the heart.</p>`
+},
     "Wed": {
-      
-      "daily-dua": `
-        <h3>Wednesday Dua</h3>
-        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
-        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
-        <audio controls>
-          <source src="audios/dua-wednesday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
-        ,
-      "daily-verse": `
+  "daily-dua": `
+    <h3>بدھ کی دعا</h3>
+    <p>اللهم اجعلني من عبادك الصالحين ووفقني لما تحب وترضى</p>
+    <p>اے اللہ! مجھے اپنے نیک بندوں میں شامل فرما اور مجھے ان کاموں کی توفیق دے جو تجھے پسند ہوں۔</p>
+    <p>O Allah, make me among Your righteous servants and grant me the ability to do what pleases You.</p>`,
 
-        <h3>Wednesday Verse</h3>
-        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
-        <audio controls>
-          <source src="audios/verse-wednesday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>`
-        ,
-      "daily-hadith": `
-        <h3>Wednesday Hadith</h3>
-        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
-        <audio controls>
-        <source src="audios/hadith-wednesday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>`
-        ,
-      "daily-wisdom": `
-      <h3>Wednesday Wisdom</h3>
-      <p>"The real victory is when you control yourself in the face of adversity."</p>
-      <audio controls>
-        <source src="audios/wisdom-wednesday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-              </audio>`
-        
-      },
+  "daily-verse": `
+    <h3>بدھ کی آیت</h3>
+    <p>وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا</p>
+    <p>جو اللہ سے ڈرتا ہے اللہ اس کے لیے راستہ بنا دیتا ہے۔</p>
+    <p>And whoever fears Allah – He will make for him a way out. (Surah At-Talaq 65:2)</p>`,
+
+  "daily-hadith": `
+    <h3>بدھ کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "أفضلُ الأعمالِ: إيمانٌ باللهِ، وجهادٌ في سبيلِهِ، وحجٌّ مبرورٌ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "سب سے بہترین عمل اللہ پر ایمان، اللہ کی راہ میں جہاد اور حج مبرور ہے۔"</p>
+    <p>The Prophet ﷺ said: "The best deeds are: faith in Allah, striving in His cause, and an accepted Hajj." (Sahih al-Bukhari)</p>`,
+
+  "daily-wisdom": `
+    <h3>بدھ کا حکمت کا قول</h3>
+    <p>الصبرُ عندَ المصيبةِ نصفُ الإيمانِ</p>
+    <p>مصیبت پر صبر کرنا آدھا ایمان ہے۔</p>
+    <p>Patience in times of hardship is half of faith.</p>`
+},
     "Thu": {
-      
-      "daily-dua": `
-        <h3>Thursday Dua</h3>
-        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
-        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
-        <audio controls>
-          <source src="audios/dua-thursday.
-          type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
-        ,
-      "daily-verse": `
-        <h3>Thursday Verse</h3>
-        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
-        <audio controls>
-          <source src="audios/verse-thursday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
-        ,
-      "daily-hadith": `
-        <h3>Thursday Hadith</h3>
-        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
-        <audio controls>
-          <source src="audios/hadith-thursday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
-        ,
-      "daily-wisdom": `
-        <h3>Thursday Wisdom</h3>
-        <p>"The real victory is when you control yourself in the face of adversity."</p>
-        <audio controls>
-          <source src="audios/wisdom-thursday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
+  "daily-dua": `
+    <h3>جمعرات کی دعا</h3>
+    <p>اللَّهُمَّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُسْلِمِينَ جَمِيعًا</p>
+    <p>اے اللہ! مجھے، میرے والدین کو اور تمام مسلمانوں کو بخش دے۔</p>
+    <p>O Allah, forgive me, my parents, and all the Muslims.</p>`,
 
-    },
+  "daily-verse": `
+    <h3>جمعرات کی آیت</h3>
+    <p>إِنَّمَا الْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا بَيْنَ أَخَوَيْكُمْ</p>
+    <p>بے شک، تمام مومن بھائی بھائی ہیں، پس اپنے بھائیوں کے درمیان صلح کروا دو۔</p>
+    <p>Indeed, the believers are but brothers, so make settlement between your brothers. (Surah Al-Hujurat 49:10)</p>`,
+
+  "daily-hadith": `
+    <h3>جمعرات کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "اعمال کا دار و مدار نیتوں پر ہے۔"</p>
+    <p>The Prophet ﷺ said: "Actions are judged by intentions." (Sahih al-Bukhari)</p>`,
+
+  "daily-wisdom": `
+    <h3>جمعرات کا حکمت کا قول</h3>
+    <p>من تواضع لله رفعه</p>
+    <p>جو اللہ کے لیے عاجزی اختیار کرتا ہے، اللہ اسے بلند کر دیتا ہے۔</p>
+    <p>Whoever humbles himself for Allah, He elevates him.</p>`
+},
     "Fri": {
-      
-      "daily-dua": `
-        <h3>Friday Dua</h3>
-        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
-        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
-        <audio controls>
-          <source src="audios/dua-friday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
-        ,
-      "daily-verse": `
-        <h3>Friday Verse</h3>
-        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
-        <audio controls>
-          <source src="audios/verse-friday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
-        ,
-      "daily-hadith": `
-        <h3>Friday Hadith</h3>
-        <p>The Prophet (ﷺ) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
-        <audio controls>
-        <source src="audios/hadith-friday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>`
-        ,
-      "daily-wisdom": `
-        <h3>Friday Wisdom</h3>
-        <p>"The real victory is when you control yourself in the face of adversity."</p>
-        <audio controls>
-          <source src="audios/wisdom-friday.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-          </audio>`
+  "daily-dua": `
+    <h3>جمعہ کی دعا</h3>
+    <p>اللَّهُمَّ اجْعَلْنِي مِنَ الَّذِينَ يَسْتَمِعُونَ الْقَوْلَ فَيَتَّبِعُونَ أَحْسَنَهُ</p>
+    <p>اے اللہ! مجھے ان لوگوں میں شامل کر جو اچھی بات سنتے ہیں اور اس پر عمل کرتے ہیں۔</p>
+    <p>O Allah, make me among those who listen to good advice and follow the best of it.</p>`,
 
-    },
+  "daily-verse": `
+    <h3>جمعہ کی آیت</h3>
+    <p>يَا أَيُّهَا الَّذِينَ آمَنُوا إِذَا نُودِيَ لِلصَّلَاةِ مِنْ يَوْمِ الْجُمُعَةِ فَاسْعَوْا إِلَى ذِكْرِ اللَّهِ</p>
+    <p>اے ایمان والو! جب جمعہ کے دن نماز کے لئے اذان دی جائے تو اللہ کے ذکر کی طرف جلدی کرو۔</p>
+    <p>O you who have believed, when the call to prayer is made on the day of Jumu'ah, then proceed to the remembrance of Allah. (Surah Al-Jumu'ah 62:9)</p>`,
+
+  "daily-hadith": `
+    <h3>جمعہ کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "خَيْرُ يَوْمٍ طَلَعَتْ فِيهِ الشَّمْسُ يَوْمُ الجُمُعَةِ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "سب سے بہترین دن جس میں سورج طلوع ہوتا ہے، جمعہ کا دن ہے۔"</p>
+    <p>The Prophet ﷺ said: "The best day on which the sun rises is Friday." (Sahih Muslim)</p>`,
+
+  "daily-wisdom": `
+    <h3>جمعہ کا حکمت کا قول</h3>
+    <p>من أكثر من الصلاة على النبي ﷺ يوم الجمعة، نال شفاعته</p>
+    <p>جو جمعہ کے دن نبی ﷺ پر زیادہ درود بھیجتا ہے، وہ ان کی شفاعت کا حق دار بن جاتا ہے۔</p>
+    <p>Whoever sends abundant blessings upon the Prophet ﷺ on Friday will be entitled to his intercession.</p>`
+},
     "Sat": {
+  "daily-dua": `
+    <h3>ہفتہ کی دعا</h3>
+    <p>اللَّهُمَّ إِنِّي أَسْأَلُكَ العَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ</p>
+    <p>اے اللہ! میں تجھ سے دنیا اور آخرت میں عافیت کا سوال کرتا ہوں۔</p>
+    <p>O Allah, I ask You for well-being in this world and the Hereafter.</p>`,
 
-      "daily-dua": `
-        <h3>Saturday Dua</h3>
-        <p>اللهم ارزقني رزقًا حلالًا طيبًا</p>
-        <p>Translation: O Allah, grant me sustenance that is halal and pure.</p>
-        <audio controls>
-        <source src="audios/dua-saturday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio>`
-        ,
-      "daily-verse": `
-        <h3>Saturday Verse</h3>
-        <p>"Indeed, Allah is with those who fear Him and those who are doers of good." - Surah An-Nahl (16:128)</p>
-        <audio controls>
-        <source src="audios/verse-saturday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-                </audio>`
-              ,
-      "daily-hadith": `
-        <h3>Saturday Hadith</h3>
-        <p>The Prophet (���) said: "The strong one is not the one who overcomes people by his strength, but the one who controls himself when he is angry." - Sahih al-Bukhari</p>
-        <audio controls>
-        <source src="audios/hadith-saturday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-                </audio>`
-                ,
-      "daily-wisdom": `
-      <h3>Saturday Wisdom</h3>
-      <p>"The real victory is when you control yourself in the face of adversity."</p>
-      <audio controls>
-        <source src="audios/wisdom-saturday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-                </audio>`
+  "daily-verse": `
+    <h3>ہفتہ کی آیت</h3>
+    <p>وَالَّذِينَ جَاهَدُوا فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا</p>
+    <p>اور جو ہمارے راستے میں جدوجہد کرتے ہیں، ہم ضرور انہیں اپنے راستے دکھائیں گے۔</p>
+    <p>And those who strive in Our cause – We will surely guide them to Our ways. (Surah Al-Ankabut 29:69)</p>`,
 
-    }
+  "daily-hadith": `
+    <h3>ہفتہ کی حدیث</h3>
+    <p>قال رسول الله ﷺ: "المُؤْمِنُ القَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنَ المُؤْمِنِ الضَّعِيفِ"</p>
+    <p>رسول اللہ ﷺ نے فرمایا: "طاقتور مؤمن کمزور مؤمن سے بہتر اور اللہ کو زیادہ محبوب ہے۔"</p>
+    <p>The Prophet ﷺ said: "A strong believer is better and more beloved to Allah than a weak believer." (Sahih Muslim)</p>`,
+
+  "daily-wisdom": `
+    <h3>ہفتہ کا حکمت کا قول</h3>
+    <p>الصَّبْرُ عِنْدَ الصَّدْمَةِ الْأُولَى</p>
+    <p>حقیقی صبر وہ ہے جو پہلی آزمائش کے وقت کیا جائے۔</p>
+    <p>True patience is at the first blow of calamity.</p>`
+}
+
   };
 
   console.log("Checking for content for the day:", currentDay); // For debugging
