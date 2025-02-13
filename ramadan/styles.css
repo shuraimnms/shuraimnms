@@ -1,90 +1,216 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(145deg, #121212, #1f1f1f);
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-/* 🌙 Glowing Header */
-.glow-text {
-    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top left, #e0f7fa, #f1f8e9, #e0f2f1);
+    color: #333;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.5s, color 0.5s;
+    position: relative;
     font-weight: bold;
-    color: #ffcc00;
-    text-shadow: 3px 3px 15px rgba(255, 204, 0, 0.7);
 }
 
-/* 📦 General Container Styling */
-.container {
-    background: #222;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 12px;
-    box-shadow: 3px 3px 15px rgba(255, 204, 0, 0.5);
-    width: 90%;
-    max-width: 500px;
+/* Dark Mode Styles */
+body.dark-mode {
+    background: radial-gradient(circle at top left, #0d0d0d, #1c1c1c, #333);
+    color: #f0f0f0;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 10px 20px;
     text-align: center;
+    color: #4caf50;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 0.8s ease-out;
 }
 
-/* 📜 Hadith Section */
-.hadith-section {
-    background: linear-gradient(145deg, #2e2e2e, #292929);
-    color: #ffdd57;
-}
-
-/* 🔔 Suhur & Iftar Alarm Section */
-.alarm-section {
-    background: linear-gradient(145deg, #1b1b1b, #2a2a2a);
-}
-
-/* 📅 Roza Tracker */
-.roza-section {
-    background: linear-gradient(145deg, #242424, #2d2d2d);
-}
-
-/* 📖 Quran Section */
-.quran-section {
-    background: linear-gradient(145deg, #1b1b1b, #222);
-}
-
-/* 🔘 Buttons */
-button, .explore-btn {
-    background: linear-gradient(145deg, #ffcc00, #ffaa00);
-    color: #222;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 1rem;
+header h1 {
+    margin: 0;
+    font-size: 2em;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    letter-spacing: 1.5px;
+    color: #2e7d32;
+}
+
+/* Controls */
+.controls button {
+    margin: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
-    cursor: pointer;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #4caf50;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s;
 }
 
-button:hover, .explore-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 4px 4px 15px rgba(255, 204, 0, 0.7);
+.controls button:hover {
+    background: #4caf50;
+    color: #fff;
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.6);
 }
 
-/* 📅 Roza Tracker */
-.roza-section #roza-days {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+    animation: fadeIn 1s ease-in;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #4caf50;
+    padding-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Hadith Styling */
+.hadith {
+    direction: rtl; /* Right to left */
+    text-align: right;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2e7d32;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+    border: 2px solid #4caf50;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hadith:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(46, 125, 50, 0.5);
+}
+
+body.dark-mode .hadith {
+    background: linear-gradient(135deg, #2e7d32, #1c1c1c);
+    color: #f0f0f0;
+    border-color: #81c784;
+}
+
+/* Calendar and Roza Tracker */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     gap: 8px;
+    margin-top: 15px;
+    justify-items: center;
 }
 
 .day {
-    width: 40px;
-    height: 40px;
-    background: #222;
-    color: white;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    border: 2px solid #4caf50;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.15);
+    color: #4caf50;
+    transition: all 0.3s;
+}
+
+.day:hover {
+    background: rgba(129, 199, 132, 0.9);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 255, 128, 0.4);
 }
 
 .day.completed {
-    background: #28a745;
+    background: linear-gradient(145deg, #4caf50, #66bb6a);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Zakat Calculator Input */
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #4caf50;
+    background: rgba(255, 255, 255, 0.15);
+    color: #333;
+    transition: all 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+button#calculate-zakat {
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 18px;
+    background: #4caf50;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+button#calculate-zakat:hover {
+    background: #388e3c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode section {
+    background: rgba(31, 31, 31, 0.5);
+    color: #f0f0f0;
+}
+
+body.dark-mode .day {
+    background: rgba(51, 51, 51, 0.5);
+    color: #81c784;
+    border-color: #81c784;
+}
+
+body.dark-mode .day.completed {
+    background: rgba(46, 125, 50, 0.9);
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -3,63 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan - ZikrMate</title>
+    <title>Ramadan Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
+    <header>
+        <h1 id="title">Ramadan Tracker</h1>
+        <div class="controls">
+            <button id="toggle-language">اردو</button>
+            <button id="dark-mode-toggle">🌙</button>
+        </div>
+    </header>
 
-    <!-- 🌙 Ramadan Header -->
-    <div class="banner">
-        <h1 class="glow-text">Ramadan Kareem / رمضان کریم</h1>
-    </div>
+    <main>
+     
 
-    <!-- 📜 Best Hadith Section -->
-    <div class="container hadith-section">
-        <h2 class="glow-text">📜 Hadith of Ramadan</h2>
-        <p>
-            The Prophet (ﷺ) said:  
-            **“When Ramadan begins, the gates of Paradise are opened, the gates of Hell are closed, and the devils are chained.”**  
-            (Bukhari & Muslim)
-        </p>
-    </div>
+        <section id="timings">
+            <h2>Ramadan Timings</h2>
+            <p><strong>Suhur:</strong> <span id="suhur-time">Loading...</span></p>
+            <p><strong>Iftar:</strong> <span id="iftar-time">Loading...</span></p>
+        </section>
 
-    <!-- 🔔 Suhur & Iftar Alarm Section -->
-    <div class="container alarm-section">
-        <h2 class="glow-text">🔔 Suhur & Iftar Alarms</h2>
+        <section id="duas">
+            <h2>Ramadan Duas</h2>
+            <p id="dua-text">اللَّهُمَّ إِنِّي لَكَ صُمْتُ...</p>
+        </section>
 
-        <label for="suhur-time">Set Suhur Alarm:</label>
-        <input type="time" id="suhur-time">
-        <button onclick="setAlarm('suhur')">Set Suhur</button>
+        <section id="roza-tracker">
+            <h2>Roza Tracker</h2>
+            <div id="calendar">
+                <!-- JavaScript will dynamically populate this with buttons -->
+            </div>
+            <p>Progress: <span id="roza-progress">0%</span></p>
+            <p>Fasts Completed: <span id="total-fasts">0/30</span></p>
+        </section>
+        
 
-        <label for="iftar-time">Set Iftar Alarm:</label>
-        <input type="time" id="iftar-time">
-        <button onclick="setAlarm('iftar')">Set Iftar</button>
+        <section id="zakat-calculator">
+            <h2>Zakat Calculator</h2>
+            <input type="number" id="zakat-input" placeholder="Enter wealth amount">
+            <button id="calculate-zakat">Calculate</button>
+            <p id="zakat-result"></p>
+        </section>
+    </main>
 
-        <h3 class="glow-text">Select Alarm Sound</h3>
-
-        <select id="alarm-sound">
-            <option value="https://drive.google.com/uc?export=download&id=1fwilzM5xlOftlZn0soofkImpxyKv4M5T">Suhur Alarm</option>
-            <option value="https://drive.google.com/uc?export=download&id=1fwilzM5xlOftlZn0soofkImpxyKv4M5T">Iftar Alarm</option>
-        </select>
-
-
-
-        <button onclick="stopAlarm()">Stop Alarm</button>
-    </div>
-
-    <!-- 📅 30-Day Roza Tracker Section -->
-    <div class="container roza-section">
-        <h2 class="glow-text"> Ramadan Roza Tracker</h2>
-        <div id="roza-days"></div>
-        <p><b>Progress:</b> <span id="roza-progress">0%</span> (<span id="total-fasts">0</span> days)</p>
-    </div>
-
-    <!-- 📖 Quran Folder Section -->
-    <div class="container quran-section">
-        <h2 class="glow-text">📖 Read Quran</h2>
-        <a href="../islamic_books/quran_kareem/index.html" class="explore-btn">Open Quran</a>
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>

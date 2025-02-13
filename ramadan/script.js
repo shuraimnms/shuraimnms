@@ -1,61 +1,112 @@
-// 🔔 Function to Set Alarms & Save to Local Storage
-function setAlarm(type) {
-    let alarmTime = type === 'suhur' ? document.getElementById('suhur-time').value : document.getElementById('iftar-time').value;
-    if (!alarmTime) {
-        alert("Please select a time!");
-        return;
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    initializeApp();
+});
 
-    localStorage.setItem(type + "-alarm", alarmTime);
-    alert(type.charAt(0).toUpperCase() + type.slice(1) + " alarm set for " + alarmTime);
-}
-
-// 🕰️ Function to Check & Play Alarm
-function checkAlarm() {
-    let now = new Date();
-    let currentTime = now.getHours().toString().padStart(2, '0') + ":" + now.getMinutes().toString().padStart(2, '0');
-
-    ['suhur', 'iftar'].forEach(type => {
-        let alarmTime = localStorage.getItem(type + "-alarm");
-        if (alarmTime === currentTime) {
-            playAlarm();
-        }
-    });
-}
-
-// 🔊 Function to Play Alarm Sound
-function playAlarm() {
-    let alarmSound = document.getElementById('alarm-sound').value;
-
-    if (!alarmSound) {
-        alert("No alarm sound selected!");
-        return;
-    }
-
-    let audio = new Audio(alarmSound);
-    audio.play();
-}
-
-// 🛑 Function to Stop Alarm
-function stopAlarm() {
-    let audio = new Audio();
-    audio.pause();
-}
-
-// ✅ Keep Checking Alarm Every Minute
-setInterval(checkAlarm, 60000);
-
-// 🕐 Load Saved Alarms on Restart
-window.onload = function () {
-    document.getElementById('suhur-time').value = localStorage.getItem("suhur-alarm") || "";
-    document.getElementById('iftar-time').value = localStorage.getItem("iftar-alarm") || "";
+function initializeApp() {
+    setupEventListeners();
+    createRozaTracker();
     updateRozaProgress();
-};
+    applySavedPreferences();
+    getLocationAndFetchTimings();
+}
 
-// 🗓️ Ramadan Roza Tracker
-const rozaDays = document.getElementById("roza-days");
+function setupEventListeners() {
+    const modeToggle = document.getElementById("dark-mode-toggle");
+    modeToggle.addEventListener("click", toggleDarkMode);
+    document.getElementById("toggle-language").addEventListener("click", toggleLanguage);
+    document.getElementById("calculate-zakat").addEventListener("click", calculateZakat);
+}
 
-// Function to Update Progress
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    const modeToggle = document.getElementById("dark-mode-toggle");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", true);
+        modeToggle.textContent = "Light Mode";
+    } else {
+        localStorage.setItem("darkMode", false);
+        modeToggle.textContent = "Dark Mode";
+    }
+}
+
+function toggleLanguage() {
+    const currentLang = document.getElementById("title").textContent;
+    if (currentLang === "Ramadan Tracker") {
+        document.getElementById("title").textContent = "رمضان ٹریکر";
+    } else {
+        document.getElementById("title").textContent = "Ramadan Tracker";
+    }
+}
+
+function calculateZakat() {
+    const amount = parseFloat(document.getElementById("zakat-input").value);
+    if (isNaN(amount) || amount <= 0) {
+        document.getElementById("zakat-result").textContent = "Please enter a valid amount.";
+        return;
+    }
+    const zakat = (amount * 2.5) / 100;
+    document.getElementById("zakat-result").textContent = `Your Zakat: $${zakat.toFixed(2)}`;
+}
+
+function getLocationAndFetchTimings() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(fetchPrayerTimes, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function fetchPrayerTimes(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    const apiURL = `https://api.aladhan.com/v1/timings?latitude=${latitude}&longitude=${longitude}&method=2`;
+
+    fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+            const timings = data.data.timings;
+            document.getElementById("suhur-time").textContent = timings.Fajr;
+            document.getElementById("iftar-time").textContent = timings.Maghrib;
+        })
+        .catch(error => console.error("Error fetching prayer times:", error));
+}
+
+function applySavedPreferences() {
+    document.body.classList.add("dark-mode"); // Always start in dark mode
+    const modeToggle = document.getElementById("dark-mode-toggle");
+    modeToggle.textContent = "Light Mode"; // Initial button text
+}
+
+function createRozaTracker() {
+    const rozaDays = document.getElementById("calendar");
+    rozaDays.innerHTML = "";
+
+    for (let i = 1; i <= 30; i++) {
+        let dayButton = document.createElement("button");
+        dayButton.classList.add("day");
+        dayButton.innerText = i;
+
+        if (localStorage.getItem("roza-" + i) === "completed") {
+            dayButton.classList.add("completed");
+        }
+
+        dayButton.addEventListener("click", () => {
+            dayButton.classList.toggle("completed");
+
+            if (dayButton.classList.contains("completed")) {
+                localStorage.setItem("roza-" + i, "completed");
+            } else {
+                localStorage.removeItem("roza-" + i);
+            }
+
+            updateRozaProgress();
+        });
+
+        rozaDays.appendChild(dayButton);
+    }
+}
+
 function updateRozaProgress() {
     let completedFasts = 0;
 
@@ -70,32 +121,19 @@ function updateRozaProgress() {
     document.getElementById("total-fasts").innerText = `${completedFasts}/30`;
 }
 
-// Create 30-Day Roza Tracker
-for (let i = 1; i <= 30; i++) {
-    let day = document.createElement("div");
-    day.classList.add("day");
-    day.innerText = i;
-
-    // Check if the fast was completed (stored in localStorage)
-    if (localStorage.getItem("roza-" + i) === "completed") {
-        day.classList.add("completed");
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
     }
-
-    // Toggle Completed State on Click
-    day.addEventListener("click", () => {
-        day.classList.toggle("completed");
-
-        if (day.classList.contains("completed")) {
-            localStorage.setItem("roza-" + i, "completed");
-        } else {
-            localStorage.removeItem("roza-" + i);
-        }
-
-        updateRozaProgress();
-    });
-
-    rozaDays.appendChild(day);
 }
-
-// Call update function on load
-updateRozaProgress();
